@@ -1,0 +1,8 @@
+ru\solovev\taskmanager\repository\RepositoryTask.class
+ru\solovev\taskmanager\command\ProjectCreate.class
+ru\solovev\taskmanager\entity\Task.class
+ru\solovev\taskmanager\command\ProjectList.class
+ru\solovev\taskmanager\entity\Project.class
+ru\solovev\taskmanager\repository\RepositoryProject.class
+ru\solovev\taskmanager\ReadFromConsole.class
+ru\solovev\taskmanager\TaskManager.class
