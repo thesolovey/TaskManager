@@ -9,7 +9,7 @@ public class TaskCreateCommand {
         System.out.println("[TASK CREATE]");
         Task task = new Task();
         task.setName(ReadFromConsole.readInputFromConsole("Input name Task: "));
-        TaskRepository.taskListAdd(task.getName());
+        TaskRepository.addTaskList(task.getName());
         System.out.println("[OK]");
     }
 }

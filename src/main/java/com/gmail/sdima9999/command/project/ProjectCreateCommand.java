@@ -9,7 +9,7 @@ public class ProjectCreateCommand {
         System.out.println("[PROJECT CREATE]");
         Project project = new Project();
         project.setName(ReadFromConsole.readInputFromConsole("Input name Project: "));
-        ProjectRepository.projectListAdd(project.getName());
+        ProjectRepository.addProjectList(project.getName());
         System.out.println("[OK]");
     }
 }

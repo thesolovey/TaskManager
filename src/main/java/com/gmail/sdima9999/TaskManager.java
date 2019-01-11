@@ -1,9 +1,13 @@
 package com.gmail.sdima9999;
 
 import com.gmail.sdima9999.command.project.ProjectCreateCommand;
+import com.gmail.sdima9999.command.project.ProjectDeleteCommand;
 import com.gmail.sdima9999.command.project.ProjectListCommand;
+import com.gmail.sdima9999.command.project.ProjectUpdateCommand;
 import com.gmail.sdima9999.command.task.TaskCreateCommand;
+import com.gmail.sdima9999.command.task.TaskDeleteCommand;
 import com.gmail.sdima9999.command.task.TaskListCommand;
+import com.gmail.sdima9999.command.task.TaskUpdateCommand;
 
 public class TaskManager {
     public static void main(String[] args) {
@@ -25,12 +29,16 @@ public class TaskManager {
                 TaskListCommand.execute();
                 break;
             case "project-delete":
-                System.out.println("[PROJECT DELETE]");
-                ReadFromConsole.readInputFromConsole("Enter the name of the Project you want to delete: ");
+                ProjectDeleteCommand.execute();
                 break;
             case "task-delete":
-                System.out.println("[TASK DELETE]");
-                ReadFromConsole.readInputFromConsole("Enter the name of the Task you want to delete: ");
+                TaskDeleteCommand.execute();
+                break;
+            case "project-update":
+                ProjectUpdateCommand.execute();
+                break;
+            case "task-update":
+                TaskUpdateCommand.execute();
                 break;
             case "exit":
                 isCorrect = false;
