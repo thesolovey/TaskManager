@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/bootstrap/StartTaskManager.java" line="10" mnemonic="9" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b429610d-2b7e-45b5-b0f1-f7e13c614bb8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectDeleteCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectUpdateCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskDeleteCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskUpdateCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/service/TaskService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/TaskManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectCreateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectCreateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectDeleteCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectDeleteCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectListCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectListCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectUpdateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectUpdateCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskCreateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskCreateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskDeleteCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskDeleteCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskListCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskListCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskUpdateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskUpdateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Project.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/ProjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/ProjectRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/TaskRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/TaskManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/TaskManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/command/project/ProjectCreateCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/command/project/ProjectCreateCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/command/project/ProjectList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/TaskManager.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/command/task/TaskCreateCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/command/task/TaskCreateCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/command/task/TaskList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/entity/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/entity/Project.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/repository/ProjectRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/repository/ProjectRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/repository/TaskRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/repository/TaskRepository.class" afterDir="false" />
     </list>
@@ -40,31 +44,31 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="58" />
-          <entry key="java" value="4970" />
+          <entry key="dummy" value="72" />
+          <entry key="java" value="6244" />
           <entry key="md" value="29" />
           <entry key="xml" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4970" />
-          <entry key="PLAIN_TEXT" value="87" />
+          <entry key="JAVA" value="6244" />
+          <entry key="PLAIN_TEXT" value="101" />
           <entry key="XML" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="java" value="38" />
-          <entry key="md" value="1" />
+          <entry key="java" value="55" />
+          <entry key="md" value="2" />
           <entry key="xml" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="38" />
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="JAVA" value="55" />
+          <entry key="PLAIN_TEXT" value="3" />
           <entry key="XML" value="7" />
         </counts>
       </usages-collector>
@@ -75,59 +79,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/TaskManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
+            <state relative-caret-position="198">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#156#157#0" expanded="true" />
+                <element signature="e#203#204#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/TaskRepository.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/bootstrap/StartTaskManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Project.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectCreateCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/ProjectRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectUpdateCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
+            <state relative-caret-position="457">
+              <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -136,10 +102,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskUpdateCommand.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/TaskRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+            <state relative-caret-position="462">
+              <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#478#479#0" expanded="true" />
+                <element signature="e#503#504#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskOpenCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="6" column="33" lean-forward="true" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -148,10 +128,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskDeleteCommand.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Task.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="-88">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -160,10 +140,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectListCommand.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskCreateCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+            <state relative-caret-position="303">
+              <caret line="23" column="2" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskListCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -204,25 +199,30 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/solovev/taskmanager/command/ProjectList.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/TaskCreate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Project.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/ProjectList.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/ProjectCreate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/RepositoryProject.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskCreate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskList.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/RepositoryTask.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Task.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectCreateCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectListCommand.java" />
         <option value="$PROJECT_DIR$/src/README.md" />
         <option value="$PROJECT_DIR$/src/.gitignore" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/TaskManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskDeleteCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectDeleteCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/ProjectRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectUpdateCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/TaskRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Project.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/IdRepositoty.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/ProjectRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/TaskManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Task.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskDeleteCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskUpdateCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskListCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/bootstrap/StartTaskManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskCreateCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskOpenCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/TaskRepository.java" />
       </list>
     </option>
   </component>
@@ -249,7 +249,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="30" />
     <option name="y" value="30" />
     <option name="width" value="2100" />
@@ -328,7 +328,7 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="gmail" type="462c0819:PsiDirectoryNode" />
               <item name="sdima9999" type="462c0819:PsiDirectoryNode" />
-              <item name="command" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TaskManager" type="b2602c69:ProjectViewProjectNode" />
@@ -340,7 +340,6 @@
               <item name="gmail" type="462c0819:PsiDirectoryNode" />
               <item name="sdima9999" type="462c0819:PsiDirectoryNode" />
               <item name="command" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TaskManager" type="b2602c69:ProjectViewProjectNode" />
@@ -376,6 +375,17 @@
               <item name="sdima9999" type="462c0819:PsiDirectoryNode" />
               <item name="repository" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="TaskManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TaskManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="gmail" type="462c0819:PsiDirectoryNode" />
+              <item name="sdima9999" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -383,7 +393,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547130597618" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547213038874" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
   </component>
   <component name="RecentsManager">
@@ -409,7 +419,7 @@
       <module name="TaskManager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.gmail.sdima9999.*" />
+          <option name="PATTERN" value="com.gmail.sdima9999.readfromconsole.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -437,10 +447,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1455" height="944" extended-state="6" />
+    <frame x="-7" y="-7" width="1455" height="944" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24301076" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24301076" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -449,7 +459,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3292232" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49964157" visible="true" weight="0.3403206" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49964157" visible="true" weight="0.24167694" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -467,34 +477,6 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.24659498" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23942652" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3292232" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49964157" visible="true" weight="0.3403206" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3292232" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5003584" side_tool="true" weight="0.3292232" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3292232" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="7" weight="0.24659498" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -508,85 +490,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskListCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="52" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskCreateCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectCreateCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectListCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/TaskManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskDeleteCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -610,33 +517,154 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/ProjectRepository.java">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+        <state relative-caret-position="44">
+          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/TaskRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Project.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+        <state relative-caret-position="440">
+          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/ReadFromConsole.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectCreateCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        <state relative-caret-position="132">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/IdRepositoty.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/readfromconsole/ReadFromConsole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskDeleteCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskUpdateCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
-          <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/service/TaskService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/ProjectRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectListCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskListCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/TaskManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#156#157#0" expanded="true" />
+            <element signature="e#203#204#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-88">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/bootstrap/StartTaskManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskCreateCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="23" column="2" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskOpenCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="33" lean-forward="true" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/TaskRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#478#479#0" expanded="true" />
+            <element signature="e#503#504#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,6 +1,6 @@
 package com.gmail.sdima9999.command.project;
 
-import com.gmail.sdima9999.ReadFromConsole;
+import com.gmail.sdima9999.readfromconsole.ReadFromConsole;
 import com.gmail.sdima9999.entity.Project;
 import com.gmail.sdima9999.repository.ProjectRepository;
 

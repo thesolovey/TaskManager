@@ -1,8 +1,9 @@
 package com.gmail.sdima9999.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
 
-public class Task {
+public class Task extends ArrayList<Task> {
     private String name;
 
     private String  id;

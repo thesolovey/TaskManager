@@ -5,6 +5,6 @@ import com.gmail.sdima9999.repository.ProjectRepository;
 public class ProjectListCommand {
     public static void execute() {
         System.out.println("[PROJECT LIST]");
-        System.out.println(ProjectRepository.myProjectList);
+        System.out.println(ProjectRepository.projectList);
     }
 }

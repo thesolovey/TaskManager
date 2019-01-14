@@ -1,4 +1,4 @@
-package com.gmail.sdima9999;
+package com.gmail.sdima9999.readfromconsole;
 
 import java.util.Scanner;
 
