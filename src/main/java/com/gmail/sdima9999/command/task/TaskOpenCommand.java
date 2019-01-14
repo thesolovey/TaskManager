@@ -5,7 +5,9 @@ import com.gmail.sdima9999.repository.TaskRepository;
 
 public class TaskOpenCommand {
     public static void execute(){
-        String name = ReadFromConsole.readInputFromConsole()
-        TaskRepository.openTask();
+        System.out.println("[TASK OPEN]");
+        String name = ReadFromConsole.readInputFromConsole("Enter Task you want open: ");
+        TaskRepository.openTask(name);
+        System.out.println("[OK]");
     }
 }

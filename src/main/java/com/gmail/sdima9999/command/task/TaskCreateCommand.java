@@ -4,6 +4,7 @@ import com.gmail.sdima9999.entity.Task;
 import com.gmail.sdima9999.readfromconsole.ReadFromConsole;
 import com.gmail.sdima9999.repository.TaskRepository;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
 
@@ -18,10 +19,14 @@ public class TaskCreateCommand {
         task.setId(idTask);
 
         Date dateBegin = new Date();
-        task.setDateBegin(dateBegin);
+        Calendar calendarBegin = Calendar.getInstance();
+        Calendar calendarEnd = Calendar.getInstance();
+        calendarBegin.setTime(dateBegin);
+        calendarEnd.add(Calendar.WEEK_OF_MONTH, 2);
 
-//        Date dateEnd = dateBegin.;
-//        task.setDateEnd(dateEnd);
+        task.setDateBegin(calendarBegin.getTime());
+
+        task.setDateEnd(calendarEnd.getTime());
 
         TaskRepository.addTask(task);
         System.out.println("[OK]");

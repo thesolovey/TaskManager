@@ -1,13 +1,11 @@
 package com.gmail.sdima9999.bootstrap;
 
-import com.gmail.sdima9999.command.project.ProjectCreateCommand;
-import com.gmail.sdima9999.command.project.ProjectDeleteCommand;
-import com.gmail.sdima9999.command.project.ProjectListCommand;
-import com.gmail.sdima9999.command.project.ProjectUpdateCommand;
+import com.gmail.sdima9999.command.project.*;
 import com.gmail.sdima9999.command.task.*;
 import com.gmail.sdima9999.readfromconsole.ReadFromConsole;
 
 public class StartTaskManager {
+    
     public static void startManager() {
         System.out.println("***WELLCOME TO TASK MANAGER***");
         Boolean isCorrect = true;
@@ -37,6 +35,9 @@ public class StartTaskManager {
                     break;
                 case "task-update":
                     TaskUpdateCommand.execute();
+                    break;
+                case "project-open":
+                    ProjectOpenCommand.execute();
                     break;
                 case "task-open":
                     TaskOpenCommand.execute();

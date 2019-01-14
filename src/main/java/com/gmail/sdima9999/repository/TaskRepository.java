@@ -11,18 +11,22 @@ public class TaskRepository {
     public static void addTask(Task task) {
         taskList.add(task);
     }
+
     public static void getTaskList() {
         for (Task x: taskList)
         System.out.println(x.getName());
     }
+
     public static void openTask(String name) {
         for (Task z: taskList)
             if (z.getName().equals(name)) {
-                System.out.println("Name: " + z.getName());
-                System.out.println("TaskID: " + z.getId());
+                System.out.println("Task Name: " + z.getName());
+                System.out.println("Task ID: " + z.getId());
                 System.out.println("TaskDateBegin: " + z.getDateBegin());
                 System.out.println("TaskDateEnd: " + z.getDateEnd());
-            } else System.out.println("Invalid name Task!"); 
+            }
+             else System.out.println("Invalid name Task!");
+
     }
     public void removeTaskList(String name) { taskList.remove(name); }
 
