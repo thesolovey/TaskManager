@@ -2,6 +2,9 @@ package com.gmail.sdima9999.command.task;
 
 import com.gmail.sdima9999.bootstrap.Bootstrap;
 import com.gmail.sdima9999.command.AbstractCommand;
+import com.gmail.sdima9999.entity.Task;
+
+import java.util.List;
 
 public class TaskListCommand extends AbstractCommand {
     public TaskListCommand(Bootstrap bootstrap) {
@@ -10,7 +13,17 @@ public class TaskListCommand extends AbstractCommand {
 
     public void execute() {
         System.out.println("[TASK LIST]");
-        bootstrap.getTaskService().getTaskListByName();
+
+        boolean checkTaskListIsEmpty = bootstrap.getTaskService().checkTaskListIsEmpty();
+        if (checkTaskListIsEmpty) {
+            System.out.println("!!!  You don't have any Task  !!!");
+            System.out.println("!!! Try command 'task-create' !!!");
+        }
+
+        List<Task> allTask = bootstrap.getTaskService().getAllNameTaskFromList();
+        for (Task task : allTask)
+            System.out.println(task.getName());
+
         System.out.println("[OK]");
     }
 }

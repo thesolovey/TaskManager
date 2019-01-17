@@ -41,13 +41,12 @@ public class TaskCreateCommand extends AbstractCommand {
             taskRepository.addTask(task);
 
             String nameProject = ReadFromConsole.readInputFromConsole("Input name Project for this Task: ");
-            for (Project x: projectList) {
-                        if (x.getName().equals(nameProject)) {
+            for (Project project: projectList) {
+                        if (project.getName().equals(nameProject)) {
                             task.setNameByProject(nameProject);
                             bootstrap.getTaskService().addTask(task);
-                        } else System.out.println("!!! Invalid name Project !!!");
-            }
-            System.out.println("[OK]");
+                        }
+            } System.out.println("[OK]");
         }
     }
 }

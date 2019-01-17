@@ -16,64 +16,37 @@ public class ProjectService {
         this.projectRepository = projectRepository;
         this.taskRepository = taskRepository;
     }
+    public  boolean checkProjectListIsEmty() {
+        List<Project> projectList = projectRepository.getProjectList();
+        return projectList == null || projectList.isEmpty();
+    }
 
     public void addProjectByList(Project project) {
         projectRepository.addProjectByList(project);
     }
 
-    public void getProjectListByName() {
-        List<Project> projectList = projectRepository.getProjectList();
-        if (projectList == null || projectList.isEmpty()) {
-            System.out.println("!!! You don't have any project now !!!");
-            System.out.println("!!!   Try command 'project-create' !!!");
-        } else
-            for (Project project : projectList)
-            System.out.println(project.getName());
-    }
+    public List<Project> getAllNameProjectFromList() { return projectRepository.getProjectList(); }
 
-    public void openProjectByName() {
+    public Project openProjectByName(String nameProject) {
         final List<Project> projectList = projectRepository.getProjectList();
-        String name = "";
-        if (projectList == null || projectList.isEmpty()) {
-            System.out.println("!!! You don't have any project now !!!");
-            System.out.println("!!!  Try command 'project-create'  !!!");
-        } else
-            name = ReadFromConsole.readInputFromConsole("Enter name Project do you want open: ");
-        for (Project project : projectList) {
-            if (project.getName().equals(name)) {
-                System.out.println("Project Name: " + project.getName());
-                System.out.println("Project ID: " + project.getId());
-                System.out.println("Project DateBegin: " + project.getDateBegin());
-                System.out.println("Project DateEnd: " + project.getDateEnd());
-
-                final List<Task> taskList = taskRepository.getTaskList();
-                if (taskList == null || taskList.isEmpty()) {
-                    System.out.println("!!!This Project don't have Task!!!");
-                } else
-                for (Task nameProject : taskList)
-                    if (nameProject.getNameByProject().equals(name)){
-                        System.out.println("Tasks from this Project: " + nameProject.getName());
-                    }
-            } else System.out.println("!!!Invalid name Project!!!");
-        }
+        Project projectByName = new Project();
+        for (Project project : projectList)
+            if (project.getName().equals(nameProject))
+                projectByName = project;
+                return projectByName;
     }
+
     public void clearAllProject() {
             projectRepository.clearAllProject();
     }
 
-    public void deleteProject() {
+    public void deleteProject(String nameProject) {
         final List<Project> projectList = projectRepository.getProjectList();
-        if (projectList == null || projectList.isEmpty()) {
-            System.out.println("!!! You don't have any project now !!!");
-            System.out.println("!!!  Try command 'project-create'  !!!");
-        } else
-            for (Project project : projectList) {
-                String name = ReadFromConsole.readInputFromConsole("Enter the name of the Project you want to delete: ");
-                if (project.getName().equals(name)) {
-                    projectList.remove(project);
-                }
-            }
+        for (Project project : projectList)
+            if (project.getName().equals(nameProject))
+                projectList.remove(project);
     }
+
     public void updateNameProject() {
         String name;
         String newName;
