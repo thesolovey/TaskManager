@@ -1,15 +1,16 @@
 package com.gmail.sdima9999.command.task;
 
-import com.gmail.sdima9999.readfromconsole.ReadFromConsole;
-import com.gmail.sdima9999.repository.TaskRepository;
+import com.gmail.sdima9999.bootstrap.Bootstrap;
+import com.gmail.sdima9999.command.AbstractCommand;
 
-public class TaskDeleteCommand {
-    public static void execute() {
+public class TaskDeleteCommand extends AbstractCommand {
+    public TaskDeleteCommand(Bootstrap bootstrap) {
+        super(bootstrap);
+    }
+
+    public void execute() {
         System.out.println("[TASK DELETE]");
-        String name = ReadFromConsole.readInputFromConsole("Enter the name of the Task you want to delete: ");
-//        if (TaskRepository.taskList.contains(name)) {
- //           TaskRepository.removeTaskList(name);
-            System.out.println("[OK]");
-//        } else System.out.println("Invalid name of Task");
+        bootstrap.getTaskService().deleteTask();
+        System.out.println("[OK]");
     }
 }

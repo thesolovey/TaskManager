@@ -13,6 +13,8 @@ public class Task extends ArrayList<Task> {
 
     private Date dateEnd;
 
+    private  String nameByProject;
+
     public String getName() {return name;}
 
     public void setName(String name) {this.name = name;}
@@ -28,4 +30,8 @@ public class Task extends ArrayList<Task> {
     public Date getDateEnd() {return dateEnd;}
 
     public void setDateEnd(Date dateEnd) {this.dateEnd = dateEnd;}
+
+    public String getNameByProject() { return nameByProject; }
+
+    public void setNameByProject(String nameByProject) { this.nameByProject = nameByProject; }
 }

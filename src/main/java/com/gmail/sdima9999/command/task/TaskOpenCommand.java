@@ -1,13 +1,16 @@
 package com.gmail.sdima9999.command.task;
 
-import com.gmail.sdima9999.readfromconsole.ReadFromConsole;
-import com.gmail.sdima9999.repository.TaskRepository;
+import com.gmail.sdima9999.bootstrap.Bootstrap;
+import com.gmail.sdima9999.command.AbstractCommand;
 
-public class TaskOpenCommand {
-    public static void execute(){
+public class TaskOpenCommand extends AbstractCommand {
+    public TaskOpenCommand(Bootstrap bootstrap) {
+        super(bootstrap);
+    }
+
+    public void execute(){
         System.out.println("[TASK OPEN]");
-        String name = ReadFromConsole.readInputFromConsole("Enter Task you want open: ");
-        TaskRepository.openTask(name);
+        bootstrap.getTaskService().openTaskByName();
         System.out.println("[OK]");
     }
 }

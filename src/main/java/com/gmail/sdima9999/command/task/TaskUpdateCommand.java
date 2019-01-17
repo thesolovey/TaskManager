@@ -1,10 +1,9 @@
 package com.gmail.sdima9999.command.task;
 
-import com.gmail.sdima9999.readfromconsole.ReadFromConsole;
-import com.gmail.sdima9999.repository.TaskRepository;
+import com.gmail.sdima9999.console.ReadFromConsole;
 
 public class TaskUpdateCommand {
-    public static void execute() {
+    public void execute() {
         System.out.println("[TASK UPDATE]");
         String name = ReadFromConsole.readInputFromConsole("Enter the name of the Task you want to exchange: ");
 //        if (TaskRepository.taskList.contains(name)) {

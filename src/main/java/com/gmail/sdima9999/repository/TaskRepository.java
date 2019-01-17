@@ -6,33 +6,13 @@ import java.util.ArrayList;
 
 public class TaskRepository {
 
-    private static ArrayList<Task> taskList = new ArrayList<>();
+    private ArrayList<Task> taskList = new ArrayList<>();
 
-    public static void addTask(Task task) {
+    public void addTask(final Task task) {
         taskList.add(task);
     }
 
-    public static void getTaskList() {
-        for (Task x: taskList)
-        System.out.println(x.getName());
-    }
+    public ArrayList<Task> getTaskList() { return taskList;}
 
-    public static void openTask(String name) {
-        for (Task z: taskList)
-            if (z.getName().equals(name)) {
-                System.out.println("Task Name: " + z.getName());
-                System.out.println("Task ID: " + z.getId());
-                System.out.println("TaskDateBegin: " + z.getDateBegin());
-                System.out.println("TaskDateEnd: " + z.getDateEnd());
-            }
-             else System.out.println("Invalid name Task!");
-
-    }
-    public void removeTaskList(String name) { taskList.remove(name); }
-
-    public void changeTaskList(String name, String newName) {
-            int i = taskList.indexOf(name);
-//            taskList.add(i, newName);
-            taskList.remove(i + 1);
-    }
+    public void clearTaskList() { taskList.clear(); }
 }

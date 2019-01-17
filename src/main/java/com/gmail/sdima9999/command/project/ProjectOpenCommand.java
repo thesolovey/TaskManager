@@ -1,13 +1,16 @@
 package com.gmail.sdima9999.command.project;
 
-import com.gmail.sdima9999.readfromconsole.ReadFromConsole;
-import com.gmail.sdima9999.repository.ProjectRepository;
+import com.gmail.sdima9999.bootstrap.Bootstrap;
+import com.gmail.sdima9999.command.AbstractCommand;
 
-public class ProjectOpenCommand {
-    public static void execute () {
+public class ProjectOpenCommand extends AbstractCommand {
+    public ProjectOpenCommand(Bootstrap bootstrap) {
+        super(bootstrap);
+    }
+
+    public void execute() {
         System.out.println("[PROJECT OPEN]");
-        String name = ReadFromConsole.readInputFromConsole("Enter name Project do you want open: ");
-        ProjectRepository.openProject(name);
+        bootstrap.getProjectService().openProjectByName();
         System.out.println("[OK]");
     }
 }

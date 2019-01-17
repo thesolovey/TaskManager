@@ -32,7 +32,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>ru.volnenko.se.App</mainClass>
+                            <mainClass>com.gmail.sdima9999</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -97,6 +97,7 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.9.8</version>
         </dependency>
+
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-xml</artifactId>
