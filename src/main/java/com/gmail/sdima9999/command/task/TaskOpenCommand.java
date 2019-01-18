@@ -32,4 +32,9 @@ public class TaskOpenCommand extends AbstractCommand {
             System.out.println("[OK]");
         }
     }
+
+    @Override
+    public void secure() {
+
+    }
 }

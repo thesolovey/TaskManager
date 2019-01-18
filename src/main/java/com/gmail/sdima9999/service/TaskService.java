@@ -1,6 +1,5 @@
 package com.gmail.sdima9999.service;
 
-import com.gmail.sdima9999.console.ReadFromConsole;
 import com.gmail.sdima9999.entity.Task;
 import com.gmail.sdima9999.repository.TaskRepository;
 
@@ -14,13 +13,13 @@ public class TaskService {
         this.taskRepository = taskRepository;
     }
 
-    public void addTask(Task task) {
-        taskRepository.addTask(task);
-    }
-
     public Boolean checkTaskListIsEmpty() {
         List<Task> taskList = taskRepository.getTaskList();
         return taskList == null || taskList.isEmpty();
+    }
+
+    public void addTask(Task task) {
+        taskRepository.addTask(task);
     }
 
     public List<Task> getAllNameTaskFromList() { return taskRepository.getTaskList(); }
@@ -47,19 +46,20 @@ public class TaskService {
         taskRepository.clearTaskList();
     }
 
-    public void deleteTask() {
+    public void deleteTask(String nameTask) {
         final List<Task> taskList = taskRepository.getTaskList();
-        String name = "";
-        if (taskList == null || taskList.isEmpty()) {
-            System.out.println("!!!  You don't have any Task  !!!");
-            System.out.println("!!! Try command 'task-create' !!!");
-        } else
-            name = ReadFromConsole.readInputFromConsole("Enter the name of the Task you want to delete: ");
-        for (Task task : taskList) {
-            if (task.getName().equals(name)) {
+        for (Task task : taskList)
+            if (task.getName().equals(nameTask)) {
+                taskList.indexOf(task);
                 taskList.remove(task);
             }
-        }
+    }
+
+    public void updateNameTask(String name, String newName) {
+        final List<Task> taskList = taskRepository.getTaskList();
+        for (Task task : taskList)
+            if (task.getName().equals(name))
+                task.setName(newName);
     }
 }
 

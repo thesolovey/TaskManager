@@ -1,15 +1,49 @@
 package com.gmail.sdima9999.bootstrap;
 
 import com.gmail.sdima9999.command.AbstractCommand;
+import com.gmail.sdima9999.command.servises.ExitCommand;
+import com.gmail.sdima9999.command.servises.HelpCommand;
 import com.gmail.sdima9999.command.project.*;
 import com.gmail.sdima9999.command.task.*;
+import com.gmail.sdima9999.command.user.*;
 import com.gmail.sdima9999.console.ReadFromConsole;
 import com.gmail.sdima9999.repository.ProjectRepository;
 import com.gmail.sdima9999.repository.TaskRepository;
+import com.gmail.sdima9999.repository.UserRepository;
 import com.gmail.sdima9999.service.ProjectService;
 import com.gmail.sdima9999.service.TaskService;
+import com.gmail.sdima9999.service.UserService;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Set;
 
 public class Bootstrap {
+
+    private final Map<String, AbstractCommand> commands = new LinkedHashMap<>();
+
+    {
+        commands.put("help", new HelpCommand(this));
+//        commands.put("user-login", new UserAuthorizationCommand(this));
+//        commands.put("user-reg", new UserRegisrtationCommand(this));
+        commands.put("user-list", new UserListCommand(this));
+        commands.put("project-create", new ProjectCreateCommand(this));
+        commands.put("task-create", new TaskCreateCommand(this));
+        commands.put("project-list", new ProjectListCommand(this));
+        commands.put("task-list", new TaskListCommand(this));
+        commands.put("project-open", new ProjectOpenCommand(this));
+        commands.put("task-open", new TaskOpenCommand(this));
+        commands.put("project-delete", new ProjectDeleteCommand(this));
+        commands.put("task-delete", new TaskDeleteCommand(this));
+        commands.put("project-clear", new ProjectClearCommand(this));
+        commands.put("task-clear", new TaskClearCommand(this));
+        commands.put("project-update", new ProjectUpdateCommand(this));
+        commands.put("task-update", new TaskUpdateCommand(this));
+        commands.put("exit", new ExitCommand(this));
+    }
+
+    public Set<String> getCommands() { return commands.keySet(); }
+
     private final TaskRepository taskRepository = new TaskRepository();
 
     private final ProjectRepository projectRepository = new ProjectRepository();
@@ -18,83 +52,37 @@ public class Bootstrap {
 
     private final TaskService taskService = new TaskService(taskRepository);
 
-    public TaskRepository getTaskRepository() {
-        return taskRepository;
-    }
+    private final UserRepository usersRepository = new UserRepository();
 
-    public ProjectRepository getProjectRepository() {
-        return projectRepository;
-    }
+    private final UserService userService = new UserService(usersRepository);
 
-    public ProjectService getProjectService() {
-        return projectService;
-    }
+    public UserRepository getUsersRepository() { return usersRepository; }
 
-    public TaskService getTaskService() {
-        return taskService;
-    }
+    public UserService getUserService() { return userService; }
+
+    public TaskRepository getTaskRepository() { return taskRepository; }
+
+    public ProjectRepository getProjectRepository() { return projectRepository; }
+
+    public ProjectService getProjectService() { return projectService; }
+
+    public TaskService getTaskService() { return taskService; }
 
     public void start() {
         System.out.println("***WELLCOME TO TASK MANAGER***");
-        Boolean isCorrect = true;
+
+        AbstractCommand userAdminCreateCommand = new UserAdminCreateCommand(this);
+        userAdminCreateCommand.execute();
+
+        AbstractCommand userTestCreateCommand = new UserTestCreateCommand(this);
+        userTestCreateCommand.execute();
+
         do {
-            String command = ReadFromConsole.readInputFromConsole("Input command: ");
-            switch (command) {
-                case "project-create":
-                    AbstractCommand projectCreateCommand = new ProjectCreateCommand(this);
-                    projectCreateCommand.execute();
-                    break;
-                case "task-create":
-                    AbstractCommand taskCreateCommand = new TaskCreateCommand(this);
-                    taskCreateCommand.execute();
-                    break;
-                case "project-list":
-                    AbstractCommand projectListCommand = new ProjectListCommand(this);
-                    projectListCommand.execute();
-                    break;
-                case "task-list":
-                    AbstractCommand taskListCommand = new TaskListCommand(this);
-                    taskListCommand.execute();
-                    break;
-                case "project-delete":
-                    AbstractCommand projectDeleteCommand = new ProjectDeleteCommand(this);
-                    projectDeleteCommand.execute();
-                    break;
-                case "task-delete":
-                    AbstractCommand taskDeleteCommand = new TaskDeleteCommand(this);
-                    taskDeleteCommand.execute();
-                    break;
-                case "project-update":
-                    ProjectUpdateCommand projectUpdateCommand = new ProjectUpdateCommand(this);
-                    projectUpdateCommand.execute();
-                    break;
-                case "task-update":
-                    TaskUpdateCommand taskUpdateCommand = new TaskUpdateCommand();
-                    taskUpdateCommand.execute();
-                    break;
-                case "project-open":
-                    AbstractCommand projectOpenCommand = new ProjectOpenCommand(this);
-                    projectOpenCommand.execute();
-                    break;
-                case "task-open":
-                    AbstractCommand taskOpenCommand = new TaskOpenCommand(this);
-                    taskOpenCommand.execute();
-                    break;
-                case "project-clear":
-                    AbstractCommand projectClearCommand = new ProjectClearCommand(this);
-                    projectClearCommand.execute();
-                    break;
-                case "task-clear":
-                    AbstractCommand taskClearCommand = new TaskClearCommand(this);
-                    taskClearCommand.execute();
-                    break;
-                case "exit":
-                    isCorrect = false;
-                    System.out.println("Good bye");
-                    break;
-                default:
-                    System.out.println("!!!Invalid command!!!");
-            }
-        } while (isCorrect);
+                String commandFromConcole = ReadFromConsole.readInputFromConsole("Input command: ");
+                AbstractCommand command = commands.get(commandFromConcole);
+                if (command != null) command.execute();
+                if (this.getUserService().getCurrentUser() != null) command.secure();
+
+        } while (true);
     }
 }

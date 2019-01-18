@@ -26,4 +26,9 @@ public class TaskListCommand extends AbstractCommand {
 
         System.out.println("[OK]");
     }
+
+    @Override
+    public void secure() {
+
+    }
 }

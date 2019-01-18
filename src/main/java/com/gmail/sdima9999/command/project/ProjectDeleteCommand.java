@@ -20,4 +20,9 @@ public class ProjectDeleteCommand extends AbstractCommand {
             bootstrap.getProjectService().deleteProject(nameProject);
         } System.out.println("[ОК]");
     }
+
+    @Override
+    public void secure() {
+
+    }
 }

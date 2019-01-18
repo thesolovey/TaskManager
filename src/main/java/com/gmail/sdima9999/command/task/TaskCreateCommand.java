@@ -5,7 +5,6 @@ import com.gmail.sdima9999.command.AbstractCommand;
 import com.gmail.sdima9999.entity.Project;
 import com.gmail.sdima9999.entity.Task;
 import com.gmail.sdima9999.console.ReadFromConsole;
-import com.gmail.sdima9999.repository.ProjectRepository;
 import com.gmail.sdima9999.repository.TaskRepository;
 
 import java.util.Calendar;
@@ -48,5 +47,10 @@ public class TaskCreateCommand extends AbstractCommand {
                         }
             } System.out.println("[OK]");
         }
+    }
+
+    @Override
+    public void secure() {
+
     }
 }

@@ -7,5 +7,9 @@ public abstract class AbstractCommand {
     public AbstractCommand(Bootstrap bootstrap) {
         this.bootstrap = bootstrap;
     }
+
     public abstract void execute();
+
+    public abstract void secure();
+
 }

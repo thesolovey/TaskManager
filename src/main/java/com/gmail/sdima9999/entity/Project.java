@@ -11,6 +11,8 @@ public class Project {
 
     private Date dateEnd;
 
+    private String userName;
+
     public String getName() {return name;}
 
     public void setName(String name) {this.name = name;}
@@ -26,4 +28,8 @@ public class Project {
     public Date getDateEnd() {return dateEnd;}
 
     public void setDateEnd(Date dateEnd) {this.dateEnd = dateEnd;}
+
+    public String getUserName() { return userName; }
+
+    public void setUserName(String userName) { this.userName = userName; }
 }

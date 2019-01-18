@@ -13,7 +13,9 @@ public class Task extends ArrayList<Task> {
 
     private Date dateEnd;
 
-    private  String nameByProject;
+    private String nameByProject;
+
+    private String userName;
 
     public String getName() {return name;}
 
@@ -34,4 +36,8 @@ public class Task extends ArrayList<Task> {
     public String getNameByProject() { return nameByProject; }
 
     public void setNameByProject(String nameByProject) { this.nameByProject = nameByProject; }
+
+    public String getUserName() { return userName; }
+
+    public void setUserName(String userName) { this.userName = userName; }
 }

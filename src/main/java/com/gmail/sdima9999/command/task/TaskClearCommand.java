@@ -24,4 +24,9 @@ public class TaskClearCommand extends AbstractCommand {
         }
         System.out.println("[OK]");
     }
+
+    @Override
+    public void secure() {
+
+    }
 }

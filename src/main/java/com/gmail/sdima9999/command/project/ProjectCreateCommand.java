@@ -4,7 +4,6 @@ import com.gmail.sdima9999.bootstrap.Bootstrap;
 import com.gmail.sdima9999.command.AbstractCommand;
 import com.gmail.sdima9999.console.ReadFromConsole;
 import com.gmail.sdima9999.entity.Project;
-import com.gmail.sdima9999.repository.ProjectRepository;
 
 
 import java.util.Calendar;
@@ -38,5 +37,9 @@ public class ProjectCreateCommand extends AbstractCommand {
         bootstrap.getProjectService().addProjectByList(project);
 
         System.out.println("[OK]");
+            }
+
+    @Override
+    public void secure() {
     }
 }

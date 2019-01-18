@@ -43,4 +43,9 @@ public class ProjectOpenCommand extends AbstractCommand {
             System.out.println("[OK]");
         }
     }
+
+    @Override
+    public void secure() {
+
+    }
 }

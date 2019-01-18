@@ -25,4 +25,9 @@ public class ProjectListCommand extends AbstractCommand {
 
         System.out.println("[OK]");
     }
+
+    @Override
+    public void secure() {
+
+    }
 }
