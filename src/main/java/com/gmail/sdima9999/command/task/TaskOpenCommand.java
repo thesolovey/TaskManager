@@ -2,7 +2,7 @@ package com.gmail.sdima9999.command.task;
 
 import com.gmail.sdima9999.bootstrap.Bootstrap;
 import com.gmail.sdima9999.command.AbstractCommand;
-import com.gmail.sdima9999.console.ReadFromConsole;
+import com.gmail.sdima9999.command.ReadFromConsole;
 import com.gmail.sdima9999.entity.Task;
 
 import java.util.List;
@@ -12,6 +12,8 @@ public class TaskOpenCommand extends AbstractCommand {
         super(bootstrap);
     }
 
+    public static final String COMMAND = "task-open";
+
     public void execute() {
         System.out.println("[TASK OPEN]");
 
@@ -20,8 +22,8 @@ public class TaskOpenCommand extends AbstractCommand {
             System.out.println("!!!  You don't have any Task  !!!");
             System.out.println("!!! Try command 'task-create' !!!");
         } else {
-            String name = ReadFromConsole.readInputFromConsole("Enter Task you want open: ");
-            List<Task> taskListByName = bootstrap.getTaskService().openTaskByName(name);
+            final String name = ReadFromConsole.readInputFromConsole("Enter Task you want open: ");
+            final List<Task> taskListByName = bootstrap.getTaskService().openTaskByName(name);
             for (Task task : taskListByName) {
                 System.out.println("Name Project for this Task: " + task.getNameByProject());
                 System.out.println("Name Task: " + task.getName());
@@ -34,7 +36,11 @@ public class TaskOpenCommand extends AbstractCommand {
     }
 
     @Override
-    public void secure() {
+    public boolean secure() { return true; }
 
-    }
+    @Override
+    public String getKeyWord() { return null; }
+
+    @Override
+    public String description() { return null; }
 }

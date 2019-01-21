@@ -9,9 +9,13 @@ public class Project {
 
     private Date dateBegin;
 
-    private Date dateEnd;
-
     private String userName;
+
+    private String userLogin;
+
+    public String getUserLogin() { return userLogin; }
+
+    public void setUserLogin(String userLogin) { this.userLogin = userLogin; }
 
     public String getName() {return name;}
 
@@ -24,10 +28,6 @@ public class Project {
     public Date getDateBegin() {return dateBegin;}
 
     public void setDateBegin(Date dateBegin) {this.dateBegin = dateBegin;}
-
-    public Date getDateEnd() {return dateEnd;}
-
-    public void setDateEnd(Date dateEnd) {this.dateEnd = dateEnd;}
 
     public String getUserName() { return userName; }
 

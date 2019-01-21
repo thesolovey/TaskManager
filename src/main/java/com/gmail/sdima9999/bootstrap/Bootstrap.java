@@ -1,12 +1,12 @@
 package com.gmail.sdima9999.bootstrap;
 
 import com.gmail.sdima9999.command.AbstractCommand;
-import com.gmail.sdima9999.command.servises.ExitCommand;
-import com.gmail.sdima9999.command.servises.HelpCommand;
+import com.gmail.sdima9999.command.service.ExitCommand;
+import com.gmail.sdima9999.command.service.HelpCommand;
 import com.gmail.sdima9999.command.project.*;
 import com.gmail.sdima9999.command.task.*;
 import com.gmail.sdima9999.command.user.*;
-import com.gmail.sdima9999.console.ReadFromConsole;
+import com.gmail.sdima9999.command.ReadFromConsole;
 import com.gmail.sdima9999.repository.ProjectRepository;
 import com.gmail.sdima9999.repository.TaskRepository;
 import com.gmail.sdima9999.repository.UserRepository;
@@ -23,23 +23,24 @@ public class Bootstrap {
     private final Map<String, AbstractCommand> commands = new LinkedHashMap<>();
 
     {
-        commands.put("help", new HelpCommand(this));
-//        commands.put("user-login", new UserAuthorizationCommand(this));
-//        commands.put("user-reg", new UserRegisrtationCommand(this));
-        commands.put("user-list", new UserListCommand(this));
-        commands.put("project-create", new ProjectCreateCommand(this));
-        commands.put("task-create", new TaskCreateCommand(this));
-        commands.put("project-list", new ProjectListCommand(this));
-        commands.put("task-list", new TaskListCommand(this));
-        commands.put("project-open", new ProjectOpenCommand(this));
-        commands.put("task-open", new TaskOpenCommand(this));
-        commands.put("project-delete", new ProjectDeleteCommand(this));
-        commands.put("task-delete", new TaskDeleteCommand(this));
-        commands.put("project-clear", new ProjectClearCommand(this));
-        commands.put("task-clear", new TaskClearCommand(this));
-        commands.put("project-update", new ProjectUpdateCommand(this));
-        commands.put("task-update", new TaskUpdateCommand(this));
-        commands.put("exit", new ExitCommand(this));
+        commands.put(HelpCommand.COMMAND, new HelpCommand(this));
+        commands.put(ExitCommand.COMMAND, new ExitCommand(this));
+        commands.put(UserRegisrtationCommand.COMMAND, new UserRegisrtationCommand(this));
+        commands.put(UserAuthorizationCommand.COMMAND, new UserAuthorizationCommand(this));
+        commands.put(UserLogoutCommand.COMMAND, new UserLogoutCommand(this));
+        commands.put(UserListCommand.COMMAND, new UserListCommand(this));
+        commands.put(ProjectCreateCommand.COMMAND, new ProjectCreateCommand(this));
+        commands.put(ProjectListCommand.COMMAND, new ProjectListCommand(this));
+        commands.put(ProjectOpenCommand.COMMAND, new ProjectOpenCommand(this));
+        commands.put(ProjectDeleteCommand.COMMAND, new ProjectDeleteCommand(this));
+        commands.put(ProjectClearCommand.COMMAND, new ProjectClearCommand(this));
+        commands.put(ProjectUpdateCommand.COMMAND, new ProjectUpdateCommand(this));
+        commands.put(TaskCreateCommand.COMMAND, new TaskCreateCommand(this));
+        commands.put(TaskListCommand.COMMAND, new TaskListCommand(this));
+        commands.put(TaskOpenCommand.COMMAND, new TaskOpenCommand(this));
+        commands.put(TaskDeleteCommand.COMMAND, new TaskDeleteCommand(this));
+        commands.put(TaskClearCommand.COMMAND, new TaskClearCommand(this));
+        commands.put(TaskUpdateCommand.COMMAND, new TaskUpdateCommand(this));
     }
 
     public Set<String> getCommands() { return commands.keySet(); }
@@ -78,10 +79,11 @@ public class Bootstrap {
         userTestCreateCommand.execute();
 
         do {
-                String commandFromConcole = ReadFromConsole.readInputFromConsole("Input command: ");
-                AbstractCommand command = commands.get(commandFromConcole);
-                if (command != null) command.execute();
-                if (this.getUserService().getCurrentUser() != null) command.secure();
+                String commandFromConsole = ReadFromConsole.readInputFromConsole("Input command: ");
+                AbstractCommand command = commands.get(commandFromConsole);
+                if (command == null) continue;
+                if (command.secure() && !this.getUserService().isAuth()) continue;
+                command.execute();
 
         } while (true);
     }

@@ -2,12 +2,14 @@ package com.gmail.sdima9999.command.project;
 
 import com.gmail.sdima9999.bootstrap.Bootstrap;
 import com.gmail.sdima9999.command.AbstractCommand;
-import com.gmail.sdima9999.console.ReadFromConsole;
+import com.gmail.sdima9999.command.ReadFromConsole;
 
 public class ProjectUpdateCommand extends AbstractCommand {
     public ProjectUpdateCommand(Bootstrap bootstrap) {
         super(bootstrap);
     }
+
+    public static final String COMMAND = "project-update";
 
     public void execute() {
         System.out.println("[PROJECT UPDATE]");
@@ -18,8 +20,8 @@ public class ProjectUpdateCommand extends AbstractCommand {
             System.out.println("!!!   Try command 'project-create' !!!");
         }
 
-        String name = ReadFromConsole.readInputFromConsole("Enter the name of the Project you want to exchange: ");
-        String newName = ReadFromConsole.readInputFromConsole("Enter new name: ");
+        final String name = ReadFromConsole.readInputFromConsole("Enter the name of the Project you want to exchange: ");
+        final String newName = ReadFromConsole.readInputFromConsole("Enter new name: ");
 
         bootstrap.getProjectService().updateNameProject(name, newName);
 
@@ -27,7 +29,11 @@ public class ProjectUpdateCommand extends AbstractCommand {
     }
 
     @Override
-    public void secure() {
+    public boolean secure() { return true; }
 
-    }
+    @Override
+    public String getKeyWord() { return null; }
+
+    @Override
+    public String description() { return null; }
 }

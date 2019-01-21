@@ -2,12 +2,14 @@ package com.gmail.sdima9999.command.task;
 
 import com.gmail.sdima9999.bootstrap.Bootstrap;
 import com.gmail.sdima9999.command.AbstractCommand;
-import com.gmail.sdima9999.console.ReadFromConsole;
+import com.gmail.sdima9999.command.ReadFromConsole;
 
 public class TaskDeleteCommand extends AbstractCommand {
     public TaskDeleteCommand(Bootstrap bootstrap) {
         super(bootstrap);
     }
+
+    public static final String COMMAND = "task-delete";
 
     public void execute() {
         System.out.println("[TASK DELETE]");
@@ -17,14 +19,18 @@ public class TaskDeleteCommand extends AbstractCommand {
             System.out.println("!!!  You don't have any Task  !!!");
             System.out.println("!!! Try command 'task-create' !!!");
         }
-        String nameTask = ReadFromConsole.readInputFromConsole("Enter the name of the Task you want to delete: ");
-        bootstrap.getTaskService().deleteTask(nameTask);
+        final String idTask = ReadFromConsole.readInputFromConsole("Enter ID Task you want to delete: ");
+        bootstrap.getTaskService().deleteTask(idTask);
 
         System.out.println("[OK]");
     }
 
     @Override
-    public void secure() {
+    public boolean secure() { return true; }
 
-    }
+    @Override
+    public String getKeyWord() { return null; }
+
+    @Override
+    public String description() { return null; }
 }

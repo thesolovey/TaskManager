@@ -2,44 +2,52 @@ package com.gmail.sdima9999.command.project;
 
 import com.gmail.sdima9999.bootstrap.Bootstrap;
 import com.gmail.sdima9999.command.AbstractCommand;
-import com.gmail.sdima9999.console.ReadFromConsole;
+import com.gmail.sdima9999.command.ReadFromConsole;
 import com.gmail.sdima9999.entity.Project;
+import com.gmail.sdima9999.entity.User;
 
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Scanner;
 import java.util.UUID;
 
 public class ProjectCreateCommand extends AbstractCommand {
     public ProjectCreateCommand(Bootstrap bootstrap) {
         super(bootstrap);
     }
+    public static final String COMMAND = "project-create";
 
     public void execute() {
         System.out.println("[PROJECT CREATE]");
-        Project project = new Project();
-        String name = ReadFromConsole.readInputFromConsole("Input name Project: ");
+        final Project project = new Project();
+        final User user = bootstrap.getUserService().getCurrentUser();
+        final String name = ReadFromConsole.readInputFromConsole("Input name Project: ");
         project.setName(name);
 
-        String idProject = UUID.randomUUID().toString();
+        final String idProject = UUID.randomUUID().toString();
         project.setId(idProject);
 
-        Date dateBegin = new Date();
+        final Date dateBegin = new Date();
         Calendar calendarBegin = Calendar.getInstance();
-        Calendar calendarEnd = Calendar.getInstance();
         calendarBegin.setTime(dateBegin);
-        calendarEnd.add(Calendar.WEEK_OF_MONTH, 2);
 
         project.setDateBegin(calendarBegin.getTime());
-
-        project.setDateEnd(calendarEnd.getTime());
-
+        project.setUserLogin(user.getLogin());
+        project.setUserName(user.getUserName());
         bootstrap.getProjectService().addProjectByList(project);
 
         System.out.println("[OK]");
             }
 
     @Override
-    public void secure() {
+    public boolean secure() {
+        return true;
     }
+
+    @Override
+    public String getKeyWord() { return null; }
+
+    @Override
+    public String description() { return null; }
 }

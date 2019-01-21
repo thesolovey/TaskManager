@@ -1,10 +1,10 @@
 package com.gmail.sdima9999.service;
 
-import com.gmail.sdima9999.console.ReadFromConsole;
 import com.gmail.sdima9999.entity.Project;
 import com.gmail.sdima9999.repository.ProjectRepository;
 import com.gmail.sdima9999.repository.TaskRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProjectService {
@@ -29,23 +29,25 @@ public class ProjectService {
         return projectRepository.getProjectList();
     }
 
-    public Project openProjectByName(String nameProject) {
+    public List<Project> openProjectByName(String nameProject) {
         final List<Project> projectList = projectRepository.getProjectList();
+        final List<Project> newProjectList = new ArrayList<>();
         Project projectByName = new Project();
-        for (Project project : projectList)
+        for (Project project : projectList) {
             if (project.getName().equals(nameProject))
                 projectByName = project;
-        return projectByName;
+            newProjectList.add(projectByName);
+        } return newProjectList;
     }
 
     public void clearAllProject() {
         projectRepository.clearAllProject();
     }
 
-    public void deleteProject(String nameProject) {
+    public void deleteProject(String idProject) {
         final List<Project> projectList = projectRepository.getProjectList();
         for (Project project : projectList)
-            if (project.getName().equals(nameProject)) {
+            if (project.getId().equals(idProject)) {
                 projectList.indexOf(project);
                 projectList.remove(project);
             }

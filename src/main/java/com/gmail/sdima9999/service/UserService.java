@@ -16,6 +16,13 @@ public class UserService {
 
     private UserRepository usersRepository;
 
+    public boolean isAuth() {
+        return currentUser != null;
+    }
+
+    public void logOut() {
+        currentUser = null;
+    }
 
     public Boolean checkUserListIsEmpty() {
         List<User> usersList = usersRepository.getUsersList();

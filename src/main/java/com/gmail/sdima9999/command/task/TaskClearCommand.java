@@ -2,12 +2,14 @@ package com.gmail.sdima9999.command.task;
 
 import com.gmail.sdima9999.bootstrap.Bootstrap;
 import com.gmail.sdima9999.command.AbstractCommand;
-import com.gmail.sdima9999.console.ReadFromConsole;
+import com.gmail.sdima9999.command.ReadFromConsole;
 
 public class TaskClearCommand extends AbstractCommand {
     public TaskClearCommand(Bootstrap bootstrap) {
         super(bootstrap);
     }
+
+    public static final String COMMAND = "task-clear";
 
     public void execute() {
         System.out.println("[TASK CLEAR]");
@@ -16,17 +18,21 @@ public class TaskClearCommand extends AbstractCommand {
             System.out.println("!!!  You don't have any Task  !!!");
             System.out.println("!!! Try command 'task-create' !!!");
         } else {
-            String answerInConcole = ReadFromConsole.readInputFromConsole("Are you sure, you want to delete all Task? Input: 'yes'");
-            if (answerInConcole.equals("yes")) {
+            final String answerInConsole = ReadFromConsole.readInputFromConsole("Are you sure, you want to delete all Task? Input: 'yes'");
+            if (answerInConsole.equals("yes")) {
                 bootstrap.getTaskService().clearTaskList();
-                System.out.println("[!!! Tasks were delete!!!] ");
+                System.out.println("[!!! Tasks were deleted!!!] ");
             }
         }
         System.out.println("[OK]");
     }
 
     @Override
-    public void secure() {
+    public boolean secure() { return true; }
 
-    }
+    @Override
+    public String getKeyWord() { return null; }
+
+    @Override
+    public String description() { return null; }
 }

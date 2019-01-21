@@ -11,6 +11,8 @@ public class UserListCommand extends AbstractCommand {
         super(bootstrap);
     }
 
+    public static final String COMMAND = "user-list";
+
     @Override
     public void execute() {
         System.out.println("[USER LIST]");
@@ -22,7 +24,11 @@ public class UserListCommand extends AbstractCommand {
     }
 
     @Override
-    public void secure() {
+    public boolean secure() { return true; }
 
-    }
+    @Override
+    public String getKeyWord() { return null; }
+
+    @Override
+    public String description() { return null; }
 }

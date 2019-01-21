@@ -11,6 +11,8 @@ public class TaskListCommand extends AbstractCommand {
         super(bootstrap);
     }
 
+    public static final String COMMAND = "task-list";
+
     public void execute() {
         System.out.println("[TASK LIST]");
 
@@ -20,7 +22,7 @@ public class TaskListCommand extends AbstractCommand {
             System.out.println("!!! Try command 'task-create' !!!");
         }
 
-        List<Task> allTask = bootstrap.getTaskService().getAllNameTaskFromList();
+        final List<Task> allTask = bootstrap.getTaskService().getAllNameTaskFromList();
         for (Task task : allTask)
             System.out.println(task.getName());
 
@@ -28,7 +30,11 @@ public class TaskListCommand extends AbstractCommand {
     }
 
     @Override
-    public void secure() {
+    public boolean secure() { return true; }
 
-    }
+    @Override
+    public String getKeyWord() { return null; }
+
+    @Override
+    public String description() { return null; }
 }

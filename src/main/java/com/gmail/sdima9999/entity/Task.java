@@ -17,6 +17,12 @@ public class Task extends ArrayList<Task> {
 
     private String userName;
 
+    private String userLogin;
+
+    public String getUserLogin() { return userLogin; }
+
+    public void setUserLogin(String userLogin) { this.userLogin = userLogin; }
+
     public String getName() {return name;}
 
     public void setName(String name) {this.name = name;}

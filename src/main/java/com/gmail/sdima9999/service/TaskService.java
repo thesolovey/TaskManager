@@ -4,6 +4,7 @@ import com.gmail.sdima9999.entity.Task;
 import com.gmail.sdima9999.repository.TaskRepository;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class TaskService {
@@ -46,20 +47,22 @@ public class TaskService {
         taskRepository.clearTaskList();
     }
 
-    public void deleteTask(String nameTask) {
+    public void deleteTask(String idTask) {
         final List<Task> taskList = taskRepository.getTaskList();
         for (Task task : taskList)
-            if (task.getName().equals(nameTask)) {
+            if (task.getId().equals(idTask)) {
                 taskList.indexOf(task);
                 taskList.remove(task);
             }
     }
 
-    public void updateNameTask(String name, String newName) {
+    public void updateTask(String name, String newName, Date newDateEnd) {
         final List<Task> taskList = taskRepository.getTaskList();
         for (Task task : taskList)
-            if (task.getName().equals(name))
+            if (task.getName().equals(name)) {
                 task.setName(newName);
+                task.setDateEnd(newDateEnd);
+            }
     }
 }
 
