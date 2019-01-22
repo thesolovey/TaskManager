@@ -1,9 +1,9 @@
 package com.gmail.sdima9999.entity;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.Date;
 
-public class Task extends ArrayList<Task> {
+public class Task implements Serializable {
 
     private String name;
 

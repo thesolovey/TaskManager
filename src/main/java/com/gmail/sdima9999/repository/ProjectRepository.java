@@ -2,10 +2,11 @@ package com.gmail.sdima9999.repository;
 
 import com.gmail.sdima9999.entity.Project;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProjectRepository {
+public class ProjectRepository implements Serializable {
 
     private List<Project> projectList = new ArrayList<>();
 
@@ -13,6 +14,7 @@ public class ProjectRepository {
 
     public List<Project> getProjectList() { return projectList; }
 
-    public void clearAllProject() {projectList.clear();}
+    public void deleteProject (Project project) { projectList.remove(project); }
 
+    public void clearAllProject() {projectList.clear();}
 }

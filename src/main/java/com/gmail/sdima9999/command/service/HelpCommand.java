@@ -9,7 +9,6 @@ public class HelpCommand extends AbstractCommand {
     public HelpCommand(Bootstrap bootstrap) { super(bootstrap); }
     public final static String COMMAND = "help";
 
-
     @Override
     public void execute() {
         System.out.println("[HELP]");
@@ -26,7 +25,7 @@ public class HelpCommand extends AbstractCommand {
     }
 
     @Override
-    public String getKeyWord() { return COMMAND; }
+    public String getKeyWord() { return null; }
 
     @Override
     public String description() { return null; }

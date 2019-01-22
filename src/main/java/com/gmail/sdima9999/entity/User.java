@@ -1,6 +1,8 @@
 package com.gmail.sdima9999.entity;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private String login;
 
     private int password;

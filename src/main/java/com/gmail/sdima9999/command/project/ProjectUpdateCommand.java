@@ -20,10 +20,11 @@ public class ProjectUpdateCommand extends AbstractCommand {
             System.out.println("!!!   Try command 'project-create' !!!");
         }
 
-        final String name = ReadFromConsole.readInputFromConsole("Enter the name of the Project you want to exchange: ");
+        final String id = ReadFromConsole.readInputFromConsole("Enter ID Project you want to exchange: ");
         final String newName = ReadFromConsole.readInputFromConsole("Enter new name: ");
 
-        bootstrap.getProjectService().updateNameProject(name, newName);
+        bootstrap.getProjectService().updateNameProject(id, newName);
+        bootstrap.getProjectService().writeObject();
 
         System.out.println("[OK]");
     }

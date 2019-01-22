@@ -4,7 +4,7 @@ import com.gmail.sdima9999.bootstrap.Bootstrap;
 public abstract class AbstractCommand {
     protected Bootstrap bootstrap;
 
-    protected static String COMMAND;
+    public static String COMMAND;
 
     public AbstractCommand(Bootstrap bootstrap) {
         this.bootstrap = bootstrap;

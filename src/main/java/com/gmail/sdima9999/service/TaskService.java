@@ -8,11 +8,9 @@ import java.util.Date;
 import java.util.List;
 
 public class TaskService {
-    private TaskRepository taskRepository;
+    private final TaskRepository taskRepository;
 
-    public TaskService(TaskRepository taskRepository) {
-        this.taskRepository = taskRepository;
-    }
+    public TaskService(TaskRepository taskRepository) { this.taskRepository = taskRepository; }
 
     public Boolean checkTaskListIsEmpty() {
         List<Task> taskList = taskRepository.getTaskList();
@@ -23,7 +21,7 @@ public class TaskService {
         taskRepository.addTask(task);
     }
 
-    public List<Task> getAllNameTaskFromList() { return taskRepository.getTaskList(); }
+    public List<Task> getAllTaskFromList() { return taskRepository.getTaskList(); }
 
     public List<Task> getTaskFromListByProjectName(String projectName) {
         final List<Task> taskList = taskRepository.getTaskList();
@@ -51,7 +49,6 @@ public class TaskService {
         final List<Task> taskList = taskRepository.getTaskList();
         for (Task task : taskList)
             if (task.getId().equals(idTask)) {
-                taskList.indexOf(task);
                 taskList.remove(task);
             }
     }
@@ -63,6 +60,14 @@ public class TaskService {
                 task.setName(newName);
                 task.setDateEnd(newDateEnd);
             }
+    }
+
+    public void writeObject() {
+
+    }
+
+    public List<Task> readObject() {
+        return null;
     }
 }
 

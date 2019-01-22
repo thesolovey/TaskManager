@@ -14,8 +14,6 @@ public class UserService {
 
     public void setCurrentUser(User currentUser) { this.currentUser = currentUser; }
 
-    private UserRepository usersRepository;
-
     public boolean isAuth() {
         return currentUser != null;
     }
@@ -23,6 +21,8 @@ public class UserService {
     public void logOut() {
         currentUser = null;
     }
+
+    private UserRepository usersRepository;
 
     public Boolean checkUserListIsEmpty() {
         List<User> usersList = usersRepository.getUsersList();

@@ -9,7 +9,6 @@ import com.gmail.sdima9999.entity.User;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Scanner;
 import java.util.UUID;
 
 public class ProjectCreateCommand extends AbstractCommand {
@@ -35,7 +34,9 @@ public class ProjectCreateCommand extends AbstractCommand {
         project.setDateBegin(calendarBegin.getTime());
         project.setUserLogin(user.getLogin());
         project.setUserName(user.getUserName());
+
         bootstrap.getProjectService().addProjectByList(project);
+        bootstrap.getProjectService().writeObject();
 
         System.out.println("[OK]");
             }

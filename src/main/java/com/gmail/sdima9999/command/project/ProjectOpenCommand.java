@@ -24,8 +24,9 @@ public class ProjectOpenCommand extends AbstractCommand {
             System.out.println("!!!   Try command 'project-create' !!!");
         } else {
             final String nameProject = ReadFromConsole.readInputFromConsole("Enter name Project do you want open: ");
-            final List<Project> projectByName = bootstrap.getProjectService().openProjectByName(nameProject);
-            for (Project project : projectByName) {
+//            final List<Project> projectList = bootstrap.getProjectService().getAllProjectFromList();
+            final List<Project> projectList = bootstrap.getProjectService().readObject();
+            for (Project project : projectList)
                 if (project.getName().equals(nameProject)) {
 
                     System.out.println("Project Name: " + project.getName());
@@ -44,15 +45,12 @@ public class ProjectOpenCommand extends AbstractCommand {
                             System.out.println("Tasks from this Project: " + task.getName());
                         }
                     System.out.println("[OK]");
-                }
             }
         }
     }
 
     @Override
-    public boolean secure() {
-        return true;
-    }
+    public boolean secure() { return true; }
 
     @Override
     public String getKeyWord() { return null; }

@@ -4,59 +4,85 @@ import com.gmail.sdima9999.entity.Project;
 import com.gmail.sdima9999.repository.ProjectRepository;
 import com.gmail.sdima9999.repository.TaskRepository;
 
-import java.util.ArrayList;
+import java.io.*;
 import java.util.List;
 
 public class ProjectService {
-    private ProjectRepository projectRepository;
-    private TaskRepository taskRepository;
+    private final ProjectRepository projectRepository;
 
     public ProjectService(ProjectRepository projectRepository, TaskRepository taskRepository) {
         this.projectRepository = projectRepository;
-        this.taskRepository = taskRepository;
     }
 
     public boolean checkProjectListIsEmty() {
-        List<Project> projectList = projectRepository.getProjectList();
+//        final List<Project> projectList = projectRepository.getProjectList();
+        final List<Project> projectList = this.readObject();
         return projectList == null || projectList.isEmpty();
     }
 
-    public void addProjectByList(Project project) {
-        projectRepository.addProjectByList(project);
-    }
+    public void addProjectByList(Project project) { projectRepository.addProjectByList(project); }
 
-    public List<Project> getAllNameProjectFromList() {
-        return projectRepository.getProjectList();
-    }
+    public List<Project> getAllProjectFromList() { return projectRepository.getProjectList(); }
 
-    public List<Project> openProjectByName(String nameProject) {
-        final List<Project> projectList = projectRepository.getProjectList();
-        final List<Project> newProjectList = new ArrayList<>();
-        Project projectByName = new Project();
-        for (Project project : projectList) {
-            if (project.getName().equals(nameProject))
-                projectByName = project;
-            newProjectList.add(projectByName);
-        } return newProjectList;
-    }
-
-    public void clearAllProject() {
-        projectRepository.clearAllProject();
-    }
+    public void clearAllProject() { projectRepository.clearAllProject(); }
 
     public void deleteProject(String idProject) {
-        final List<Project> projectList = projectRepository.getProjectList();
+        List<Project> projectList = projectRepository.getProjectList();
         for (Project project : projectList)
-            if (project.getId().equals(idProject)) {
-                projectList.indexOf(project);
-                projectList.remove(project);
-            }
+            if (project.getId().equals(idProject))
+                projectRepository.deleteProject(project);
     }
 
-    public void updateNameProject(String nameProject, String newNameProject) {
+    public void updateNameProject(String id, String newNameProject) {
         final List<Project> projectList = projectRepository.getProjectList();
         for (Project project : projectList)
-            if (project.getName().equals(nameProject))
+            if (project.getId().equals(id))
                 project.setName(newNameProject);
+    }
+
+    public void writeObject() {
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream("temp.txt");
+        } catch (FileNotFoundException e) { e.printStackTrace(); }
+
+        ObjectOutputStream oos = null;
+        try {
+            oos = new ObjectOutputStream(fos);
+        } catch (IOException e) { e.printStackTrace(); }
+
+        try {
+            if (oos != null) {
+                oos.writeObject(projectRepository.getProjectList());
+            }
+        } catch (IOException e) { e.printStackTrace(); }
+
+        try {
+            if (oos != null) {
+                oos.flush();
+            }
+        } catch (IOException e) { e.printStackTrace(); }
+
+        try {
+            oos.close();
+        } catch (IOException e) { e.printStackTrace(); }
+    }
+
+    public List<Project> readObject() {
+        FileInputStream fis = null;
+        try {
+            fis = new FileInputStream("temp.txt");
+        } catch (FileNotFoundException e) { e.printStackTrace(); }
+
+        ObjectInputStream oin = null;
+        try {
+            oin = new ObjectInputStream(fis);
+        } catch (IOException e) { e.printStackTrace(); }
+
+        List<Project> projectList = null;
+        try {
+            projectList = (List<Project>) oin.readObject();
+        } catch (IOException | ClassNotFoundException e) { e.printStackTrace(); }
+        return projectList;
     }
 }

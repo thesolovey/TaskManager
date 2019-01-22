@@ -1,8 +1,10 @@
 package com.gmail.sdima9999.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Project {
+public class Project implements Serializable {
+
     private String name;
 
     private String id;
