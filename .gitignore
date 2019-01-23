@@ -1,4 +1,6 @@
-*.class
-*.iml
 .idea/
-out/
+.TaskManager.iml/
+.target/
+.idea/
+*.iml
+*.iws

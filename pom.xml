@@ -32,7 +32,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.gmail.sdima9999</mainClass>
+                            <mainClass>com.gmail.sdima</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -74,7 +74,7 @@
                 <configuration>
                     <artifactItems>
                         <artifactItem>
-                            <groupId>com.gmail.sdima9999</groupId>
+                            <groupId>com.gmail.sdima</groupId>
                             <artifactId>taskmanager</artifactId>
                             <version>1.0.0</version>
                             <type>jar</type>
@@ -87,6 +87,46 @@
                     <overWriteSnapshots>true</overWriteSnapshots>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>com.webcohesion.enunciate</groupId>
+                <artifactId>enunciate-maven-plugin</artifactId>
+                <version>2.11.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>docs</goal>
+                        </goals>
+                        <configuration>
+                            <docsDir>${project.build.directory}/docs</docsDir>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                    <groupId>org.apache.cxf</groupId>
+                    <artifactId>cxf-codegen-plugin</artifactId>
+                    <version>3.2.7</version>
+                    <executions>
+                        <execution>
+                            <id>generate-sources</id>
+                            <phase>generate-sources</phase>
+                            <configuration>
+                                <sourceRoot>${project.basedir}/src/main/java</sourceRoot>
+                                <wsdlOptions>
+                                    <wsdlOption>
+                                        <wsdl>http://localhost:8080/CalcEndpoint?wsdl</wsdl>
+                                    </wsdlOption>
+                                </wsdlOptions>
+                            </configuration>
+                            <goals>
+                                <goal>wsdl2java</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
         </plugins>
 
     </build>

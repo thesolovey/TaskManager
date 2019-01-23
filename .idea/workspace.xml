@@ -2,29 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b429610d-2b7e-45b5-b0f1-f7e13c614bb8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/service/SaveCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/dto/Data.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/endpoint/endPointProject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/webservice/WebServicesProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/AbstractCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/AbstractCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectCreateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectCreateCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectDeleteCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectDeleteCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectListCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectListCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectOpenCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectOpenCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectUpdateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectUpdateCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/service/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/service/HelpCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskListCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskListCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/ProjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/ProjectRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/TaskRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/service/ProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/service/TaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/command/project/ProjectCreateCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/command/project/ProjectCreateCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/entity/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/entity/Project.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/entity/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/entity/Task.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/repository/ProjectRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/repository/ProjectRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/repository/TaskRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/repository/TaskRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/bootstrap/Bootstrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/bootstrap/Bootstrap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/AbstractCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/AbstractCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/ReadFromConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/ReadFromConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectClearCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/project/ProjectClearCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectCreateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/project/ProjectCreateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectDeleteCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/project/ProjectDeleteCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectListCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/project/ProjectListCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectOpenCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/project/ProjectOpenCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectUpdateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/project/ProjectUpdateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/service/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/service/ExitCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/service/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/service/HelpCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskClearCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/task/TaskClearCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskCreateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/task/TaskCreateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskDeleteCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/task/TaskDeleteCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskListCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/task/TaskListCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskOpenCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/task/TaskOpenCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskUpdateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/task/TaskUpdateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/user/UserAdminCreateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/user/UserAdminCreateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/user/UserAuthorizationCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/user/UserAuthorizationCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/user/UserListCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/user/UserListCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/user/UserLogoutCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/user/UserLogoutCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/user/UserRegisrtationCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/user/UserRegisrtationCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/user/UserTestCreateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/user/UserTestCreateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/entity/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/entity/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/ProjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/repository/ProjectRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/repository/TaskRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/service/ProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/service/TaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/sdima/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/command/project/ProjectCreateCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/command/task/TaskCreateCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/entity/Project.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/entity/Task.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/repository/ProjectRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/sdima9999/repository/TaskRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/temp.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,22 +63,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/bootstrap/Bootstrap.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/webservice/WebServicesProject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/service/ProjectService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="323">
+              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,10 +75,47 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectCreateCommand.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/service/ProjectService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="37" column="64" lean-forward="true" selection-start-line="37" selection-start-column="64" selection-end-line="37" selection-end-column="64" />
+            <state relative-caret-position="459">
+              <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#991#992#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/project/ProjectClearCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="25" column="39" lean-forward="true" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/endpoint/endPointProject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/project/ProjectCreateCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="37" column="64" selection-start-line="37" selection-start-column="64" selection-end-line="37" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,6 +128,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -95,30 +147,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectOpen.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/TaskManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/bootstrap/bootstrap.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/UsersRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/bootstrap/Authorization.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/authorization/CreateNewUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Users.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/authorization/NewUserCreateCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/authorization/Authorization.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/user/Authorization.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/user/AuthorizationCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/user/UserRegistrationCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/user/NewUserCreateCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/bootstrap/StartTaskManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/App.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/HelpCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/servises/ExitCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/servises/HelpCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/user/UserLogoutCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/user/UserListCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/service/ExitCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectClearCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskListCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskOpenCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskClearCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/user/UserRegesrtationCommand.java" />
@@ -129,15 +157,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskDeleteCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskCreateCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskUpdateCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Task.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/TaskRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Project.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectOpenCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectCreateCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/service/TaskService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectUpdateCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectListCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectDeleteCommand.java" />
@@ -146,6 +171,33 @@
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/bootstrap/Bootstrap.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/AbstractCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/service/ProjectService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/service/TaskService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/dto/Data.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/webservice/WebServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/webservice/WebService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/TaskRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima/service/ProjectService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima/service/TaskService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima/service/UserService.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima/dto/Data.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/service/SaveCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima/repository/UserRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima/repository/ProjectRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima/repository/TaskRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima/endpoint/WebServicePubliser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima/webservice/Server.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima/endpoint/WebServicePublisher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima/webservice/ServerImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima/webservice/WebServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima/webservice/WebService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima/webservice/WebServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima/webservice/WebServicesImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima/endpoint/endPointProject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/sdima/webservice/WebServicesProject.java" />
       </list>
     </option>
   </component>
@@ -189,7 +241,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -221,7 +272,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sdima9999" type="462c0819:PsiDirectoryNode" />
+              <item name="sdima" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TaskManager" type="b2602c69:ProjectViewProjectNode" />
@@ -229,7 +280,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sdima9999" type="462c0819:PsiDirectoryNode" />
+              <item name="sdima" type="462c0819:PsiDirectoryNode" />
               <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -238,7 +289,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sdima9999" type="462c0819:PsiDirectoryNode" />
+              <item name="sdima" type="462c0819:PsiDirectoryNode" />
               <item name="command" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -247,7 +298,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sdima9999" type="462c0819:PsiDirectoryNode" />
+              <item name="sdima" type="462c0819:PsiDirectoryNode" />
               <item name="command" type="462c0819:PsiDirectoryNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -257,17 +308,37 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sdima9999" type="462c0819:PsiDirectoryNode" />
+              <item name="sdima" type="462c0819:PsiDirectoryNode" />
+              <item name="endpoint" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TaskManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TaskManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sdima" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TaskManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TaskManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sdima" type="462c0819:PsiDirectoryNode" />
+              <item name="webservice" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548167073635" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548255229455" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
   </component>
   <component name="RecentsManager">
@@ -287,13 +358,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.endPointProject">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.gmail.sdima9999.App" />
-      <module name="com.gmail.sdima9999" />
+      <option name="MAIN_CLASS_NAME" value="com.gmail.sdima.App" />
+      <module name="com.gmail.sdima" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.gmail.sdima9999.command.*" />
+          <option name="PATTERN" value="com.gmail.sdima.command.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="endPointProject" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.gmail.sdima.endpoint.endPointProject" />
+      <module name="com.gmail.sdima" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gmail.sdima.endpoint.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -303,6 +387,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.endPointProject" />
         <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
@@ -324,7 +409,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19402985" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19616205" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -333,7 +418,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49964157" visible="true" weight="0.31419286" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49964157" visible="true" weight="0.31419286" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -383,47 +468,22 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/solovev/taskmanager/GetName.java" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/IdRepositoty.java" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="104" column="21" selection-start-line="104" selection-start-column="21" selection-end-line="104" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/user/UserRegistrationCommand.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/user/NewUserCreateCommand.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/bootstrap/StartTaskManager.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/App.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="38" lean-forward="true" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/ReadFromConsole.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/ReadFromConsole.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/service/ExitCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/service/ExitCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
@@ -433,7 +493,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/user/UserListCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/user/UserListCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
@@ -443,7 +503,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/user/UserLogoutCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/user/UserLogoutCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
@@ -453,7 +513,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskListCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/task/TaskListCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
           <caret line="26" column="47" lean-forward="true" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
@@ -463,7 +523,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskClearCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/task/TaskClearCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="23" column="59" selection-start-line="23" selection-start-column="59" selection-end-line="23" selection-end-column="59" />
@@ -473,7 +533,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/user/UserAdminCreateCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/user/UserAdminCreateCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
@@ -483,7 +543,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/user/UserRegisrtationCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/user/UserRegisrtationCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="24" column="59" lean-forward="true" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
@@ -493,7 +553,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/user/UserTestCreateCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/user/UserTestCreateCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="20" column="59" lean-forward="true" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
@@ -503,7 +563,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskDeleteCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/task/TaskDeleteCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
@@ -513,7 +573,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskUpdateCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/task/TaskUpdateCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
           <caret line="24" column="54" lean-forward="true" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
@@ -523,7 +583,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskCreateCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/task/TaskCreateCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="42" column="24" lean-forward="true" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
@@ -533,27 +593,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/task/TaskOpenCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="31" column="74" lean-forward="true" selection-start-line="31" selection-start-column="74" selection-end-line="31" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/user/UserAuthorizationCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/user/UserAuthorizationCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
@@ -566,57 +606,17 @@
     <entry file="file://$PROJECT_DIR$/temp.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/User.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="58">
           <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Task.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/entity/Task.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectClearCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="25" column="39" lean-forward="true" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/TaskRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectOpenCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="27" column="89" selection-start-line="27" selection-start-column="89" selection-end-line="27" selection-end-column="89" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -627,19 +627,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/service/TaskService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2244#2245#0" expanded="true" />
-            <element signature="e#2271#2272#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectDeleteCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/project/ProjectDeleteCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
@@ -649,7 +637,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectListCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/project/ProjectListCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
@@ -660,30 +648,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectUpdateCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/project/ProjectUpdateCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/entity/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/repository/ProjectRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -715,7 +683,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/service/HelpCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/service/HelpCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
@@ -725,37 +693,244 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/AbstractCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/AbstractCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/bootstrap/Bootstrap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/command/project/ProjectCreateCommand.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="415">
-          <caret line="37" column="64" lean-forward="true" selection-start-line="37" selection-start-column="64" selection-end-line="37" selection-end-column="64" />
+          <caret line="104" column="21" selection-start-line="104" selection-start-column="21" selection-end-line="104" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/project/ProjectOpenCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="27" column="89" selection-start-line="27" selection-start-column="89" selection-end-line="27" selection-end-column="89" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima9999/service/ProjectService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/task/TaskOpenCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="408">
+          <caret line="31" column="74" selection-start-line="31" selection-start-column="74" selection-end-line="31" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="17">
+            <caret line="1" selection-start-line="1" selection-end-line="1" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/service/TaskService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="841">
+          <caret line="62" column="57" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/service/SaveCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#243#244#0" expanded="true" />
+            <element signature="e#271#272#0" expanded="true" />
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#346#347#0" expanded="true" />
+            <element signature="e#395#396#0" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/repository/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="63" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="49" column="59" selection-start-line="49" selection-start-column="59" selection-end-line="49" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/repository/ProjectRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/repository/TaskRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/dto/Data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/webservice/WebServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/endpoint/WebServicePublisher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="63" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/endpoint/endPointTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/webservice/WebServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/entity/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/bootstrap/Bootstrap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_192/src.zip!/javax/xml/ws/Endpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="239" selection-start-line="239" selection-end-line="239" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/project/ProjectClearCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="25" column="39" lean-forward="true" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/command/project/ProjectCreateCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="37" column="64" selection-start-line="37" selection-start-column="64" selection-end-line="37" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/service/ProjectService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#991#992#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/webservice/WebServicesProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/sdima/endpoint/endPointProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
