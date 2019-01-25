@@ -19,4 +19,6 @@ public class TaskRepository implements Serializable {
     public void clearTaskList() { taskList.clear(); }
 
     public void deleteTask(final Task task) { taskList.remove(task); }
+
+    public void addListTasks(List<Task> tasks) { taskList.addAll(tasks); }
 }

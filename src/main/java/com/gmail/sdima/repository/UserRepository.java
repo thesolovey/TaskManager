@@ -17,4 +17,6 @@ public class UserRepository implements Serializable {
     public void clearUsersList() { usersList.clear();}
 
     public void deleteUser(User user) { usersList.remove(user); }
+
+    public void addListUser(List<User> users) { usersList.addAll(users); }
 }

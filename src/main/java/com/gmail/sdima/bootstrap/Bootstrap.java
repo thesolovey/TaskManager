@@ -1,14 +1,14 @@
 package com.gmail.sdima.bootstrap;
 
 import com.gmail.sdima.command.AbstractCommand;
+import com.gmail.sdima.command.ReadFromConsole;
+import com.gmail.sdima.command.project.*;
 import com.gmail.sdima.command.service.ExitCommand;
 import com.gmail.sdima.command.service.HelpCommand;
-import com.gmail.sdima.command.project.*;
 import com.gmail.sdima.command.service.LoadCommand;
 import com.gmail.sdima.command.service.SaveCommand;
 import com.gmail.sdima.command.task.*;
 import com.gmail.sdima.command.user.*;
-import com.gmail.sdima.command.ReadFromConsole;
 import com.gmail.sdima.repository.ProjectRepository;
 import com.gmail.sdima.repository.TaskRepository;
 import com.gmail.sdima.repository.UserRepository;
@@ -81,8 +81,6 @@ public class Bootstrap {
 
         AbstractCommand userTestCreateCommand = new UserTestCreateCommand(this);
         userTestCreateCommand.execute();
-
-
 
         do {
                 String commandFromConsole = ReadFromConsole.readInputFromConsole("Input command: ");

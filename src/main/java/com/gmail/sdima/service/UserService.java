@@ -46,6 +46,11 @@ public class UserService {
     }
 
     public void clearUsersList() {
-        if (usersRepository.getUsersList() == null) return;
         usersRepository.clearUsersList(); }
+
+    public void addListUsers(List<User> userList) {
+        if (userList == null) return;
+        usersRepository.addListUser(userList);
+    }
 }
+

@@ -1,6 +1,5 @@
 package com.gmail.sdima.service;
 
-import com.gmail.sdima.entity.Project;
 import com.gmail.sdima.entity.Task;
 import com.gmail.sdima.repository.ProjectRepository;
 import com.gmail.sdima.repository.TaskRepository;
@@ -81,6 +80,11 @@ public class TaskService {
                 task.setName(newName);
                 task.setDateEnd(newDateEnd);
             }
+    }
+
+    public void addListTasks(List<Task> tasks) {
+        if (tasks == null) return;
+        taskRepository.addListTasks(tasks);
     }
 }
 

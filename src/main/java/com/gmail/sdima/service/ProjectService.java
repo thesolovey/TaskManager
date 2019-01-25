@@ -4,7 +4,6 @@ import com.gmail.sdima.entity.Project;
 import com.gmail.sdima.repository.ProjectRepository;
 import com.gmail.sdima.repository.TaskRepository;
 
-import java.util.Iterator;
 import java.util.List;
 
 public class ProjectService {
@@ -52,5 +51,10 @@ public class ProjectService {
         for (Project project : projectList)
             if (project.getId().equals(id))
                 project.setName(newNameProject);
+    }
+
+    public void addListProjects(List<Project> projects) {
+        if (projects == null) return;
+        projectRepository.addListProjects(projects);
     }
 }

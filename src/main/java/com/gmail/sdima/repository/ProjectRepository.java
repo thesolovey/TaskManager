@@ -16,4 +16,6 @@ public class ProjectRepository implements Serializable {
     public void clearProjectList() {projectList.clear();}
 
     public void deleteProject(final Project project) { projectList.remove(project); }
+
+    public void addListProjects(List<Project> projects) { projectList.addAll(projects); }
 }
