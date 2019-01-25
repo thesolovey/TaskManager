@@ -42,13 +42,15 @@ public class TaskCreateCommand extends AbstractCommand {
             task.setDateBegin(calendarBegin.getTime());
             task.setDateEnd(calendarEnd.getTime());
             task.setUserLogin(user.getLogin());
-            task.setUserName(user.getUserName());
+            task.setIdByProject(user.getUserName());
 
-            final String nameProject = ReadFromConsole.readInputFromConsole("Input name Project for this Task: ");
+            final String idProject = ReadFromConsole.readInputFromConsole("Input ID Project for this Task: ");
             for (Project project: projectList) {
-                        if (project.getName().equals(nameProject)) {
-                            task.setNameByProject(nameProject);
-                            bootstrap.getTaskService().addTask(task);
+                if (project.getId().equals(idProject)) {
+                    String projectName = project.getName();
+                    task.setNameByProject(projectName);
+                    task.setIdByProject(idProject);
+                    bootstrap.getTaskService().addTask(task);
                         }
             } System.out.println("[OK]");
         }

@@ -3,7 +3,6 @@ package com.gmail.sdima.service;
 import com.gmail.sdima.entity.User;
 import com.gmail.sdima.repository.UserRepository;
 
-import java.io.*;
 import java.util.List;
 
 public class UserService {
@@ -49,28 +48,4 @@ public class UserService {
     public void clearUsersList() {
         if (usersRepository.getUsersList() == null) return;
         usersRepository.clearUsersList(); }
-
-    public void writeObject() {
-        try {
-            FileOutputStream fos = null;
-            fos = new FileOutputStream("temp.txt");
-            ObjectOutputStream oos = null;
-            oos = new ObjectOutputStream(fos);
-            oos.writeObject(usersRepository.getUsersList());
-            oos.flush();
-            oos.close();
-        } catch (IOException e) {e.printStackTrace();}
-    }
-
-    public List<User>  readObject () {
-        List<User> userList = null;
-        try {
-            FileInputStream fis = null;
-            fis = new FileInputStream("temp.txt");
-            ObjectInputStream ois = null;
-            ois = new ObjectInputStream(fis);
-            userList = (List<User>) ois.readObject();
-        } catch (IOException | ClassNotFoundException e) { e.printStackTrace();}
-        return userList;
-    }
 }

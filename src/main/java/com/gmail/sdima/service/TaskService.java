@@ -1,17 +1,22 @@
 package com.gmail.sdima.service;
 
+import com.gmail.sdima.entity.Project;
 import com.gmail.sdima.entity.Task;
+import com.gmail.sdima.repository.ProjectRepository;
 import com.gmail.sdima.repository.TaskRepository;
 
-import java.io.*;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 public class TaskService {
     private final TaskRepository taskRepository;
+    private final ProjectRepository projectRepository;
 
-    public TaskService(TaskRepository taskRepository) { this.taskRepository = taskRepository; }
+    public TaskService(TaskRepository taskRepository, ProjectRepository projectRepository) { this.taskRepository = taskRepository;
+        this.projectRepository = projectRepository;
+    }
 
     public Boolean checkTaskListIsEmpty() {
         List<Task> taskList = taskRepository.getTaskList();
@@ -27,13 +32,23 @@ public class TaskService {
         return taskRepository.getTaskList();
     }
 
-    public List<Task> getTaskFromListByProjectName(String projectName) {
+    public List<Task> getTaskByProjectName(String projectName) {
         final List<Task> taskList = taskRepository.getTaskList();
         final List<Task> taskByProjectName = new ArrayList<>();
-        for (Task task : taskList)
+        for (Task task : taskList) {
             if (task.getNameByProject().equals(projectName))
                 taskByProjectName.add(task);
-        return taskByProjectName;
+        } return taskByProjectName;
+    }
+
+    public void deleteTaskByProjectId(String projectId) {
+        if (projectId == null) return;
+        final List<Task> taskList = taskRepository.getTaskList();
+        if (taskList == null || taskList.isEmpty()) return;
+        Iterator<Task> it = taskList.iterator(); it.hasNext();
+        Task task = it.next();
+        if (task.getIdByProject().equals(projectId))
+            it.remove();
     }
 
     public List<Task> openTaskByName(String nameTask) {
@@ -51,12 +66,11 @@ public class TaskService {
     }
 
     public void deleteTask(String idTask) {
-        if (taskRepository.getTaskList() == null) return;
+        if (idTask == null) return;
         final List<Task> taskList = taskRepository.getTaskList();
         for (Task task : taskList)
-            if (task.getId().equals(idTask)) {
-                taskList.remove(task);
-            }
+            if (task.getId().equals(idTask))
+                taskRepository.deleteTask(task);
     }
 
     public void updateTask(String name, String newName, Date newDateEnd) {
@@ -67,30 +81,6 @@ public class TaskService {
                 task.setName(newName);
                 task.setDateEnd(newDateEnd);
             }
-    }
-
-    public void writeObject() {
-        try {
-            FileOutputStream fos = null;
-            fos = new FileOutputStream("temp.txt");
-            ObjectOutputStream oos = null;
-            oos = new ObjectOutputStream(fos);
-            oos.writeObject(taskRepository.getTaskList());
-            oos.flush();
-            oos.close();
-        } catch (IOException e) { e.printStackTrace(); }
-    }
-
-    public List<Task> readObject () {
-        List<Task> taskList = null;
-        try {
-            FileInputStream fis = null;
-            fis = new FileInputStream("temp.txt");
-            ObjectInputStream oin = null;
-            oin = new ObjectInputStream(fis);
-            taskList = (List<Task>) oin.readObject();
-        } catch (IOException | ClassNotFoundException e) { e.printStackTrace();
-        } return taskList;
     }
 }
 

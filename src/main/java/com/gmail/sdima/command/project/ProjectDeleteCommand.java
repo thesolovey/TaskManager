@@ -20,8 +20,9 @@ public class ProjectDeleteCommand extends AbstractCommand {
             System.out.println("!!!  Try command 'project-create'  !!!");
         } else {
             final String idProject = ReadFromConsole.readInputFromConsole("Input ID Project you want delete: ");
+
+            bootstrap.getTaskService().deleteTaskByProjectId(idProject);
             bootstrap.getProjectService().deleteProject(idProject);
-            bootstrap.getProjectService().writeObject();
         }
             System.out.println("[ОК]");
     }

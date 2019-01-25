@@ -15,7 +15,7 @@ public class Task implements Serializable {
 
     private String nameByProject;
 
-    private String userName;
+    private String idByProject;
 
     private String userLogin;
 
@@ -43,7 +43,7 @@ public class Task implements Serializable {
 
     public void setNameByProject(String nameByProject) { this.nameByProject = nameByProject; }
 
-    public String getUserName() { return userName; }
+    public String getIdByProject() { return idByProject; }
 
-    public void setUserName(String userName) { this.userName = userName; }
+    public void setIdByProject(String idByProject) { this.idByProject = idByProject; }
 }

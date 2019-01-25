@@ -4,6 +4,8 @@ import com.gmail.sdima.command.AbstractCommand;
 import com.gmail.sdima.command.service.ExitCommand;
 import com.gmail.sdima.command.service.HelpCommand;
 import com.gmail.sdima.command.project.*;
+import com.gmail.sdima.command.service.LoadCommand;
+import com.gmail.sdima.command.service.SaveCommand;
 import com.gmail.sdima.command.task.*;
 import com.gmail.sdima.command.user.*;
 import com.gmail.sdima.command.ReadFromConsole;
@@ -25,6 +27,8 @@ public class Bootstrap {
     {
         commands.put(HelpCommand.COMMAND, new HelpCommand(this));
         commands.put(ExitCommand.COMMAND, new ExitCommand(this));
+        commands.put(SaveCommand.COMMAND, new SaveCommand(this));
+        commands.put(LoadCommand.COMMAND, new LoadCommand(this));
         commands.put(UserRegisrtationCommand.COMMAND, new UserRegisrtationCommand(this));
         commands.put(UserAuthorizationCommand.COMMAND, new UserAuthorizationCommand(this));
         commands.put(UserLogoutCommand.COMMAND, new UserLogoutCommand(this));
@@ -51,7 +55,7 @@ public class Bootstrap {
 
     private final ProjectService projectService = new ProjectService(projectRepository, taskRepository);
 
-    private final TaskService taskService = new TaskService(taskRepository);
+    private final TaskService taskService = new TaskService(taskRepository, projectRepository);
 
     private final UserRepository usersRepository = new UserRepository();
 
@@ -77,6 +81,8 @@ public class Bootstrap {
 
         AbstractCommand userTestCreateCommand = new UserTestCreateCommand(this);
         userTestCreateCommand.execute();
+
+
 
         do {
                 String commandFromConsole = ReadFromConsole.readInputFromConsole("Input command: ");

@@ -36,7 +36,6 @@ public class ProjectCreateCommand extends AbstractCommand {
         project.setUserName(user.getUserName());
 
         bootstrap.getProjectService().addProjectByList(project);
-        bootstrap.getProjectService().writeObject();
 
         System.out.println("[OK]");
             }

@@ -6,9 +6,9 @@ import com.gmail.sdima.service.ProjectService;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
-@WebService(endpointInterface = "com.gmail.sdima.webservice.WebServicesProject")
+@WebService(endpointInterface = "com.gmail.sdima.webservice.WebProjectServices")
 
-public class WebServicesProject {
+public class WebProjectServices {
 
     @WebMethod
     public void createProject(Project project) {

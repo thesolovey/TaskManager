@@ -24,7 +24,6 @@ public class ProjectUpdateCommand extends AbstractCommand {
         final String newName = ReadFromConsole.readInputFromConsole("Enter new name: ");
 
         bootstrap.getProjectService().updateNameProject(id, newName);
-        bootstrap.getProjectService().writeObject();
 
         System.out.println("[OK]");
     }

@@ -9,8 +9,6 @@ import java.util.List;
 public class ProjectRepository implements Serializable {
     private final List<Project> projectList = new ArrayList<>();
 
-    public void findAll() {    }
-
     public void addProject(final Project project) { projectList.add(project); }
 
     public List<Project> getProjectList() { return projectList; }
