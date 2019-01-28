@@ -4,9 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.gmail.sdima9999</groupId>
-    <artifactId>com.gmail.sdima9999</artifactId>
+    <groupId>com.gmail.sdima</groupId>
+    <artifactId>aplication</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>clientTaskManager</module>
+        <module>serverTaskManager</module>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -113,7 +119,7 @@
                             <id>generate-sources</id>
                             <phase>generate-sources</phase>
                             <configuration>
-                                <sourceRoot>${project.basedir}/src/main/java</sourceRoot>
+                                <sourceRoot>src/main/java</sourceRoot>
                                 <wsdlOptions>
                                     <wsdlOption>
                                         <wsdl>http://localhost:8080/CalcEndpoint?wsdl</wsdl>
@@ -136,6 +142,19 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.9.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>0.9.10</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.weld.se</groupId>
+            <artifactId>weld-se-core</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>

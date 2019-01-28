@@ -1,9 +1,9 @@
-.idea/
-.TaskManager.iml/
-.target/
-.idea/
+.idea
+.TaskManager.iml
+.target
+.idea
 *.iml
 *.iws
-project.txt/
-task.txt/
-user.txt/
+.project.txt
+.task.txt
+.user.txt
