@@ -52,11 +52,11 @@ public class LoadCommand extends AbstractCommand {
 
     @Override
     public String getKeyWord() {
-        return null;
+        return "load";
     }
 
     @Override
     public String description() {
-        return null;
+        return "Loads previously saved data";
     }
 }

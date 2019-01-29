@@ -1,6 +1,6 @@
 package endpoint;
 
-import api.ServiceLocator;
+import entity.User;
 import webservice.WebProjectServices;
 
 import javax.jws.WebMethod;
@@ -8,32 +8,26 @@ import javax.jws.WebService;
 import javax.xml.ws.Endpoint;
 
 @WebService
-public class EndPointProject extends AbstractEndPoint {
-
-    private ServiceLocator serviceLocator;
-
-    public EndPointProject(ServiceLocator serviceLocator) {
-        this.serviceLocator = serviceLocator;
-    }
+public class EndPointProject {
 
     @WebMethod
     public void run() {
 
         Endpoint.publish("http://localhost:8080/project?wsdl", new WebProjectServices());
-        
-    }
-
-    @Override
-    public void create() {
 
     }
 
-    @Override
+    @WebMethod
+    public void create(User newUser) {
+
+    }
+
+    @WebMethod
     public void delete() {
 
     }
 
-    @Override
+    @WebMethod
     public void findAll() {
 
     }

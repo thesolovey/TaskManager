@@ -43,8 +43,8 @@ public class UserAuthorizationCommand extends AbstractCommand {
     public boolean secure() { return false; }
 
     @Override
-    public String getKeyWord() { return null; }
+    public String getKeyWord() { return "user-login"; }
 
     @Override
-    public String description() { return null; }
+    public String description() { return "Authorization"; }
 }

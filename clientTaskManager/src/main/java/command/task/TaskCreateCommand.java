@@ -62,8 +62,8 @@ public class TaskCreateCommand extends AbstractCommand {
     }
 
     @Override
-    public String getKeyWord() { return null; }
+    public String getKeyWord() { return "task-create"; }
 
     @Override
-    public String description() { return null; }
+    public String description() { return "Create new Task"; }
 }

@@ -37,5 +37,5 @@ public class UserTestCreateCommand extends AbstractCommand {
     public String getKeyWord() { return null; }
 
     @Override
-    public String description() { return null; }
+    public String description() { return "Create user Test"; }
 }

@@ -29,8 +29,8 @@ public class TaskDeleteCommand extends AbstractCommand {
     public boolean secure() { return true; }
 
     @Override
-    public String getKeyWord() { return null; }
+    public String getKeyWord() { return "task-delete"; }
 
     @Override
-    public String description() { return null; }
+    public String description() { return "Delete selected Task"; }
 }

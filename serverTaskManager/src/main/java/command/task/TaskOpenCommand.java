@@ -39,8 +39,8 @@ public class TaskOpenCommand extends AbstractCommand {
     public boolean secure() { return true; }
 
     @Override
-    public String getKeyWord() { return null; }
+    public String getKeyWord() { return "task-open"; }
 
     @Override
-    public String description() { return null; }
+    public String description() { return "Open selected Task"; }
 }

@@ -37,8 +37,8 @@ public class ProjectListCommand extends AbstractCommand {
     }
 
     @Override
-    public String getKeyWord() { return null; }
+    public String getKeyWord() { return "project-list"; }
 
     @Override
-    public String description() { return null; }
+    public String description() { return "Shows list Projects"; }
 }

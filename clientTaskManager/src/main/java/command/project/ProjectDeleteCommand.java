@@ -31,8 +31,8 @@ public class ProjectDeleteCommand extends AbstractCommand {
     public boolean secure() { return true; }
 
     @Override
-    public String getKeyWord() { return null; }
+    public String getKeyWord() { return "project-delete"; }
 
     @Override
-    public String description() { return null; }
+    public String description() { return "Delete selected Project"; }
 }

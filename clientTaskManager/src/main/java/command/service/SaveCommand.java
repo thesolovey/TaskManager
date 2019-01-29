@@ -45,11 +45,11 @@ public class SaveCommand extends AbstractCommand {
 
     @Override
     public String getKeyWord() {
-        return null;
+        return "save";
     }
 
     @Override
     public String description() {
-        return null;
+        return "Save data";
     }
 }

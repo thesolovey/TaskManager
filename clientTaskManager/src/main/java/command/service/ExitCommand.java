@@ -17,8 +17,8 @@ public class ExitCommand extends AbstractCommand {
     public boolean secure() { return false; }
 
     @Override
-    public String getKeyWord() { return null; }
+    public String getKeyWord() { return "exit"; }
 
     @Override
-    public String description() { return null; }
+    public String description() { return "Exit from TaskManager"; }
 }

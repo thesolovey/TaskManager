@@ -21,8 +21,8 @@ public class UserLogoutCommand extends AbstractCommand {
     }
 
     @Override
-    public String getKeyWord() { return null; }
+    public String getKeyWord() { return "user-logout"; }
 
     @Override
-    public String description() { return null; }
+    public String description() { return "Logout currently user"; }
 }

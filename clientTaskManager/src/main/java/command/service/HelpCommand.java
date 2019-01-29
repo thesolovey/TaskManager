@@ -25,9 +25,9 @@ public class HelpCommand extends AbstractCommand {
     }
 
     @Override
-    public String getKeyWord() { return null; }
+    public String getKeyWord() { return "help"; }
 
     @Override
-    public String description() { return null; }
+    public String description() { return "Shows all commands"; }
 
 }

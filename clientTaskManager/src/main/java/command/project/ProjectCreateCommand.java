@@ -46,8 +46,8 @@ public class ProjectCreateCommand extends AbstractCommand {
     }
 
     @Override
-    public String getKeyWord() { return null; }
+    public String getKeyWord() { return "project-create"; }
 
     @Override
-    public String description() { return null; }
+    public String description() { return "Create new project"; }
 }

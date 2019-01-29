@@ -31,8 +31,8 @@ public class ProjectClearCommand extends AbstractCommand {
     public boolean secure() { return true; }
 
     @Override
-    public String getKeyWord() { return null; }
+    public String getKeyWord() { return "project-clear"; }
 
     @Override
-    public String description() { return null; }
+    public String description() { return "Delete all projects"; }
 }

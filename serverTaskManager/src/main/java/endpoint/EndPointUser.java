@@ -1,24 +1,53 @@
 package endpoint;
 
-public class EndPointUser extends AbstractEndPoint {
-    @Override
+import entity.User;
+import webservice.WebUserService;
+
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+import javax.xml.ws.Endpoint;
+import java.util.List;
+
+@WebService
+public class EndPointUser {
+    WebUserService webUserService = new WebUserService();
+
+    @WebMethod
     public void run() {
 
-        return null;
-    }
-
-    @Override
-    public void create() {
+        Endpoint.publish("http://localhost:8080/user?wsdl", new WebUserService());
 
     }
 
-    @Override
+    @WebMethod
+    public void create(User newUser) {
+
+    }
+
+    @WebMethod
     public void delete() {
 
     }
 
-    @Override
-    public void findAll() {
+    @WebMethod
+    public User getCurrentUser() {
+        User user = webUserService.currentUser();
+        return user;
+    }
 
+    @WebMethod
+    public void setCurrentUser(User currentUser) {
+        webUserService.setCurrentUser(currentUser);
+    }
+
+    @WebMethod
+    public List<User> findAll() {
+        List<User> userList = webUserService.findAll();
+        return userList;
+    }
+
+    @WebMethod
+    public boolean auth() {
+        if (webUserService.auth()); return true;
     }
 }

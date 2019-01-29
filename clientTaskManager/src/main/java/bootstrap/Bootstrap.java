@@ -18,11 +18,17 @@ import java.util.Map;
 
 public class Bootstrap {
 
-    private final EndPointTask endPointUser = new EndPointUser().run();
+    private final EndPointUser endPointUser = new EndPointUser();
 
-    private final EndPointTask endPointProject = new EndPointProject().run();
+    private final EndPointProject endPointProject = new EndPointProject();
 
-    private final EndPointTask endPointTask = new EndPointTask().run();
+    private final EndPointTask endPointTask = new EndPointTask();
+
+    public EndPointUser getEndPointUser() { return endPointUser; }
+
+    public EndPointProject getEndPointProject() { return endPointProject; }
+
+    public EndPointTask getEndPointTask() { return endPointTask; }
 
     private final Map<String, AbstractCommand> commands = new LinkedHashMap<>();
 
@@ -62,6 +68,10 @@ public class Bootstrap {
 
     public void start() {
 
+        endPointUser.run();
+        endPointProject.run();
+        endPointTask.run();
+
         AbstractCommand userAdminCreateCommand = new UserAdminCreateCommand(this);
         userAdminCreateCommand.execute();
 
@@ -79,7 +89,8 @@ public class Bootstrap {
             AbstractCommand command = commands.get(commandFromConsole);
 
             if (command == null) continue;
-            if (command.secure() && !this.getUserService().isAuth()) continue;
+            if (command.secure() && !this.endPointUser.auth()) continue;
+
             //           if (commands.containsKey(commandFromConsole)) {
             command.execute();
             //           }

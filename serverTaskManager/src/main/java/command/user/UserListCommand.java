@@ -27,8 +27,8 @@ public class UserListCommand extends AbstractCommand {
     public boolean secure() { return true; }
 
     @Override
-    public String getKeyWord() { return null; }
+    public String getKeyWord() { return "user-list"; }
 
     @Override
-    public String description() { return null; }
+    public String description() { return "Shows list users"; }
 }

@@ -40,8 +40,8 @@ public class UserRegisrtationCommand extends AbstractCommand {
     }
 
     @Override
-    public String getKeyWord() { return null; }
+    public String getKeyWord() { return "user-reg"; }
 
     @Override
-    public String description() { return null; }
+    public String description() { return "Registration new User"; }
 }

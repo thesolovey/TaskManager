@@ -25,8 +25,8 @@ public class UserAdminCreateCommand extends AbstractCommand {
         newUser.setUserName(userName);
         newUser.setId(userId);
 
-        bootstrap.getUserService().addUserByList(newUser);
-
+//        bootstrap.getUserService().addUserByList(newUser);
+        bootstrap.getEndPointUser().create(newUser);
     }
 
     @Override
@@ -38,5 +38,5 @@ public class UserAdminCreateCommand extends AbstractCommand {
     public String getKeyWord() { return null; }
 
     @Override
-    public String description() { return null; }
+    public String description() { return "Create user Admin"; }
 }

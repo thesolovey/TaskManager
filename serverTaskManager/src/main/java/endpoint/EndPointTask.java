@@ -1,21 +1,33 @@
 package endpoint;
 
-public class EndPointTask extends AbstractEndPoint {
-    @Override
+import entity.User;
+import webservice.WebTaskService;
+
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+import javax.xml.ws.Endpoint;
+
+@WebService
+public class EndPointTask  {
+
+    @WebMethod
     public void run() {
-    }
 
-    @Override
-    public void create() {
+        Endpoint.publish("http://localhost:8080/task?wsdl", new WebTaskService());
 
     }
 
-    @Override
+    @WebMethod
+    public void create(User newUser) {
+
+    }
+
+    @WebMethod
     public void delete() {
 
     }
 
-    @Override
+    @WebMethod
     public void findAll() {
 
     }
