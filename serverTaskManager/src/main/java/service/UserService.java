@@ -30,7 +30,7 @@ public class UserService {
     }
 
     public void addUserByList(User user) {
-        if (usersRepository.getUsersList() == null) return;
+        if (user == null) return;
         usersRepository.addUser(user);
     }
 

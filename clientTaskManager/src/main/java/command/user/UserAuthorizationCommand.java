@@ -1,15 +1,15 @@
 package command.user;
 
-import bootstrap.Bootstrap;
+import bootstrap.BootstrapClient;
 import command.AbstractCommand;
 import command.ReadFromConsole;
-import entity.User;
+import endpoint.User;
 
 import java.util.List;
 
 public class UserAuthorizationCommand extends AbstractCommand {
 
-    public UserAuthorizationCommand(Bootstrap bootstrap) {
+    public UserAuthorizationCommand(BootstrapClient bootstrap) {
         super(bootstrap);
     }
 

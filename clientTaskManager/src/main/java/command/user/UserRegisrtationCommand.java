@@ -1,14 +1,14 @@
 package command.user;
 
-import bootstrap.Bootstrap;
+import bootstrap.BootstrapClient;
 import command.AbstractCommand;
 import command.ReadFromConsole;
-import entity.User;
+import endpoint.User;
 
 import java.util.UUID;
 
 public class UserRegisrtationCommand extends AbstractCommand {
-    public UserRegisrtationCommand(Bootstrap bootstrap) {
+    public UserRegisrtationCommand(BootstrapClient bootstrap) {
         super(bootstrap);
     }
     public final static String COMMAND = "user-reg";
@@ -29,8 +29,10 @@ public class UserRegisrtationCommand extends AbstractCommand {
         newUser.setUserName(userName);
         newUser.setId(userId);
 
-        bootstrap.getUserService().addUserByList(newUser);
-        bootstrap.getUserService().setCurrentUser(newUser);
+        bootstrap.getEndPointUser().create(newUser);
+        bootstrap.getEndPointUser().setCurrentUser(newUser);
+//        bootstrap.getUserService().addUserByList(newUser);
+//        bootstrap.getUserService().setCurrentUser(newUser);
         System.out.println("[OK]");
     }
 

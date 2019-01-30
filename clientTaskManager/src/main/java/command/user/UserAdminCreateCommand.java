@@ -1,13 +1,13 @@
 package command.user;
 
-import bootstrap.Bootstrap;
+import bootstrap.BootstrapClient;
 import command.AbstractCommand;
-import entity.User;
+import endpoint.User;
 
 import java.util.UUID;
 
 public class UserAdminCreateCommand extends AbstractCommand {
-    public UserAdminCreateCommand(Bootstrap bootstrap) {
+    public UserAdminCreateCommand(BootstrapClient bootstrap) {
         super(bootstrap);
     }
 
@@ -25,8 +25,7 @@ public class UserAdminCreateCommand extends AbstractCommand {
         newUser.setUserName(userName);
         newUser.setId(userId);
 
-//        bootstrap.getUserService().addUserByList(newUser);
-        bootstrap.getEndPointUser().create(newUser);
+        getBootstrap().getEndPointUser().create(newUser);
     }
 
     @Override

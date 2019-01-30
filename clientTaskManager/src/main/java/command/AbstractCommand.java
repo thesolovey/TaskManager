@@ -1,17 +1,17 @@
 package command;
-import bootstrap.Bootstrap;
+import bootstrap.BootstrapClient;
 
 public abstract class AbstractCommand {
 
-    protected Bootstrap bootstrap;
+    protected BootstrapClient bootstrap;
 
-    public Bootstrap getBootstrap() { return bootstrap; }
+    public BootstrapClient getBootstrap() { return bootstrap; }
 
-    public void setBootstrap(Bootstrap bootstrap) { this.bootstrap = bootstrap; }
+    public void setBootstrap(BootstrapClient bootstrap) { this.bootstrap = bootstrap; }
 
     public static String COMMAND;
 
-    public AbstractCommand(Bootstrap bootstrap) {
+    public AbstractCommand(BootstrapClient bootstrap) {
         this.bootstrap = bootstrap;
     }
 

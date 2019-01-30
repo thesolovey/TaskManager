@@ -1,10 +1,10 @@
 package command.service;
 
-import bootstrap.Bootstrap;
+import bootstrap.BootstrapClient;
 import command.AbstractCommand;
 
 public class ExitCommand extends AbstractCommand {
-    public ExitCommand(Bootstrap bootstrap) { super(bootstrap); }
+    public ExitCommand(BootstrapClient bootstrap) { super(bootstrap); }
 
     public static final String COMMAND = "exit";
 

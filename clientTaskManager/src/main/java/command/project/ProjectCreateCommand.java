@@ -1,17 +1,17 @@
 package command.project;
 
-import bootstrap.Bootstrap;
+import bootstrap.BootstrapClient;
 import command.AbstractCommand;
 import command.ReadFromConsole;
-import entity.Project;
-import entity.User;
+import endpoint.Project;
+import endpoint.User;
 
 import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
 
 public class ProjectCreateCommand extends AbstractCommand {
-    public ProjectCreateCommand(Bootstrap bootstrap) {
+    public ProjectCreateCommand(BootstrapClient bootstrap) {
         super(bootstrap);
     }
     public static final String COMMAND = "project-create";
@@ -19,8 +19,7 @@ public class ProjectCreateCommand extends AbstractCommand {
     public void execute() {
         System.out.println("[PROJECT CREATE]");
         final Project project = new Project();
-        final User user = bootstrap.
-        final User user = bootstrap.getUserService().getCurrentUser();
+        final User user = getBootstrap().getEndPointUser().getCurrentUser();
         final String name = ReadFromConsole.readInputFromConsole("Input name Project: ");
         project.setName(name);
 
@@ -35,7 +34,7 @@ public class ProjectCreateCommand extends AbstractCommand {
         project.setUserLogin(user.getLogin());
         project.setUserName(user.getUserName());
 
-        bootstrap.getProjectService().addProjectByList(project);
+//        getBootstrap().getEndPointProject().create(project);
 
         System.out.println("[OK]");
             }

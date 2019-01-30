@@ -1,11 +1,10 @@
 package command.task;
 
-import bootstrap.Bootstrap;
+import bootstrap.BootstrapClient;
 import command.AbstractCommand;
-import command.ReadFromConsole;
 
 public class TaskClearCommand extends AbstractCommand {
-    public TaskClearCommand(Bootstrap bootstrap) {
+    public TaskClearCommand(BootstrapClient bootstrap) {
         super(bootstrap);
     }
 
@@ -13,17 +12,17 @@ public class TaskClearCommand extends AbstractCommand {
 
     public void execute() {
         System.out.println("[TASK CLEAR]");
-        boolean checkTaskListIsEmpty = bootstrap.getTaskService().checkTaskListIsEmpty();
-        if (checkTaskListIsEmpty) {
-            System.out.println("!!!  You don't have any Task  !!!");
-            System.out.println("!!! Try command 'task-create' !!!");
-        } else {
-            final String answerInConsole = ReadFromConsole.readInputFromConsole("Are you sure, you want to delete all Task? Input: 'yes'");
-            if (answerInConsole.equals("yes")) {
-                bootstrap.getTaskService().clearTaskList();
-                System.out.println("[!!! Tasks were deleted!!!] ");
-            }
-        }
+//        boolean checkTaskListIsEmpty = bootstrap.getTaskService().checkTaskListIsEmpty();
+//        if (checkTaskListIsEmpty) {
+//            System.out.println("!!!  You don't have any Task  !!!");
+//            System.out.println("!!! Try command 'task-create' !!!");
+//        } else {
+//            final String answerInConsole = ReadFromConsole.readInputFromConsole("Are you sure, you want to delete all Task? Input: 'yes'");
+//            if (answerInConsole.equals("yes")) {
+//                bootstrap.getTaskService().clearTaskList();
+//                System.out.println("[!!! Tasks were deleted!!!] ");
+//            }
+//        }
         System.out.println("[OK]");
     }
 

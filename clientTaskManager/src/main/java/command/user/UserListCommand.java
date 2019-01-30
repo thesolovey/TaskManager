@@ -1,13 +1,13 @@
 package command.user;
 
-import bootstrap.Bootstrap;
+import bootstrap.BootstrapClient;
 import command.AbstractCommand;
-import entity.User;
+import endpoint.User;
 
 import java.util.List;
 
 public class UserListCommand extends AbstractCommand {
-    public UserListCommand(Bootstrap bootstrap) {
+    public UserListCommand(BootstrapClient bootstrap) {
         super(bootstrap);
     }
 
@@ -16,7 +16,7 @@ public class UserListCommand extends AbstractCommand {
     @Override
     public void execute() {
         System.out.println("[USER LIST]");
-        List<User> userList = bootstrap.getUserService().getUsersList();
+        final List<User> userList = getBootstrap().getEndPointUser().findAll();
         for (User user : userList)
             System.out.println(user.getUserName());
         System.out.println("[OK]");

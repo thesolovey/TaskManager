@@ -1,11 +1,10 @@
 package command.task;
 
-import bootstrap.Bootstrap;
+import bootstrap.BootstrapClient;
 import command.AbstractCommand;
-import command.ReadFromConsole;
 
 public class TaskDeleteCommand extends AbstractCommand {
-    public TaskDeleteCommand(Bootstrap bootstrap) {
+    public TaskDeleteCommand(BootstrapClient bootstrap) {
         super(bootstrap);
     }
 
@@ -14,13 +13,13 @@ public class TaskDeleteCommand extends AbstractCommand {
     public void execute() {
         System.out.println("[TASK DELETE]");
 
-        boolean checkTaskListIsEmpty = bootstrap.getTaskService().checkTaskListIsEmpty();
-        if (checkTaskListIsEmpty) {
-            System.out.println("!!!  You don't have any Task  !!!");
-            System.out.println("!!! Try command 'task-create' !!!");
-        }
-        final String idTask = ReadFromConsole.readInputFromConsole("Enter ID Task you want to delete: ");
-        bootstrap.getTaskService().deleteTask(idTask);
+//        boolean checkTaskListIsEmpty = bootstrap.getTaskService().checkTaskListIsEmpty();
+//        if (checkTaskListIsEmpty) {
+//            System.out.println("!!!  You don't have any Task  !!!");
+//            System.out.println("!!! Try command 'task-create' !!!");
+//        }
+//        final String idTask = ReadFromConsole.readInputFromConsole("Enter ID Task you want to delete: ");
+//        bootstrap.getTaskService().deleteTask(idTask);
 
         System.out.println("[OK]");
     }

@@ -1,7 +1,6 @@
 package endpoint;
 
 import entity.User;
-import webservice.WebTaskService;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -13,7 +12,7 @@ public class EndPointTask  {
     @WebMethod
     public void run() {
 
-        Endpoint.publish("http://localhost:8080/task?wsdl", new WebTaskService());
+        Endpoint.publish("http://localhost:8080/task?wsdl", new EndPointTask());
 
     }
 

@@ -1,17 +1,18 @@
 package command.user;
 
-import bootstrap.Bootstrap;
+import bootstrap.BootstrapClient;
 import command.AbstractCommand;
 
 public class UserLogoutCommand extends AbstractCommand {
-    public UserLogoutCommand(Bootstrap bootstrap) { super(bootstrap); }
+    public UserLogoutCommand(BootstrapClient bootstrap) { super(bootstrap); }
 
     public static final String COMMAND = "user-logout";
 
     @Override
     public void execute() {
         System.out.println("[LOGOUT]");
-        bootstrap.getUserService().logOut();
+        getBootstrap().getEndPointUser().logOut();
+//        bootstrap.getEndPointUser().logOut();
         System.out.println("[OK]");
     }
 

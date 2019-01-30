@@ -1,7 +1,8 @@
 package endpoint;
 
 import entity.User;
-import webservice.WebUserService;
+import repository.UserRepository;
+import service.UserService;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -10,44 +11,45 @@ import java.util.List;
 
 @WebService
 public class EndPointUser {
-    WebUserService webUserService = new WebUserService();
+
+    private UserRepository userRepository = new UserRepository();
+    private UserService userService = new UserService(userRepository);
 
     @WebMethod
     public void run() {
-
-        Endpoint.publish("http://localhost:8080/user?wsdl", new WebUserService());
-
+        Endpoint.publish("http://localhost:8080/user?wsdl", new EndPointUser());
     }
 
     @WebMethod
-    public void create(User newUser) {
-
+    public void create(User user) {
+        userService.addUserByList(user);
     }
 
     @WebMethod
-    public void delete() {
-
+    public void logOut() {
+        userService.logOut();
     }
 
     @WebMethod
     public User getCurrentUser() {
-        User user = webUserService.currentUser();
+        User user = userService.getCurrentUser();
         return user;
     }
 
     @WebMethod
     public void setCurrentUser(User currentUser) {
-        webUserService.setCurrentUser(currentUser);
+        userService.setCurrentUser(currentUser);
     }
 
     @WebMethod
     public List<User> findAll() {
-        List<User> userList = webUserService.findAll();
+        final List<User> userList = userService.getUsersList();
         return userList;
     }
 
     @WebMethod
     public boolean auth() {
-        if (webUserService.auth()); return true;
+        boolean authz = userService.isAuth();
+        return authz;
     }
 }
