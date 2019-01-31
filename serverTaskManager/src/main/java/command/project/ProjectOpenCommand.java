@@ -21,7 +21,7 @@ public class ProjectOpenCommand extends AbstractCommand {
         boolean projectListIsEmpty = bootstrap.getProjectService().checkProjectListIsEmty();
         if (projectListIsEmpty) {
             System.out.println("!!! You don't have any project now !!!");
-            System.out.println("!!!   Try command 'project-create' !!!");
+            System.out.println("!!!   Try command 'project-createProject' !!!");
         } else {
             final String nameProject = ReadFromConsole.readInputFromConsole("Enter name Project do you want open: ");
             final List<Project> projectList = bootstrap.getProjectService().getAllProjectFromList();

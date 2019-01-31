@@ -16,9 +16,9 @@ public class TaskClearCommand extends AbstractCommand {
         boolean checkTaskListIsEmpty = bootstrap.getTaskService().checkTaskListIsEmpty();
         if (checkTaskListIsEmpty) {
             System.out.println("!!!  You don't have any Task  !!!");
-            System.out.println("!!! Try command 'task-create' !!!");
+            System.out.println("!!! Try command 'task-createProject' !!!");
         } else {
-            final String answerInConsole = ReadFromConsole.readInputFromConsole("Are you sure, you want to delete all Task? Input: 'yes'");
+            final String answerInConsole = ReadFromConsole.readInputFromConsole("Are you sure, you want to deleteProject all Task? Input: 'yes'");
             if (answerInConsole.equals("yes")) {
                 bootstrap.getTaskService().clearTaskList();
                 System.out.println("[!!! Tasks were deleted!!!] ");

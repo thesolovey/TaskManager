@@ -20,7 +20,7 @@ public class TaskOpenCommand extends AbstractCommand {
         boolean checkTaskListIsEmpty = bootstrap.getTaskService().checkTaskListIsEmpty();
         if (checkTaskListIsEmpty) {
             System.out.println("!!!  You don't have any Task  !!!");
-            System.out.println("!!! Try command 'task-create' !!!");
+            System.out.println("!!! Try command 'task-createProject' !!!");
         } else {
             final String name = ReadFromConsole.readInputFromConsole("Enter Task you want open: ");
             final List<Task> taskListByName = bootstrap.getTaskService().openTaskByName(name);

@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.UUID;
 
 public class ProjectCreateCommand extends AbstractCommand {
-    public static final String COMMAND = "project-create";
+    public static final String COMMAND = "project-createProject";
 
     public ProjectCreateCommand(Bootstrap bootstrap) {
         super(bootstrap);
@@ -46,7 +46,7 @@ public class ProjectCreateCommand extends AbstractCommand {
     }
 
     @Override
-    public String getKeyWord() { return "project-create"; }
+    public String getKeyWord() { return "project-createProject"; }
 
     @Override
     public String description() { return "Create new Project"; }

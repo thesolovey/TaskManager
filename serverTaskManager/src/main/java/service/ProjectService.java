@@ -1,12 +1,13 @@
 package service;
 
+import api.IProjectServise;
 import entity.Project;
 import repository.ProjectRepository;
 import repository.TaskRepository;
 
 import java.util.List;
 
-public class ProjectService {
+public class ProjectService implements IProjectServise {
     private final ProjectRepository projectRepository;
 
     public ProjectService(ProjectRepository projectRepository, TaskRepository taskRepository) {
@@ -36,7 +37,7 @@ public class ProjectService {
         if (idProject == null) return;
         List<Project> projectList = projectRepository.getProjectList();
 
-//        Iterator<Project> it = projectList.iterator(); it.hasNext();
+//        Iterator<Project> it = getProjectList.iterator(); it.hasNext();
 //        Project project = it.next();
 //        if (project.getId().equals(idProject))
 //            it.remove();

@@ -20,7 +20,7 @@ public class ProjectListCommand extends AbstractCommand {
         boolean projectListIsEmpty = bootstrap.getProjectService().checkProjectListIsEmty();
                 if (projectListIsEmpty) {
             System.out.println("!!! You don't have any project now !!!");
-            System.out.println("!!!   Try command 'project-create' !!!");
+            System.out.println("!!!   Try command 'project-createProject' !!!");
         } else {
         final List<Project> allProject = bootstrap.getProjectService().getAllProjectFromList();
         final User user = bootstrap.getUserService().getCurrentUser();

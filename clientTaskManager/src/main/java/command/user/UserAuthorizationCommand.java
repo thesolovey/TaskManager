@@ -21,8 +21,6 @@ public class UserAuthorizationCommand extends AbstractCommand {
 
         List<User> userList = bootstrap.getEndPointUser().findAll();
         if (bootstrap.getEndPointUser().getCurrentUser() != null) {
-//        List<User> userList = bootstrap.getUserService().getUsersList();
-//        if (bootstrap.getUserService().getCurrentUser() != null) {
             System.out.println("!!! You first need to log out !!!");
         } else {
 
@@ -33,7 +31,6 @@ public class UserAuthorizationCommand extends AbstractCommand {
                     int passwordHash = password.hashCode();
                     if (passwordHash == (user.getPassword())) {
                         bootstrap.getEndPointUser().setCurrentUser(user);
-//                        bootstrap.getUserService().setCurrentUser(user);
                         System.out.println("[OK]");
                     } else {
                         System.out.println("Invalid Password");

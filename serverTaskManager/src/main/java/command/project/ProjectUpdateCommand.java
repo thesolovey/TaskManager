@@ -17,7 +17,7 @@ public class ProjectUpdateCommand extends AbstractCommand {
         boolean checkProjectListIsEmpty = bootstrap.getProjectService().checkProjectListIsEmty();
         if (checkProjectListIsEmpty) {
             System.out.println("!!! You don't have any project now !!!");
-            System.out.println("!!!   Try command 'project-create' !!!");
+            System.out.println("!!!   Try command 'project-createProject' !!!");
         }
 
         final String id = ReadFromConsole.readInputFromConsole("Enter ID Project you want to exchange: ");

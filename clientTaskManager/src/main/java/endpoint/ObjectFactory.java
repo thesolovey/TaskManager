@@ -24,12 +24,14 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Create_QNAME = new QName("http://endpoint/", "create");
-    private final static QName _CreateResponse_QNAME = new QName("http://endpoint/", "createResponse");
-    private final static QName _Delete_QNAME = new QName("http://endpoint/", "delete");
-    private final static QName _DeleteResponse_QNAME = new QName("http://endpoint/", "deleteResponse");
-    private final static QName _FindAll_QNAME = new QName("http://endpoint/", "findAll");
-    private final static QName _FindAllResponse_QNAME = new QName("http://endpoint/", "findAllResponse");
+    private final static QName _CreateTask_QNAME = new QName("http://endpoint/", "createTask");
+    private final static QName _CreateTaskResponse_QNAME = new QName("http://endpoint/", "createTaskResponse");
+    private final static QName _DeleteTask_QNAME = new QName("http://endpoint/", "deleteTask");
+    private final static QName _DeleteTaskResponse_QNAME = new QName("http://endpoint/", "deleteTaskResponse");
+    private final static QName _FindAllTask_QNAME = new QName("http://endpoint/", "findAllTask");
+    private final static QName _FindAllTaskResponse_QNAME = new QName("http://endpoint/", "findAllTaskResponse");
+    private final static QName _OpenTask_QNAME = new QName("http://endpoint/", "openTask");
+    private final static QName _OpenTaskResponse_QNAME = new QName("http://endpoint/", "openTaskResponse");
     private final static QName _Run_QNAME = new QName("http://endpoint/", "run");
     private final static QName _RunResponse_QNAME = new QName("http://endpoint/", "runResponse");
 
@@ -41,51 +43,67 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Create }
+     * Create an instance of {@link CreateTask }
      * 
      */
-    public Create createCreate() {
-        return new Create();
+    public CreateTask createCreateTask() {
+        return new CreateTask();
     }
 
     /**
-     * Create an instance of {@link CreateResponse }
+     * Create an instance of {@link CreateTaskResponse }
      * 
      */
-    public CreateResponse createCreateResponse() {
-        return new CreateResponse();
+    public CreateTaskResponse createCreateTaskResponse() {
+        return new CreateTaskResponse();
     }
 
     /**
-     * Create an instance of {@link Delete }
+     * Create an instance of {@link DeleteTask }
      * 
      */
-    public Delete createDelete() {
-        return new Delete();
+    public DeleteTask createDeleteTask() {
+        return new DeleteTask();
     }
 
     /**
-     * Create an instance of {@link DeleteResponse }
+     * Create an instance of {@link DeleteTaskResponse }
      * 
      */
-    public DeleteResponse createDeleteResponse() {
-        return new DeleteResponse();
+    public DeleteTaskResponse createDeleteTaskResponse() {
+        return new DeleteTaskResponse();
     }
 
     /**
-     * Create an instance of {@link FindAll }
+     * Create an instance of {@link FindAllTask }
      * 
      */
-    public FindAll createFindAll() {
-        return new FindAll();
+    public FindAllTask createFindAllTask() {
+        return new FindAllTask();
     }
 
     /**
-     * Create an instance of {@link FindAllResponse }
+     * Create an instance of {@link FindAllTaskResponse }
      * 
      */
-    public FindAllResponse createFindAllResponse() {
-        return new FindAllResponse();
+    public FindAllTaskResponse createFindAllTaskResponse() {
+        return new FindAllTaskResponse();
+    }
+
+    /**
+     * Create an instance of {@link OpenTask }
+     * 
+     */
+    public OpenTask createOpenTask() {
+        return new OpenTask();
+    }
+
+    /**
+     * Create an instance of {@link OpenTaskResponse }
+     * 
+     */
+    public OpenTaskResponse createOpenTaskResponse() {
+        return new OpenTaskResponse();
     }
 
     /**
@@ -105,65 +123,83 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link User }
+     * Create an instance of {@link Task }
      * 
      */
-    public User createUser() {
-        return new User();
+    public Task createTask() {
+        return new Task();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Create }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link CreateTask }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://endpoint/", name = "create")
-    public JAXBElement<Create> createCreate(Create value) {
-        return new JAXBElement<Create>(_Create_QNAME, Create.class, null, value);
+    @XmlElementDecl(namespace = "http://endpoint/", name = "createTask")
+    public JAXBElement<CreateTask> createCreateTask(CreateTask value) {
+        return new JAXBElement<CreateTask>(_CreateTask_QNAME, CreateTask.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CreateResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link CreateTaskResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://endpoint/", name = "createResponse")
-    public JAXBElement<CreateResponse> createCreateResponse(CreateResponse value) {
-        return new JAXBElement<CreateResponse>(_CreateResponse_QNAME, CreateResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://endpoint/", name = "createTaskResponse")
+    public JAXBElement<CreateTaskResponse> createCreateTaskResponse(CreateTaskResponse value) {
+        return new JAXBElement<CreateTaskResponse>(_CreateTaskResponse_QNAME, CreateTaskResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Delete }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteTask }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://endpoint/", name = "delete")
-    public JAXBElement<Delete> createDelete(Delete value) {
-        return new JAXBElement<Delete>(_Delete_QNAME, Delete.class, null, value);
+    @XmlElementDecl(namespace = "http://endpoint/", name = "deleteTask")
+    public JAXBElement<DeleteTask> createDeleteTask(DeleteTask value) {
+        return new JAXBElement<DeleteTask>(_DeleteTask_QNAME, DeleteTask.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteTaskResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://endpoint/", name = "deleteResponse")
-    public JAXBElement<DeleteResponse> createDeleteResponse(DeleteResponse value) {
-        return new JAXBElement<DeleteResponse>(_DeleteResponse_QNAME, DeleteResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://endpoint/", name = "deleteTaskResponse")
+    public JAXBElement<DeleteTaskResponse> createDeleteTaskResponse(DeleteTaskResponse value) {
+        return new JAXBElement<DeleteTaskResponse>(_DeleteTaskResponse_QNAME, DeleteTaskResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link FindAll }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindAllTask }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://endpoint/", name = "findAll")
-    public JAXBElement<FindAll> createFindAll(FindAll value) {
-        return new JAXBElement<FindAll>(_FindAll_QNAME, FindAll.class, null, value);
+    @XmlElementDecl(namespace = "http://endpoint/", name = "findAllTask")
+    public JAXBElement<FindAllTask> createFindAllTask(FindAllTask value) {
+        return new JAXBElement<FindAllTask>(_FindAllTask_QNAME, FindAllTask.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link FindAllResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindAllTaskResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://endpoint/", name = "findAllResponse")
-    public JAXBElement<FindAllResponse> createFindAllResponse(FindAllResponse value) {
-        return new JAXBElement<FindAllResponse>(_FindAllResponse_QNAME, FindAllResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://endpoint/", name = "findAllTaskResponse")
+    public JAXBElement<FindAllTaskResponse> createFindAllTaskResponse(FindAllTaskResponse value) {
+        return new JAXBElement<FindAllTaskResponse>(_FindAllTaskResponse_QNAME, FindAllTaskResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link OpenTask }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://endpoint/", name = "openTask")
+    public JAXBElement<OpenTask> createOpenTask(OpenTask value) {
+        return new JAXBElement<OpenTask>(_OpenTask_QNAME, OpenTask.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link OpenTaskResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://endpoint/", name = "openTaskResponse")
+    public JAXBElement<OpenTaskResponse> createOpenTaskResponse(OpenTaskResponse value) {
+        return new JAXBElement<OpenTaskResponse>(_OpenTaskResponse_QNAME, OpenTaskResponse.class, null, value);
     }
 
     /**

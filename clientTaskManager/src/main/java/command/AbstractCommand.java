@@ -1,7 +1,8 @@
 package command;
+import api.ICommand;
 import bootstrap.BootstrapClient;
 
-public abstract class AbstractCommand {
+public abstract class AbstractCommand implements ICommand {
 
     protected BootstrapClient bootstrap;
 

@@ -1,11 +1,12 @@
 package service;
 
+import api.IUserService;
 import entity.User;
 import repository.UserRepository;
 
 import java.util.List;
 
-public class UserService {
+public class UserService implements IUserService {
     public UserService(UserRepository usersRepository) { this.usersRepository = usersRepository; }
 
     private User currentUser = null;

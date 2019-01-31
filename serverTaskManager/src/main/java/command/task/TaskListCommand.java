@@ -19,7 +19,7 @@ public class TaskListCommand extends AbstractCommand {
         boolean checkTaskListIsEmpty = bootstrap.getTaskService().checkTaskListIsEmpty();
         if (checkTaskListIsEmpty) {
             System.out.println("!!!  You don't have any Task  !!!");
-            System.out.println("!!! Try command 'task-create' !!!");
+            System.out.println("!!! Try command 'task-createProject' !!!");
         }
 
         final List<Task> allTask = bootstrap.getTaskService().getAllTaskFromList();

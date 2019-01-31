@@ -6,7 +6,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
-import java.util.Date;
 
 
 /**
@@ -43,7 +42,7 @@ import java.util.Date;
 public class Project {
 
     @XmlSchemaType(name = "dateTime")
-    protected Date dateBegin;
+    protected XMLGregorianCalendar dateBegin;
     protected String id;
     protected String name;
     protected String userLogin;
@@ -57,19 +56,19 @@ public class Project {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public Date getDateBegin() {
+    public XMLGregorianCalendar getDateBegin() {
         return dateBegin;
     }
 
     /**
      * Sets the value of the dateBegin property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setDateBegin(Date value) {
+    public void setDateBegin(XMLGregorianCalendar value) {
         this.dateBegin = value;
     }
 

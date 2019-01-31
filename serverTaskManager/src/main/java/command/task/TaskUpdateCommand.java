@@ -18,7 +18,7 @@ public class TaskUpdateCommand extends AbstractCommand {
         boolean checkTaskListIsEmpty = bootstrap.getTaskService().checkTaskListIsEmpty();
         if (checkTaskListIsEmpty) {
             System.out.println("!!!  You don't have any Task  !!!");
-            System.out.println("!!! Try command 'task-create' !!!");
+            System.out.println("!!! Try command 'task-createProject' !!!");
         }
         String name = ReadFromConsole.readInputFromConsole("Enter the name of the Task you want to exchange: ");
         String newName = ReadFromConsole.readInputFromConsole("Enter new name: ");

@@ -16,9 +16,9 @@ public class ProjectClearCommand extends AbstractCommand {
         boolean checkProjectListIsEmpty = bootstrap.getProjectService().checkProjectListIsEmty();
         if (checkProjectListIsEmpty) {
             System.out.println("!!! You don't have any project now !!!");
-            System.out.println("!!!   Try command 'project-create' !!!");
+            System.out.println("!!!   Try command 'project-createProject' !!!");
         } else {
-            final String answerInConsole = ReadFromConsole.readInputFromConsole("Are you sure, you want to delete all Project? Input: 'yes'");
+            final String answerInConsole = ReadFromConsole.readInputFromConsole("Are you sure, you want to deleteProject all Project? Input: 'yes'");
             if (answerInConsole.equals("yes")) {
                 bootstrap.getProjectService().clearAllProject();
                 System.out.println("[!!! Projects were deleted!!!] ");

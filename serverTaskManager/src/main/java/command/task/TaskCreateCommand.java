@@ -14,13 +14,13 @@ public class TaskCreateCommand extends AbstractCommand {
         super(bootstrap);
     }
 
-    public static final String COMMAND = "task-create";
+    public static final String COMMAND = "task-createProject";
 
     public void execute() {
-        final List<Project> projectList = bootstrap.getProjectRepository().getProjectList();
+        final List<Project> projectList = bootstrap.getProjectService().getAllProjectFromList();
         if (projectList == null || projectList.isEmpty()) {
             System.out.println("!!!  You must have any Project   !!!");
-            System.out.println("!!! Try command 'project-create' !!!");
+            System.out.println("!!! Try command 'project-createProject' !!!");
         } else {
             System.out.println("[TASK CREATE]");
             final Task task = new Task();
@@ -62,7 +62,7 @@ public class TaskCreateCommand extends AbstractCommand {
     }
 
     @Override
-    public String getKeyWord() { return "task-create"; }
+    public String getKeyWord() { return "task-createProject"; }
 
     @Override
     public String description() { return "Create new Task"; }

@@ -19,10 +19,12 @@ public class BootstrapClient {
     private final EndPointUser endPointUser = new EndPointUserService().getEndPointUserPort();
     private final EndPointProject endPointProject = new EndPointProjectService().getEndPointProjectPort();
     private final EndPointTask endPointTask = new EndPointTaskService().getEndPointTaskPort();
+    private final EndPointSession endPointSession = new EndPointServiceSession().getEndPointSessionPort();
 
     public EndPointUser getEndPointUser() { return endPointUser; }
     public EndPointProject getEndPointProject() {return endPointProject; }
     public EndPointTask getEndPointTask() { return endPointTask; }
+    public EndPointSession getEndPointSession() { return endPointSession; }
 
     private final Map<String, AbstractCommand> commands = new LinkedHashMap<>();
 

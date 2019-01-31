@@ -30,7 +30,7 @@ public class ProjectCreateCommand extends AbstractCommand {
         Calendar calendarBegin = Calendar.getInstance();
         calendarBegin.setTime(dateBegin);
 
-        project.setDateBegin(calendarBegin.getTime());
+//        project.setDateBegin(calendarBegin.getTime());
         project.setUserLogin(user.getLogin());
         project.setUserName(user.getUserName());
 

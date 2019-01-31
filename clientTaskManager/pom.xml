@@ -34,6 +34,9 @@
                                     <wsdl>http://localhost:8080/project?wsdl</wsdl>
                                 </wsdlOption>
                                 <wsdlOption>
+                                    <wsdl>http://localhost:8080/session?wsdl</wsdl>
+                                </wsdlOption>
+                                <wsdlOption>
                                     <wsdl>http://localhost:8080/task?wsdl</wsdl>
                                 </wsdlOption>
                             </wsdlOptions>

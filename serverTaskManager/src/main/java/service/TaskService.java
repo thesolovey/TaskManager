@@ -1,5 +1,6 @@
 package service;
 
+import api.ITaskService;
 import entity.Task;
 import repository.ProjectRepository;
 import repository.TaskRepository;
@@ -9,7 +10,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-public class TaskService {
+public class TaskService implements ITaskService {
     private final TaskRepository taskRepository;
     private final ProjectRepository projectRepository;
 
