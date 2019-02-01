@@ -1,7 +1,10 @@
 package command;
+
 import bootstrap.Bootstrap;
 
-public abstract class AbstractCommand {
+import java.io.Serializable;
+
+public abstract class AbstractCommand implements Serializable {
     protected Bootstrap bootstrap;
 
     public AbstractCommand(Bootstrap bootstrap) {

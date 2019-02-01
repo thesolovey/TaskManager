@@ -16,15 +16,20 @@ import java.util.Map;
 
 public class BootstrapClient {
 
-    private final EndPointUser endPointUser = new EndPointUserService().getEndPointUserPort();
-    private final EndPointProject endPointProject = new EndPointProjectService().getEndPointProjectPort();
-    private final EndPointTask endPointTask = new EndPointTaskService().getEndPointTaskPort();
-    private final EndPointSession endPointSession = new EndPointServiceSession().getEndPointSessionPort();
+    private final EndpointUser endpointUser = new EndpointUserService().getEndpointUserPort();
+    private final EndpointProject endpointProject = new EndpointProjectService().getEndpointProjectPort();
+    private final EndpointTask endpointTask = new EndpointTaskService().getEndpointTaskPort();
+    private final EndpointSession endpointSession = new EndpointSessionService().getEndpointSessionPort();
 
-    public EndPointUser getEndPointUser() { return endPointUser; }
-    public EndPointProject getEndPointProject() {return endPointProject; }
-    public EndPointTask getEndPointTask() { return endPointTask; }
-    public EndPointSession getEndPointSession() { return endPointSession; }
+    public EndpointUser getEndpointUser() { return endpointUser; }
+    public EndpointProject getEndpointProject() {return endpointProject; }
+    public EndpointTask getEndpointTask() { return endpointTask; }
+    public EndpointSession getEndpointSession() { return endpointSession; }
+
+    private static Session sessionCurrentUser = new Session();
+    public static Session getSessionCurrentUser() { return sessionCurrentUser; }
+    public static void setSessionCurrentUser(Session sessionCurrentUser) {
+        BootstrapClient.sessionCurrentUser = sessionCurrentUser; }
 
     private final Map<String, AbstractCommand> commands = new LinkedHashMap<>();
 
@@ -81,7 +86,9 @@ public class BootstrapClient {
             AbstractCommand command = commands.get(commandFromConsole);
 
             if (command == null) continue;
-            if (command.secure() && !this.getEndPointUser().auth()) continue;
+
+            if (command.secure() && !getEndpointUser().authUser()) continue;
+//            if (command.secure() && !this.endpointUser.authUser()) continue;
 
             //           if (commands.containsKey(commandFromConsole)) {
             command.execute();

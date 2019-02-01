@@ -20,7 +20,7 @@ public class ProjectService implements IProjectServise {
     }
 
     public void addProjectByList(Project project) {
-        if (projectRepository.getProjectList() == null) return;
+        if (project == null) return;
         projectRepository.addProject(project);
     }
 
@@ -29,7 +29,6 @@ public class ProjectService implements IProjectServise {
     }
 
     public void clearAllProject() {
-        if (projectRepository.getProjectList() == null) return;
         projectRepository.clearProjectList();
     }
 
@@ -39,7 +38,7 @@ public class ProjectService implements IProjectServise {
 
 //        Iterator<Project> it = getProjectList.iterator(); it.hasNext();
 //        Project project = it.next();
-//        if (project.getId().equals(idProject))
+//        if (project.getSignature().equals(idProject))
 //            it.remove();
         for (Project project : projectList)
             if (project.getId().equals(idProject))

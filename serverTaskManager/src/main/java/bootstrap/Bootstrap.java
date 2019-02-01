@@ -1,10 +1,10 @@
 package bootstrap;
 
-import api.ServiceLocator;
-import endpoint.ProjectEndPoint;
-import endpoint.SessionEndPoint;
-import endpoint.TaskEndPoint;
-import endpoint.UserEndPoint;
+import api.*;
+import endpoint.EndpointProject;
+import endpoint.EndpointSession;
+import endpoint.EndpointTask;
+import endpoint.EndpointUser;
 import repository.ProjectRepository;
 import repository.SessionRepository;
 import repository.TaskRepository;
@@ -14,38 +14,60 @@ import service.SessionService;
 import service.TaskService;
 import service.UserService;
 
+import javax.xml.ws.Endpoint;
+
 public class Bootstrap implements ServiceLocator {
 
-    private final UserEndPoint userEndPoint = new UserEndPoint();
-    private final ProjectEndPoint projectEndPoint = new ProjectEndPoint();
-    private final TaskEndPoint taskEndPoint = new TaskEndPoint();
-    private final SessionEndPoint sessionEndPoint = new SessionEndPoint();
+    private ISessionService sessionService;
+    private IUserService userService;
+    private IProjectServise projectServise;
+    private ITaskService taskService;
 
-    private final UserRepository usersRepository = new UserRepository();
-    private final TaskRepository taskRepository = new TaskRepository();
-    private final ProjectRepository projectRepository = new ProjectRepository();
-    private final SessionRepository sessionRepository = new SessionRepository();
+    private final EndpointUser endpointUser = new EndpointUser(this);
+    private final EndpointProject endpointProject = new EndpointProject(this);
+    private final EndpointTask endpointTask = new EndpointTask(this);
+    private final EndpointSession endpointSession = new EndpointSession();
 
-    private final UserService userService = new UserService(usersRepository);
-    private final ProjectService projectService = new ProjectService(projectRepository, taskRepository);
-    private final TaskService taskService = new TaskService(taskRepository, projectRepository);
-    private final SessionService sessionService = new SessionService(sessionRepository);
+//    private final UserRepository usersRepository = new UserRepository();
+//    private final TaskRepository taskRepository = new TaskRepository();
+//    private final ProjectRepository projectRepository = new ProjectRepository();
+//    private final SessionRepository sessionRepository = new SessionRepository();
 
-    public UserService getUserService() { return userService; }
+//    private final UserService userService = new UserService(usersRepository);
+//    private final ProjectService projectService = new ProjectService(projectRepository, taskRepository);
+//    private final TaskService taskService = new TaskService(taskRepository, projectRepository);
+//    private final SessionService sessionService = new SessionService(sessionRepository);
 
-    public ProjectService getProjectService() { return projectService; }
+    public IUserService getUserService() { return userService; }
 
-    public TaskService getTaskService() { return taskService; }
+    public IProjectServise getProjectService() { return projectServise; }
 
-    public SessionService getSessionService() { return sessionService; }
+    public ITaskService getTaskService() { return taskService; }
+
+    public ISessionService getSessionService() { return sessionService; }
+
+    private void publishEndpoint() {
+        Endpoint.publish("http://localhost:8080/user?wsdl", new EndpointUser(this));
+        Endpoint.publish("http://localhost:8080/session?wsdl", new EndpointSession());
+        Endpoint.publish("http://localhost:8080/project?wsdl", new EndpointProject(this));
+        Endpoint.publish("http://localhost:8080/task?wsdl", new EndpointTask(this));
+
+    }
 
     public void start() {
 
-        userEndPoint.run();
-        projectEndPoint.run();
-        taskEndPoint.run();
-        sessionEndPoint.run();
+        final UserRepository usersRepository = new UserRepository();
+        final TaskRepository taskRepository = new TaskRepository();
+        final ProjectRepository projectRepository = new ProjectRepository();
+        final SessionRepository sessionRepository = new SessionRepository();
 
+        UserService userService = new UserService(usersRepository);
+        ProjectService projectService = new ProjectService(projectRepository, taskRepository);
+        TaskService taskService = new TaskService(taskRepository, projectRepository);
+        SessionService sessionService = new SessionService(sessionRepository);
+
+        publishEndpoint();
+//        Session session = getSessionService().getCurrentSession();
         System.out.println("***WELLCOME TO TASK MANAGER***");
 
         do {

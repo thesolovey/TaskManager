@@ -3,6 +3,7 @@ package command.user;
 import bootstrap.BootstrapClient;
 import command.AbstractCommand;
 import command.ReadFromConsole;
+import endpoint.Session;
 import endpoint.User;
 
 import java.util.List;
@@ -19,8 +20,8 @@ public class UserAuthorizationCommand extends AbstractCommand {
     public void execute() {
         System.out.println("[USER AUTHORIZATION]");
 
-        List<User> userList = bootstrap.getEndPointUser().findAll();
-        if (bootstrap.getEndPointUser().getCurrentUser() != null) {
+        final List<User> userList = bootstrap.getEndpointUser().findAllUser();
+        if (bootstrap.getEndpointUser().getCurrentUser() != null) {
             System.out.println("!!! You first need to log out !!!");
         } else {
 
@@ -30,7 +31,14 @@ public class UserAuthorizationCommand extends AbstractCommand {
                     String password = ReadFromConsole.readInputFromConsole("Input password: ");
                     int passwordHash = password.hashCode();
                     if (passwordHash == (user.getPassword())) {
-                        bootstrap.getEndPointUser().setCurrentUser(user);
+//                        bootstrap.getEndpointUser().setCurrentUser(user);
+
+                        final String userId = user.getId();
+                        final Session session = bootstrap.getEndpointSession().getNewSession(userId);
+                        BootstrapClient.setSessionCurrentUser(session);
+
+                        bootstrap.getEndpointUser().setCurrentUser(session);
+
                         System.out.println("[OK]");
                     } else {
                         System.out.println("Invalid Password");

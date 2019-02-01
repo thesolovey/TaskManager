@@ -11,8 +11,8 @@ public class UserLogoutCommand extends AbstractCommand {
     @Override
     public void execute() {
         System.out.println("[LOGOUT]");
-        getBootstrap().getEndPointUser().logOut();
-//        bootstrap.getEndPointUser().logOut();
+        getBootstrap().getEndpointUser().logOutUser();
+//        bootstrap.getEndpointUser().logOut();
         System.out.println("[OK]");
     }
 

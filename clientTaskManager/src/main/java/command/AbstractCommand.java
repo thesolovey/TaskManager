@@ -1,8 +1,11 @@
 package command;
+
 import api.ICommand;
 import bootstrap.BootstrapClient;
 
-public abstract class AbstractCommand implements ICommand {
+import java.io.Serializable;
+
+public abstract class AbstractCommand implements ICommand, Serializable {
 
     protected BootstrapClient bootstrap;
 

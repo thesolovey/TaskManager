@@ -6,11 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SessionRepository {
+
+    private static final int VALID_PERIOD = 1800;
+
     private List<Session> sessionList = new ArrayList<>();
 
     public void addSession(Session session) { sessionList.add(session); }
 
-    public void deleteSession(Session session) {sessionList.remove(session); }
+    public List<Session> getSessionList () { return sessionList; }
 
-    public List<Session> getSessionList() { return sessionList; }
+    public void delete(Session session) {sessionList.remove(session); }
 }

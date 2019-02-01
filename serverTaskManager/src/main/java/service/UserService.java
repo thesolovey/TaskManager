@@ -7,23 +7,19 @@ import repository.UserRepository;
 import java.util.List;
 
 public class UserService implements IUserService {
+    private UserRepository usersRepository;
     public UserService(UserRepository usersRepository) { this.usersRepository = usersRepository; }
 
-    private User currentUser = null;
+//    private User currentUser = null;
+//    public User getCurrentUser() { return currentUser; }
+//    public void setCurrentUser(User currentUser) { this.currentUser = currentUser; }
+//    private Session currentSession = null;
+//    public Session getUserSession() { return currentSession; }
+//    public void setUserSession(Session userSession) { this.currentSession = userSession; }
+//
+//    public boolean isAuth() { return currentSession != null; }
+//    public void logOut() { currentSession = null; }
 
-    public User getCurrentUser() { return currentUser; }
-
-    public void setCurrentUser(User currentUser) { this.currentUser = currentUser; }
-
-    public boolean isAuth() {
-        return currentUser != null;
-    }
-
-    public void logOut() {
-        currentUser = null;
-    }
-
-    private UserRepository usersRepository;
 
     public Boolean checkUserListIsEmpty() {
         List<User> usersList = usersRepository.getUsersList();
@@ -37,13 +33,13 @@ public class UserService implements IUserService {
 
     public List<User> getUsersList() { return usersRepository.getUsersList(); }
 
-    public User getUserByLogin(String login) {
-        User userByLogin = new User();
-        List<User> usersList = usersRepository.getUsersList();
+    public User getUserById (String userId) {
+        User userById = new User();
+        final List<User> usersList = usersRepository.getUsersList();
         for (User users : usersList)
-            if (users.getLogin().equals(login))
-                userByLogin = users;
-                return userByLogin;
+            if (users.getId().equals(userId))
+                userById = users;
+                return userById;
     }
 
     public void clearUsersList() {

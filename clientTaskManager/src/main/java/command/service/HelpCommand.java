@@ -11,7 +11,6 @@ public class HelpCommand extends AbstractCommand {
     public void execute() {
         System.out.println("[HELP]");
 //        Set<String> commands = bootstrap.getCommands();
-//
 //        for (String string : commands)
 //        System.out.println(string);
         System.out.println("[OK}");

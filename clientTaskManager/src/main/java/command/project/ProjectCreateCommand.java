@@ -4,6 +4,7 @@ import bootstrap.BootstrapClient;
 import command.AbstractCommand;
 import command.ReadFromConsole;
 import endpoint.Project;
+import endpoint.Session;
 import endpoint.User;
 
 import java.util.Calendar;
@@ -19,7 +20,8 @@ public class ProjectCreateCommand extends AbstractCommand {
     public void execute() {
         System.out.println("[PROJECT CREATE]");
         final Project project = new Project();
-        final User user = getBootstrap().getEndPointUser().getCurrentUser();
+        final Session session = BootstrapClient.getSessionCurrentUser();
+        final User user = getBootstrap().getEndpointUser().getUserById(session.getUserId());
         final String name = ReadFromConsole.readInputFromConsole("Input name Project: ");
         project.setName(name);
 
@@ -34,7 +36,7 @@ public class ProjectCreateCommand extends AbstractCommand {
         project.setUserLogin(user.getLogin());
         project.setUserName(user.getUserName());
 
-//        getBootstrap().getEndPointProject().create(project);
+        getBootstrap().getEndpointProject().createProject(session, project);
 
         System.out.println("[OK]");
             }

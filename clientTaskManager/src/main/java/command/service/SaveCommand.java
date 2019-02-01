@@ -3,6 +3,7 @@ package command.service;
 import bootstrap.BootstrapClient;
 import command.AbstractCommand;
 
+
 public class SaveCommand extends AbstractCommand {
 
     public SaveCommand(BootstrapClient bootstrap) { super(bootstrap); }
@@ -10,28 +11,33 @@ public class SaveCommand extends AbstractCommand {
 
     @Override
     public void execute() {
-//        System.out.println("[SAVE]");
+        System.out.println("[SAVE]");
+
 //        try {
 //            FileOutputStream fosUser = new FileOutputStream("user.txt");
 //            ObjectOutputStream oosUser = new ObjectOutputStream(fosUser);
-//            oosUser.writeObject(bootstrap.getUserService().getUsersList());
+//            oosUser.writeObject(bootstrap.getEndpointUser().getUserList());
 //            oosUser.flush();
 //            oosUser.close();
 //
 //            FileOutputStream fosProject = new FileOutputStream("project.txt");
 //            ObjectOutputStream oosProject = new ObjectOutputStream(fosProject);
-//            oosProject.writeObject(bootstrap.getProjectService().getAllProjectFromList());
+//            oosProject.writeObject(bootstrap.getEndpointProject().findAllProject());
 //            oosProject.flush();
 //            oosProject.close();
 //
 //            FileOutputStream fosTask = new FileOutputStream("task.txt");
 //            ObjectOutputStream oosTask = new ObjectOutputStream(fosTask);
-//            oosTask.writeObject(bootstrap.getTaskService().getAllTaskFromList());
+//            oosTask.writeObject(bootstrap.getEndpointTask().findAllTask());
 //            oosTask.flush();
 //            oosTask.close();
-//        } catch (IOException e) {e.printStackTrace();}
 //
-//        System.out.println("[OK]");
+//            FileOutputStream fosSession = new FileOutputStream("session.txt");
+//            ObjectOutputStream oosSession = new ObjectOutputStream(fosSession);
+//            oosSession.writeObject(bootstrap.getEndpointSession().getListAllSession());
+//        } catch (IOException e) {e.printStackTrace();}
+
+        System.out.println("[OK]");
     }
 
     @Override

@@ -24,22 +24,42 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _CheckTaskListIsEmpty_QNAME = new QName("http://endpoint/", "checkTaskListIsEmpty");
+    private final static QName _CheckTaskListIsEmptyResponse_QNAME = new QName("http://endpoint/", "checkTaskListIsEmptyResponse");
     private final static QName _CreateTask_QNAME = new QName("http://endpoint/", "createTask");
     private final static QName _CreateTaskResponse_QNAME = new QName("http://endpoint/", "createTaskResponse");
     private final static QName _DeleteTask_QNAME = new QName("http://endpoint/", "deleteTask");
+    private final static QName _DeleteTaskByIdProjecr_QNAME = new QName("http://endpoint/", "deleteTaskByIdProjecr");
+    private final static QName _DeleteTaskByIdProjecrResponse_QNAME = new QName("http://endpoint/", "deleteTaskByIdProjecrResponse");
     private final static QName _DeleteTaskResponse_QNAME = new QName("http://endpoint/", "deleteTaskResponse");
     private final static QName _FindAllTask_QNAME = new QName("http://endpoint/", "findAllTask");
     private final static QName _FindAllTaskResponse_QNAME = new QName("http://endpoint/", "findAllTaskResponse");
+    private final static QName _GetTaskByProjectName_QNAME = new QName("http://endpoint/", "getTaskByProjectName");
+    private final static QName _GetTaskByProjectNameResponse_QNAME = new QName("http://endpoint/", "getTaskByProjectNameResponse");
     private final static QName _OpenTask_QNAME = new QName("http://endpoint/", "openTask");
     private final static QName _OpenTaskResponse_QNAME = new QName("http://endpoint/", "openTaskResponse");
-    private final static QName _Run_QNAME = new QName("http://endpoint/", "run");
-    private final static QName _RunResponse_QNAME = new QName("http://endpoint/", "runResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: endpoint
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link CheckTaskListIsEmpty }
+     * 
+     */
+    public CheckTaskListIsEmpty createCheckTaskListIsEmpty() {
+        return new CheckTaskListIsEmpty();
+    }
+
+    /**
+     * Create an instance of {@link CheckTaskListIsEmptyResponse }
+     * 
+     */
+    public CheckTaskListIsEmptyResponse createCheckTaskListIsEmptyResponse() {
+        return new CheckTaskListIsEmptyResponse();
     }
 
     /**
@@ -67,6 +87,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link DeleteTaskByIdProjecr }
+     * 
+     */
+    public DeleteTaskByIdProjecr createDeleteTaskByIdProjecr() {
+        return new DeleteTaskByIdProjecr();
+    }
+
+    /**
+     * Create an instance of {@link DeleteTaskByIdProjecrResponse }
+     * 
+     */
+    public DeleteTaskByIdProjecrResponse createDeleteTaskByIdProjecrResponse() {
+        return new DeleteTaskByIdProjecrResponse();
+    }
+
+    /**
      * Create an instance of {@link DeleteTaskResponse }
      * 
      */
@@ -91,6 +127,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetTaskByProjectName }
+     * 
+     */
+    public GetTaskByProjectName createGetTaskByProjectName() {
+        return new GetTaskByProjectName();
+    }
+
+    /**
+     * Create an instance of {@link GetTaskByProjectNameResponse }
+     * 
+     */
+    public GetTaskByProjectNameResponse createGetTaskByProjectNameResponse() {
+        return new GetTaskByProjectNameResponse();
+    }
+
+    /**
      * Create an instance of {@link OpenTask }
      * 
      */
@@ -107,27 +159,29 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Run }
-     * 
-     */
-    public Run createRun() {
-        return new Run();
-    }
-
-    /**
-     * Create an instance of {@link RunResponse }
-     * 
-     */
-    public RunResponse createRunResponse() {
-        return new RunResponse();
-    }
-
-    /**
      * Create an instance of {@link Task }
      * 
      */
     public Task createTask() {
         return new Task();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CheckTaskListIsEmpty }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://endpoint/", name = "checkTaskListIsEmpty")
+    public JAXBElement<CheckTaskListIsEmpty> createCheckTaskListIsEmpty(CheckTaskListIsEmpty value) {
+        return new JAXBElement<CheckTaskListIsEmpty>(_CheckTaskListIsEmpty_QNAME, CheckTaskListIsEmpty.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CheckTaskListIsEmptyResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://endpoint/", name = "checkTaskListIsEmptyResponse")
+    public JAXBElement<CheckTaskListIsEmptyResponse> createCheckTaskListIsEmptyResponse(CheckTaskListIsEmptyResponse value) {
+        return new JAXBElement<CheckTaskListIsEmptyResponse>(_CheckTaskListIsEmptyResponse_QNAME, CheckTaskListIsEmptyResponse.class, null, value);
     }
 
     /**
@@ -158,6 +212,24 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteTaskByIdProjecr }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://endpoint/", name = "deleteTaskByIdProjecr")
+    public JAXBElement<DeleteTaskByIdProjecr> createDeleteTaskByIdProjecr(DeleteTaskByIdProjecr value) {
+        return new JAXBElement<DeleteTaskByIdProjecr>(_DeleteTaskByIdProjecr_QNAME, DeleteTaskByIdProjecr.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteTaskByIdProjecrResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://endpoint/", name = "deleteTaskByIdProjecrResponse")
+    public JAXBElement<DeleteTaskByIdProjecrResponse> createDeleteTaskByIdProjecrResponse(DeleteTaskByIdProjecrResponse value) {
+        return new JAXBElement<DeleteTaskByIdProjecrResponse>(_DeleteTaskByIdProjecrResponse_QNAME, DeleteTaskByIdProjecrResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DeleteTaskResponse }{@code >}}
      * 
      */
@@ -185,6 +257,24 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetTaskByProjectName }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://endpoint/", name = "getTaskByProjectName")
+    public JAXBElement<GetTaskByProjectName> createGetTaskByProjectName(GetTaskByProjectName value) {
+        return new JAXBElement<GetTaskByProjectName>(_GetTaskByProjectName_QNAME, GetTaskByProjectName.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetTaskByProjectNameResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://endpoint/", name = "getTaskByProjectNameResponse")
+    public JAXBElement<GetTaskByProjectNameResponse> createGetTaskByProjectNameResponse(GetTaskByProjectNameResponse value) {
+        return new JAXBElement<GetTaskByProjectNameResponse>(_GetTaskByProjectNameResponse_QNAME, GetTaskByProjectNameResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link OpenTask }{@code >}}
      * 
      */
@@ -200,24 +290,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://endpoint/", name = "openTaskResponse")
     public JAXBElement<OpenTaskResponse> createOpenTaskResponse(OpenTaskResponse value) {
         return new JAXBElement<OpenTaskResponse>(_OpenTaskResponse_QNAME, OpenTaskResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Run }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://endpoint/", name = "run")
-    public JAXBElement<Run> createRun(Run value) {
-        return new JAXBElement<Run>(_Run_QNAME, Run.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RunResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://endpoint/", name = "runResponse")
-    public JAXBElement<RunResponse> createRunResponse(RunResponse value) {
-        return new JAXBElement<RunResponse>(_RunResponse_QNAME, RunResponse.class, null, value);
     }
 
 }

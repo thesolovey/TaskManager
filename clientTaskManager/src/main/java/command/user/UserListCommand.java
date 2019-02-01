@@ -16,7 +16,7 @@ public class UserListCommand extends AbstractCommand {
     @Override
     public void execute() {
         System.out.println("[USER LIST]");
-        final List<User> userList = getBootstrap().getEndPointUser().findAll();
+        final List<User> userList = getBootstrap().getEndpointUser().findAllUser();
         for (User user : userList)
             System.out.println(user.getUserName());
         System.out.println("[OK]");
