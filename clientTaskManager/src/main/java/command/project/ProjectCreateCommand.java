@@ -3,6 +3,7 @@ package command.project;
 import bootstrap.BootstrapClient;
 import command.AbstractCommand;
 import command.ReadFromConsole;
+import endpoint.AccessForbiddenException_Exception;
 import endpoint.Project;
 import endpoint.Session;
 import endpoint.User;
@@ -21,7 +22,12 @@ public class ProjectCreateCommand extends AbstractCommand {
         System.out.println("[PROJECT CREATE]");
         final Project project = new Project();
         final Session session = BootstrapClient.getSessionCurrentUser();
-        final User user = getBootstrap().getEndpointUser().getUserById(BootstrapClient.getSessionCurrentUser(), session.getUserId());
+        User user = new User();
+        try {
+            user = getBootstrap().getEndpointUser().getUserById(BootstrapClient.getSessionCurrentUser(), session.getUserId());
+        } catch (AccessForbiddenException_Exception e) {
+            e.printStackTrace();
+        }
         final String name = ReadFromConsole.readInputFromConsole("Input name Project: ");
         project.setName(name);
 
@@ -36,7 +42,11 @@ public class ProjectCreateCommand extends AbstractCommand {
         project.setUserLogin(user.getLogin());
         project.setUserName(user.getUserName());
 
-        getBootstrap().getEndpointProject().createProject(session, project);
+        try {
+            getBootstrap().getEndpointProject().createProject(session, project);
+        } catch (AccessForbiddenException_Exception e) {
+            e.printStackTrace();
+        }
 
         System.out.println("[OK]");
             }

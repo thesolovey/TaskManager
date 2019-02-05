@@ -2,8 +2,10 @@ package command.user;
 
 import bootstrap.BootstrapClient;
 import command.AbstractCommand;
+import endpoint.AccessForbiddenException_Exception;
 import endpoint.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserListCommand extends AbstractCommand {
@@ -16,7 +18,12 @@ public class UserListCommand extends AbstractCommand {
     @Override
     public void execute() {
         System.out.println("[USER LIST]");
-        final List<User> userList = getBootstrap().getEndpointUser().getUserList(BootstrapClient.getSessionCurrentUser());
+        List<User> userList = new ArrayList<>();
+        try {
+            userList = getBootstrap().getEndpointUser().getUserList(BootstrapClient.getSessionCurrentUser());
+        } catch (AccessForbiddenException_Exception e) {
+            e.printStackTrace();
+        }
         for (User user : userList)
             System.out.println(user.getUserName());
         System.out.println("[OK]");

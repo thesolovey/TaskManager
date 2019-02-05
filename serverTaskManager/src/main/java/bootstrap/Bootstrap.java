@@ -28,20 +28,20 @@ public class Bootstrap implements ServiceLocator {
     public ITaskService getiTaskService() { return taskService; }
     public ISessionService getiSessionService() { return sessionService; }
 
-    final private UserRepository usersRepository = new UserRepository();
-    final private TaskRepository taskRepository = new TaskRepository();
-    final private ProjectRepository projectRepository = new ProjectRepository();
-    final private SessionRepository sessionRepository = new SessionRepository();
+    private final UserRepository usersRepository = new UserRepository();
+    private final TaskRepository taskRepository = new TaskRepository();
+    private final ProjectRepository projectRepository = new ProjectRepository();
+    private final SessionRepository sessionRepository = new SessionRepository();
 
-    private UserService userService = new UserService(usersRepository);
-    private ProjectService projectService = new ProjectService(projectRepository, taskRepository);
-    private TaskService taskService = new TaskService(taskRepository, projectRepository);
-    private SessionService sessionService = new SessionService(sessionRepository);
+    private final UserService userService = new UserService(usersRepository);
+    private final ProjectService projectService = new ProjectService(projectRepository, taskRepository);
+    private final TaskService taskService = new TaskService(taskRepository, projectRepository);
+    private final SessionService sessionService = new SessionService(sessionRepository);
 
     private void publishEndpoint() {
 
         Endpoint.publish("http://localhost:8080/user?wsdl", new EndpointUser(this));
-        Endpoint.publish("http://localhost:8080/session?wsdl", new EndpointSession());
+        Endpoint.publish("http://localhost:8080/session?wsdl", new EndpointSession(this));
         Endpoint.publish("http://localhost:8080/project?wsdl", new EndpointProject(this));
         Endpoint.publish("http://localhost:8080/task?wsdl", new EndpointTask(this));
     }
@@ -49,7 +49,7 @@ public class Bootstrap implements ServiceLocator {
     public void start() {
 
         publishEndpoint();
-        System.out.println("***WELLCOME TO TASK MANAGER***");
+        System.out.println("***SERVER RUN***");
 
         do {
 //            String commandFromConsole = ReadFromConsole.readInputFromConsole("Input command: ");

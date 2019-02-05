@@ -1,8 +1,8 @@
 package endpoint;
 
+import api.ServiceLocator;
 import entity.Session;
-import repository.SessionRepository;
-import service.SessionService;
+import exception.AccessForbiddenException;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -10,14 +10,14 @@ import javax.jws.WebService;
 @WebService
 public class EndpointSession {
 
-    private SessionRepository sessionRepository = new SessionRepository();
-    private SessionService sessionService = new SessionService(sessionRepository);
+    private ServiceLocator serviceLocator;
+    public EndpointSession(ServiceLocator serviceLocator) { this.serviceLocator = serviceLocator; }
 
     @WebMethod
-    public Session getNewSession(String userId) { return sessionService.getNewSession(userId); }
+    public Session getNewSession(String userId) { return serviceLocator.getiSessionService().getNewSession(userId); }
 
     @WebMethod
-    public Session getSessionByUserId(String userId) { return sessionService.getSessionById(userId); }
+    public Session getSessionByUserId(String userId) { return serviceLocator.getiSessionService().getSessionById(userId); }
 
 //    @WebMethod
 //    public void addSession(Session session) { sessionService.addSession(session); }
@@ -26,8 +26,8 @@ public class EndpointSession {
 //    public void deleteSession(Session session) { sessionService.delete(session); }
 
     @WebMethod
-    public void validateSession(Session session) { sessionService.validateSession(session); }
+    public void validateSession(Session session) throws AccessForbiddenException { serviceLocator.getiSessionService().validateSession(session); }
 
     @WebMethod
-    public void logOut(Session session) { sessionService.logOut(session); }
+    public void logOut(Session session) { serviceLocator.getiSessionService().logOut(session); }
 }

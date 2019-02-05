@@ -13,7 +13,7 @@ public class SessionRepository {
 
     public void addSession(final Session session) { sessionList.add(session); }
 
-    public List<Session> getSessionList () { return sessionList; }
-
     public void delete(final Session session) { sessionList.remove(session); }
+
+    public List<Session> getSessionList () { return sessionList; }
 }

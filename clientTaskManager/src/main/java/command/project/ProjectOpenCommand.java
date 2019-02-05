@@ -3,9 +3,11 @@ package command.project;
 import bootstrap.BootstrapClient;
 import command.AbstractCommand;
 import command.ReadFromConsole;
+import endpoint.AccessForbiddenException_Exception;
 import endpoint.Project;
 import endpoint.Task;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProjectOpenCommand extends AbstractCommand {
@@ -24,7 +26,12 @@ public class ProjectOpenCommand extends AbstractCommand {
             System.out.println("!!!   Try command 'project-create' !!!");
         } else {
             final String nameProject = ReadFromConsole.readInputFromConsole("Enter name Project do you want open: ");
-            final List<Project> projectList = bootstrap.getEndpointProject().findAllProject(BootstrapClient.getSessionCurrentUser());
+            List<Project> projectList = new ArrayList<>();
+            try {
+                projectList = bootstrap.getEndpointProject().findAllProject(BootstrapClient.getSessionCurrentUser());
+            } catch (AccessForbiddenException_Exception e) {
+                e.printStackTrace();
+            }
             for (Project project : projectList)
                 if (project.getName().equals(nameProject)) {
 

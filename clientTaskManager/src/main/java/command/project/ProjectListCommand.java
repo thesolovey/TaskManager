@@ -2,8 +2,10 @@ package command.project;
 
 import bootstrap.BootstrapClient;
 import command.AbstractCommand;
+import endpoint.AccessForbiddenException_Exception;
 import endpoint.Project;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProjectListCommand extends AbstractCommand {
@@ -22,11 +24,14 @@ public class ProjectListCommand extends AbstractCommand {
             System.out.println("!!!   Try command 'project-create' !!!");
         } else {
 
-        final List<Project> allProject = bootstrap.getEndpointProject().findAllProject(BootstrapClient.getSessionCurrentUser());
-//        final User user = new User();
-        for (Project project : allProject)
-//            if (project.getUserLogin().equals(user.getLogin()))
-                System.out.println(project.getName());
+        List<Project> allProject = new ArrayList<>();
+                    try {
+                        allProject = bootstrap.getEndpointProject().findAllProject(BootstrapClient.getSessionCurrentUser());
+                    } catch (AccessForbiddenException_Exception e) {
+                        e.printStackTrace();
+                    }
+                    for (Project project : allProject)
+            System.out.println(project.getName());
                 }
                 System.out.println("[OK]");
     }

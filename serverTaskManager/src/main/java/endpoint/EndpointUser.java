@@ -3,6 +3,7 @@ package endpoint;
 import api.ServiceLocator;
 import entity.Session;
 import entity.User;
+import exception.AccessForbiddenException;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -18,7 +19,7 @@ public class EndpointUser {
     public void createUser(final User user) { serviceLocator.getiUserService().addUserByList(user); }
 
     @WebMethod
-    public List<User> getUserList(final Session session) {
+    public List<User> getUserList(final Session session) throws AccessForbiddenException {
         serviceLocator.getiSessionService().validateSession(session);
         return serviceLocator.getiUserService().getUsersList();
     }
@@ -27,7 +28,7 @@ public class EndpointUser {
     public List<User> getUserListForRegistration() { return serviceLocator.getiUserService().getUsersList(); }
 
     @WebMethod
-    public User getUserById(final Session session, final String userId) {
+    public User getUserById(final Session session, final String userId) throws AccessForbiddenException {
         serviceLocator.getiSessionService().validateSession(session);
         return serviceLocator.getiUserService().getUserById(userId); }
 }

@@ -61,6 +61,7 @@ endpoint\GetProjectListResponse.class
 endpoint\DeleteProjectResponse.class
 endpoint\LogOut.class
 endpoint\GetListAllSessionResponse.class
+endpoint\AccessForbiddenException.class
 endpoint\CreateTaskResponse.class
 endpoint\GetTaskByProjectNameResponse.class
 endpoint\SessionListResponse.class
@@ -73,6 +74,7 @@ endpoint\User.class
 command\project\ProjectUpdateCommand.class
 endpoint\AddSession.class
 endpoint\GetCurrentUser.class
+endpoint\AccessForbiddenException_Exception.class
 endpoint\LoadResponse.class
 endpoint\ValidateSessionResponse.class
 endpoint\CheckTaskListIsEmpty.class

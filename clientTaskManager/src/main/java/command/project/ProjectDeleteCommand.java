@@ -3,6 +3,7 @@ package command.project;
 import bootstrap.BootstrapClient;
 import command.AbstractCommand;
 import command.ReadFromConsole;
+import endpoint.AccessForbiddenException_Exception;
 
 public class ProjectDeleteCommand extends AbstractCommand {
     public ProjectDeleteCommand(BootstrapClient bootstrap) {
@@ -22,7 +23,11 @@ public class ProjectDeleteCommand extends AbstractCommand {
             final String idProject = ReadFromConsole.readInputFromConsole("Input ID Project you want delete: ");
 
             bootstrap.getEndpointTask().deleteTaskByIdProjecr(idProject);
-            bootstrap.getEndpointProject().deleteProject(BootstrapClient.getSessionCurrentUser(), idProject);
+            try {
+                bootstrap.getEndpointProject().deleteProject(BootstrapClient.getSessionCurrentUser(), idProject);
+            } catch (AccessForbiddenException_Exception e) {
+                e.printStackTrace();
+            }
         }
             System.out.println("[ОК]");
     }

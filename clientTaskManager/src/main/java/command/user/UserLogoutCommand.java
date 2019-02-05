@@ -12,6 +12,7 @@ public class UserLogoutCommand extends AbstractCommand {
     public void execute() {
         System.out.println("[LOGOUT]");
         getBootstrap().getEndpointSession().logOut(BootstrapClient.getSessionCurrentUser());
+        BootstrapClient.setSessionCurrentUser(null);
         System.out.println("[OK]");
     }
 
