@@ -19,19 +19,19 @@ public class SaveCommand extends AbstractCommand {
         try {
             FileOutputStream fosUser = new FileOutputStream("user.txt");
             ObjectOutputStream oosUser = new ObjectOutputStream(fosUser);
-            oosUser.writeObject(bootstrap.getUserService().getUsersList());
+            oosUser.writeObject(bootstrap.getiUserService().getUsersList());
             oosUser.flush();
             oosUser.close();
 
             FileOutputStream fosProject = new FileOutputStream("project.txt");
             ObjectOutputStream oosProject = new ObjectOutputStream(fosProject);
-            oosProject.writeObject(bootstrap.getProjectService().getAllProjectFromList());
+//            oosProject.writeObject(bootstrap.getProjectService().getAllProjectFromList());
             oosProject.flush();
             oosProject.close();
 
             FileOutputStream fosTask = new FileOutputStream("task.txt");
             ObjectOutputStream oosTask = new ObjectOutputStream(fosTask);
-            oosTask.writeObject(bootstrap.getTaskService().getAllTaskFromList());
+//            oosTask.writeObject(bootstrap.getiTaskService().getAllTaskFromList());
             oosTask.flush();
             oosTask.close();
         } catch (IOException e) {e.printStackTrace();}

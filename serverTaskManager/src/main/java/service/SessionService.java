@@ -10,45 +10,38 @@ public class SessionService implements ISessionService {
     private SessionRepository sessionRepository;
     public SessionService(SessionRepository sessionRepository) { this.sessionRepository = sessionRepository; }
 
-//    private Session currentSession = null;
-//    public Session getCurrentSession() { return currentSession; }
-//    public void setCurrentSession(Session userSession) { this.currentSession = userSession; }
-
-    // НИКАКИХ ТЕКУЩИХ СЕССИЙ НА СЕРВЕРЕ, ПРОВЕРЯЕМ ВСЕГДА СЕССИЮ ПРИ ПОСТУПЛЕНИИ С КАЖДЫМ ЗАПРОСОМ
-
-    public void validateSession(Session session) {
-        if (session == null) {  }
-        if (session.getUserId() == null) {   }
-        // тут проверяю сессию полученную от клиента разными проверками
+    public void validateSession(final Session currentSession) {
+        if (currentSession == null) { throw new NullPointerException("CurrentSession is null!!!"); }
+        if (currentSession.getUserId() == null) { throw new NullPointerException("UserId is null"); }
+        final List<Session> sessionList = sessionRepository.getSessionList();
+        if (sessionList.size() == 0) { throw new NullPointerException("You don't have valid session!!!"); }
+        for (Session session: sessionList)
+            if (!session.getUserId().equals(currentSession.getUserId())) { throw new NullPointerException("Invalid currentSession!!!"); }
     }
 
-//    public boolean isAuth() { return currentSession != null; }
+    public void logOut(final Session currentSession) { //тут убиваю сессию
+        if (currentSession == null) return;
+        final List<Session> sessionList = sessionRepository.getSessionList();
+        for (Session session : sessionList) {
+            if (session.getUserId().equals(currentSession.getUserId())) {
+                sessionRepository.delete(session);
+                return;
+            }
+        }
+    }
 
-    public void logOut() { //тут убиваю сессию
-         }
-
-    public Session getNewSession(String userId) { if (userId == null) { return null; }
+    public Session getNewSession(final String userId) { if (userId == null) { return null; }
         final Session session = new Session();
         session.setUserId(userId);
         sessionRepository.addSession(session);
         return session;
     }
 
-    public void addSession(Session session) {
-        if (session == null) return;
-        sessionRepository.addSession(session);
-    }
-
-    public Session getSessionById(String userId) {
+    public Session getSessionById(final String userId) {
         if (userId == null || userId.isEmpty()) { return null; }
         final List<Session> sessionList = sessionRepository.getSessionList();
 //        for (Session session: sessionList)
 //            if (session.getUserId().equals(userId))
               return null;
-    }
-
-    public void delete(Session session) {
-        if (session == null) return;
-        sessionRepository.delete(session);
     }
 }

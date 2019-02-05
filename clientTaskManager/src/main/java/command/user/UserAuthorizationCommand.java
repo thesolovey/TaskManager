@@ -20,36 +20,29 @@ public class UserAuthorizationCommand extends AbstractCommand {
     public void execute() {
         System.out.println("[USER AUTHORIZATION]");
 
-        final List<User> userList = bootstrap.getEndpointUser().findAllUser();
-        if (bootstrap.getEndpointUser().getCurrentUser() != null) {
+        final List<User> userList = bootstrap.getEndpointUser().getUserListForRegistration();
+        if (BootstrapClient.getSessionCurrentUser() != null) {
             System.out.println("!!! You first need to log out !!!");
         } else {
-
-            String login = ReadFromConsole.readInputFromConsole("Input login: ");
+            final String login = ReadFromConsole.readInputFromConsole("Input login: ");
             for (User user : userList) {
                 if (user.getLogin().equals(login)) {
-                    String password = ReadFromConsole.readInputFromConsole("Input password: ");
+                    final String password = ReadFromConsole.readInputFromConsole("Input password: ");
                     int passwordHash = password.hashCode();
                     if (passwordHash == (user.getPassword())) {
-//                        bootstrap.getEndpointUser().setCurrentUser(user);
-
                         final String userId = user.getId();
                         final Session session = bootstrap.getEndpointSession().getNewSession(userId);
                         BootstrapClient.setSessionCurrentUser(session);
-
-                        bootstrap.getEndpointUser().setCurrentUser(session);
-
                         System.out.println("[OK]");
-                    } else {
-                        System.out.println("Invalid Password");
+                        break;
                     }
-                } //else {System.out.println("Invalid Login"); }
+                }
             }
         }
     }
 
     @Override
-    public boolean secure() { return false; }
+    public boolean secure() { return true; }
 
     @Override
     public String getKeyWord() { return "user-login"; }

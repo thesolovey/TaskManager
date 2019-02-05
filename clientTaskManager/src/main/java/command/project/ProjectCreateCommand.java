@@ -21,7 +21,7 @@ public class ProjectCreateCommand extends AbstractCommand {
         System.out.println("[PROJECT CREATE]");
         final Project project = new Project();
         final Session session = BootstrapClient.getSessionCurrentUser();
-        final User user = getBootstrap().getEndpointUser().getUserById(session.getUserId());
+        final User user = getBootstrap().getEndpointUser().getUserById(BootstrapClient.getSessionCurrentUser(), session.getUserId());
         final String name = ReadFromConsole.readInputFromConsole("Input name Project: ");
         project.setName(name);
 
@@ -29,7 +29,7 @@ public class ProjectCreateCommand extends AbstractCommand {
         project.setId(idProject);
 
         final Date dateBegin = new Date();
-        Calendar calendarBegin = Calendar.getInstance();
+        final Calendar calendarBegin = Calendar.getInstance();
         calendarBegin.setTime(dateBegin);
 
 //        project.setDateBegin(calendarBegin.getTime());
@@ -42,9 +42,7 @@ public class ProjectCreateCommand extends AbstractCommand {
             }
 
     @Override
-    public boolean secure() {
-        return true;
-    }
+    public boolean secure() { return false; }
 
     @Override
     public String getKeyWord() { return "project-create"; }

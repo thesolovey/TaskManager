@@ -18,56 +18,37 @@ import javax.xml.ws.Endpoint;
 
 public class Bootstrap implements ServiceLocator {
 
-    private ISessionService sessionService;
-    private IUserService userService;
-    private IProjectServise projectServise;
-    private ITaskService taskService;
+    private ISessionService iSessionService;
+    private IUserService iUserService;
+    private IProjectService iProjectService;
+    private ITaskService iTaskService;
 
-    private final EndpointUser endpointUser = new EndpointUser(this);
-    private final EndpointProject endpointProject = new EndpointProject(this);
-    private final EndpointTask endpointTask = new EndpointTask(this);
-    private final EndpointSession endpointSession = new EndpointSession();
+    public IUserService getiUserService() { return userService; }
+    public IProjectService getiProjectService() { return projectService; }
+    public ITaskService getiTaskService() { return taskService; }
+    public ISessionService getiSessionService() { return sessionService; }
 
-//    private final UserRepository usersRepository = new UserRepository();
-//    private final TaskRepository taskRepository = new TaskRepository();
-//    private final ProjectRepository projectRepository = new ProjectRepository();
-//    private final SessionRepository sessionRepository = new SessionRepository();
+    final private UserRepository usersRepository = new UserRepository();
+    final private TaskRepository taskRepository = new TaskRepository();
+    final private ProjectRepository projectRepository = new ProjectRepository();
+    final private SessionRepository sessionRepository = new SessionRepository();
 
-//    private final UserService userService = new UserService(usersRepository);
-//    private final ProjectService projectService = new ProjectService(projectRepository, taskRepository);
-//    private final TaskService taskService = new TaskService(taskRepository, projectRepository);
-//    private final SessionService sessionService = new SessionService(sessionRepository);
-
-    public IUserService getUserService() { return userService; }
-
-    public IProjectServise getProjectService() { return projectServise; }
-
-    public ITaskService getTaskService() { return taskService; }
-
-    public ISessionService getSessionService() { return sessionService; }
+    private UserService userService = new UserService(usersRepository);
+    private ProjectService projectService = new ProjectService(projectRepository, taskRepository);
+    private TaskService taskService = new TaskService(taskRepository, projectRepository);
+    private SessionService sessionService = new SessionService(sessionRepository);
 
     private void publishEndpoint() {
+
         Endpoint.publish("http://localhost:8080/user?wsdl", new EndpointUser(this));
         Endpoint.publish("http://localhost:8080/session?wsdl", new EndpointSession());
         Endpoint.publish("http://localhost:8080/project?wsdl", new EndpointProject(this));
         Endpoint.publish("http://localhost:8080/task?wsdl", new EndpointTask(this));
-
     }
 
     public void start() {
 
-        final UserRepository usersRepository = new UserRepository();
-        final TaskRepository taskRepository = new TaskRepository();
-        final ProjectRepository projectRepository = new ProjectRepository();
-        final SessionRepository sessionRepository = new SessionRepository();
-
-        UserService userService = new UserService(usersRepository);
-        ProjectService projectService = new ProjectService(projectRepository, taskRepository);
-        TaskService taskService = new TaskService(taskRepository, projectRepository);
-        SessionService sessionService = new SessionService(sessionRepository);
-
         publishEndpoint();
-//        Session session = getSessionService().getCurrentSession();
         System.out.println("***WELLCOME TO TASK MANAGER***");
 
         do {
@@ -75,7 +56,7 @@ public class Bootstrap implements ServiceLocator {
 //            AbstractCommand command = commands.get(commandFromConsole);
 //
 //            if (command == null) continue;
-//            if (command.secure() && !this.getUserService().isAuth()) continue;
+//            if (command.secure() && !this.getiUserService().isAuth()) continue;
 //                command.execute();
         } while (true);
     }

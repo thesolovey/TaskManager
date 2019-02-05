@@ -1,3 +1,4 @@
+endpoint\GetUserListForRegistration.class
 endpoint\FindAllUser.class
 command\service\HelpCommand.class
 endpoint\DeleteSession.class
@@ -28,11 +29,13 @@ endpoint\EndpointSession.class
 endpoint\GetUserListResponse.class
 endpoint\EndpointSessionService.class
 endpoint\GetProjectList.class
+endpoint\GetUserListForRegistrationResponse.class
 endpoint\CreateUser.class
 command\project\ProjectDeleteCommand.class
 command\project\ProjectListCommand.class
 endpoint\CheckProjectListIsEmptyResponse.class
 endpoint\Load.class
+endpoint\LogOutResponse.class
 command\AbstractCommand.class
 endpoint\FindAllUserResponse.class
 endpoint\EndpointUserService.class
@@ -47,6 +50,7 @@ endpoint\OpenTaskResponse.class
 AppClient.class
 endpoint\GetNewSessionResponse.class
 endpoint\CheckTaskListIsEmptyResponse.class
+endpoint\ValidateSession.class
 endpoint\GetCurrentUserResponse.class
 endpoint\FindAllProjectResponse.class
 endpoint\GetTaskByProjectName.class
@@ -55,6 +59,7 @@ endpoint\GetListAllSession.class
 api\ICommand.class
 endpoint\GetProjectListResponse.class
 endpoint\DeleteProjectResponse.class
+endpoint\LogOut.class
 endpoint\GetListAllSessionResponse.class
 endpoint\CreateTaskResponse.class
 endpoint\GetTaskByProjectNameResponse.class
@@ -69,6 +74,7 @@ command\project\ProjectUpdateCommand.class
 endpoint\AddSession.class
 endpoint\GetCurrentUser.class
 endpoint\LoadResponse.class
+endpoint\ValidateSessionResponse.class
 endpoint\CheckTaskListIsEmpty.class
 endpoint\LogOutUserResponse.class
 endpoint\SessionList.class

@@ -19,7 +19,7 @@ public class TaskCreateCommand extends AbstractCommand {
 //            System.out.println("[TASK CREATE]");
 //            final Task task = new Task();
 //            final String name = ReadFromConsole.readInputFromConsole("Input name Task: ");
-//            final User user = bootstrap.getUserService().getCurrentUser();
+//            final User user = bootstrap.getiUserService().getCurrentUser();
 //            task.setName(name);
 //            final String idTask = UUID.randomUUID().toString();
 //            task.setId(idTask);
@@ -44,7 +44,7 @@ public class TaskCreateCommand extends AbstractCommand {
 //                    String projectName = project.getName();
 //                    task.setNameByProject(projectName);
 //                    task.setIdByProject(idProject);
-//                    bootstrap.getTaskService().addTask(task);
+//                    bootstrap.getiTaskService().addTask(task);
 //                        }
 //            } System.out.println("[OK]");
 //        }

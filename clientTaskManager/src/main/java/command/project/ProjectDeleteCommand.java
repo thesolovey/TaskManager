@@ -22,13 +22,13 @@ public class ProjectDeleteCommand extends AbstractCommand {
             final String idProject = ReadFromConsole.readInputFromConsole("Input ID Project you want delete: ");
 
             bootstrap.getEndpointTask().deleteTaskByIdProjecr(idProject);
-            bootstrap.getEndpointProject().deleteProject(idProject);
+            bootstrap.getEndpointProject().deleteProject(BootstrapClient.getSessionCurrentUser(), idProject);
         }
             System.out.println("[ОК]");
     }
 
     @Override
-    public boolean secure() { return true; }
+    public boolean secure() { return false; }
 
     @Override
     public String getKeyWord() { return "project-delete"; }

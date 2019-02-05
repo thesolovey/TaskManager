@@ -3,5 +3,7 @@ package api;
 import entity.Session;
 
 public interface ISessionService {
-    boolean invalidSession(Session session);
+    void validateSession(Session session);
+    void logOut(Session session);
+    Session getNewSession(String userId);
 }

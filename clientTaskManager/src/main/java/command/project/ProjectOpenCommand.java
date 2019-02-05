@@ -48,7 +48,7 @@ public class ProjectOpenCommand extends AbstractCommand {
     }
 
     @Override
-    public boolean secure() { return true; }
+    public boolean secure() { return false; }
 
     @Override
     public String getKeyWord() { return "project-open"; }

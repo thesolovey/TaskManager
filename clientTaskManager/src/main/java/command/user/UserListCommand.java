@@ -16,7 +16,7 @@ public class UserListCommand extends AbstractCommand {
     @Override
     public void execute() {
         System.out.println("[USER LIST]");
-        final List<User> userList = getBootstrap().getEndpointUser().findAllUser();
+        final List<User> userList = getBootstrap().getEndpointUser().getUserList(BootstrapClient.getSessionCurrentUser());
         for (User user : userList)
             System.out.println(user.getUserName());
         System.out.println("[OK]");
@@ -24,7 +24,7 @@ public class UserListCommand extends AbstractCommand {
     }
 
     @Override
-    public boolean secure() { return true; }
+    public boolean secure() { return false; }
 
     @Override
     public String getKeyWord() { return "user-list"; }

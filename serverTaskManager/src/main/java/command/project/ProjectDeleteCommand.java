@@ -2,7 +2,6 @@ package command.project;
 
 import bootstrap.Bootstrap;
 import command.AbstractCommand;
-import command.ReadFromConsole;
 
 public class ProjectDeleteCommand extends AbstractCommand {
     public static final String COMMAND = "project-deleteProject";
@@ -14,18 +13,17 @@ public class ProjectDeleteCommand extends AbstractCommand {
     public void execute() {
         System.out.println("[PROJECT DELETE]");
 
-        boolean projectListIsEmpty = bootstrap.getProjectService().checkProjectListIsEmty();
-        if (projectListIsEmpty) {
-            System.out.println("!!! You don't have any project now !!!");
-            System.out.println("!!!  Try command 'project-createProject'  !!!");
-        } else {
-            final String idProject = ReadFromConsole.readInputFromConsole("Input ID Project you want deleteProject: ");
-
-            bootstrap.getTaskService().deleteTaskByProjectId(idProject);
-            bootstrap.getProjectService().deleteProject(idProject);
+//        boolean projectListIsEmpty = bootstrap.getProjectService().checkProjectListIsEmty();
+//        if (projectListIsEmpty) {
+//            System.out.println("!!! You don't have any project now !!!");
+//            System.out.println("!!!  Try command 'project-createProject'  !!!");
+//        } else {
+//            final String idProject = ReadFromConsole.readInputFromConsole("Input ID Project you want deleteProject: ");
+//
+//            bootstrap.getiTaskService().deleteTaskByProjectId(idProject);
+//            bootstrap.getProjectService().deleteProject(idProject);
         }
-            System.out.println("[ОК]");
-    }
+//    }
 
     @Override
     public boolean secure() { return true; }

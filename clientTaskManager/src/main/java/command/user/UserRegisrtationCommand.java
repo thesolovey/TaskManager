@@ -30,9 +30,6 @@ public class UserRegisrtationCommand extends AbstractCommand {
         newUser.setId(userId);
 
         bootstrap.getEndpointUser().createUser(newUser);
-//        bootstrap.getEndpointUser().setCurrentUser(newUser);
-//        bootstrap.getUserService().addUserByList(newUser);
-//        bootstrap.getUserService().setCurrentUser(newUser);
         System.out.println("[OK]");
     }
 

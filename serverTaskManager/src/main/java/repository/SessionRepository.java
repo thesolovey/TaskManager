@@ -11,9 +11,9 @@ public class SessionRepository {
 
     private List<Session> sessionList = new ArrayList<>();
 
-    public void addSession(Session session) { sessionList.add(session); }
+    public void addSession(final Session session) { sessionList.add(session); }
 
     public List<Session> getSessionList () { return sessionList; }
 
-    public void delete(Session session) {sessionList.remove(session); }
+    public void delete(final Session session) { sessionList.remove(session); }
 }

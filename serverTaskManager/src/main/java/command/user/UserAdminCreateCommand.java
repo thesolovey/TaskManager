@@ -25,7 +25,7 @@ public class UserAdminCreateCommand extends AbstractCommand {
         newUser.setUserName(userName);
         newUser.setId(userId);
 
-        bootstrap.getUserService().addUserByList(newUser);
+        bootstrap.getiUserService().addUserByList(newUser);
 
     }
 

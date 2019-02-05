@@ -25,7 +25,7 @@ public class UserTestCreateCommand extends AbstractCommand {
         user.setUserName(userName);
         user.setId(userId);
 
-        bootstrap.getUserService().addUserByList(user);
+        bootstrap.getiUserService().addUserByList(user);
     }
 
     @Override

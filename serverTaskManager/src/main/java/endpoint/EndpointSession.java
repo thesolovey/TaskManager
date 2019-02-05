@@ -19,9 +19,15 @@ public class EndpointSession {
     @WebMethod
     public Session getSessionByUserId(String userId) { return sessionService.getSessionById(userId); }
 
-    @WebMethod
-    public void addSession(Session session) { sessionService.addSession(session); }
+//    @WebMethod
+//    public void addSession(Session session) { sessionService.addSession(session); }
+//
+//    @WebMethod
+//    public void deleteSession(Session session) { sessionService.delete(session); }
 
     @WebMethod
-    public void deleteSession(Session session) { sessionService.delete(session); }
+    public void validateSession(Session session) { sessionService.validateSession(session); }
+
+    @WebMethod
+    public void logOut(Session session) { sessionService.logOut(session); }
 }

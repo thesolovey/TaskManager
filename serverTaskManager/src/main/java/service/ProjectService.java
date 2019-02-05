@@ -1,20 +1,21 @@
 package service;
 
-import api.IProjectServise;
+import api.IProjectService;
 import entity.Project;
 import repository.ProjectRepository;
 import repository.TaskRepository;
 
+import java.util.Iterator;
 import java.util.List;
 
-public class ProjectService implements IProjectServise {
+public class ProjectService implements IProjectService {
     private final ProjectRepository projectRepository;
 
     public ProjectService(ProjectRepository projectRepository, TaskRepository taskRepository) {
         this.projectRepository = projectRepository;
     }
 
-    public boolean checkProjectListIsEmty() {
+    public boolean checkProjectListIsEmpty() {
         final List<Project> projectList = projectRepository.getProjectList();
         return projectList == null || projectList.isEmpty();
     }
@@ -34,15 +35,19 @@ public class ProjectService implements IProjectServise {
 
     public void deleteProject(String idProject) {
         if (idProject == null) return;
-        List<Project> projectList = projectRepository.getProjectList();
+        final List<Project> projectList = projectRepository.getProjectList();
 
-//        Iterator<Project> it = getProjectList.iterator(); it.hasNext();
-//        Project project = it.next();
-//        if (project.getSignature().equals(idProject))
-//            it.remove();
-        for (Project project : projectList)
-            if (project.getId().equals(idProject))
-                projectRepository.deleteProject(project);
+        Iterator<Project> it = projectList.iterator();
+        while (it.hasNext()) {
+            Project project = it.next();
+            { if (project.getId().equals(idProject))
+                    it.remove();
+            }
+        }
+
+//        for (Project project : projectList)
+//            if (project.getId().equals(idProject))
+//                projectRepository.deleteProject(project);
     }
 
     public void updateNameProject(String id, String newNameProject) {

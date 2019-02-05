@@ -3,7 +3,6 @@ package command.project;
 import bootstrap.BootstrapClient;
 import command.AbstractCommand;
 import endpoint.Project;
-import endpoint.User;
 
 import java.util.List;
 
@@ -24,19 +23,16 @@ public class ProjectListCommand extends AbstractCommand {
         } else {
 
         final List<Project> allProject = bootstrap.getEndpointProject().findAllProject(BootstrapClient.getSessionCurrentUser());
-        final User user = new User();
-//                bootstrap.getEndpointUser().getCurrentUser();
+//        final User user = new User();
         for (Project project : allProject)
-            if (project.getUserLogin().equals(user.getLogin()))
+//            if (project.getUserLogin().equals(user.getLogin()))
                 System.out.println(project.getName());
                 }
                 System.out.println("[OK]");
     }
 
     @Override
-    public boolean secure() {
-        return true;
-    }
+    public boolean secure() { return false; }
 
     @Override
     public String getKeyWord() { return "project-list"; }

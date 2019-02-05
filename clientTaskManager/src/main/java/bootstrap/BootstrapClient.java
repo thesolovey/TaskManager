@@ -26,13 +26,12 @@ public class BootstrapClient {
     public EndpointTask getEndpointTask() { return endpointTask; }
     public EndpointSession getEndpointSession() { return endpointSession; }
 
-    private static Session sessionCurrentUser = new Session();
+    private static Session sessionCurrentUser = null;
     public static Session getSessionCurrentUser() { return sessionCurrentUser; }
     public static void setSessionCurrentUser(Session sessionCurrentUser) {
         BootstrapClient.sessionCurrentUser = sessionCurrentUser; }
 
     private final Map<String, AbstractCommand> commands = new LinkedHashMap<>();
-
     {
         commands.put(HelpCommand.COMMAND, new HelpCommand(this));
         commands.put(ExitCommand.COMMAND, new ExitCommand(this));
@@ -86,10 +85,8 @@ public class BootstrapClient {
             AbstractCommand command = commands.get(commandFromConsole);
 
             if (command == null) continue;
-
-            if (command.secure() && !getEndpointUser().authUser()) continue;
-//            if (command.secure() && !this.endpointUser.authUser()) continue;
-
+//            if (command.secure() && getEndpointSession().validateSession(sessionCurrentUser)) continue;
+            if (command.secure() || getSessionCurrentUser() != null)
             //           if (commands.containsKey(commandFromConsole)) {
             command.execute();
             //           }

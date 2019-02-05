@@ -2,9 +2,9 @@ package api;
 
 public interface ServiceLocator {
 
-    IProjectServise getProjectService();
-    ITaskService getTaskService();
-    ISessionService getSessionService();
-    IUserService getUserService();
+    IProjectService getiProjectService();
+    ITaskService getiTaskService();
+    ISessionService getiSessionService();
+    IUserService getiUserService();
 
 }

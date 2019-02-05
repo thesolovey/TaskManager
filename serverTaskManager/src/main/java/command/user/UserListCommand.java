@@ -16,7 +16,7 @@ public class UserListCommand extends AbstractCommand {
     @Override
     public void execute() {
         System.out.println("[USER LIST]");
-        List<User> userList = bootstrap.getUserService().getUsersList();
+        List<User> userList = bootstrap.getiUserService().getUsersList();
         for (User user : userList)
             System.out.println(user.getUserName());
         System.out.println("[OK]");
