@@ -7,12 +7,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for clearAllProjectList complex type.
+ * <p>Java class for getProjectByUserId complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="clearAllProjectList"&gt;
+ * &lt;complexType name="getProjectByUserId"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
@@ -26,10 +26,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "clearAllProjectList", propOrder = {
+@XmlType(name = "getProjectByUserId", propOrder = {
     "arg0"
 })
-public class ClearAllProjectList {
+public class GetProjectByUserId {
 
     protected Session arg0;
 

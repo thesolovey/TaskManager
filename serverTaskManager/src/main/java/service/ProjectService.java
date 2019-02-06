@@ -2,10 +2,11 @@ package service;
 
 import api.IProjectService;
 import entity.Project;
+import entity.Session;
 import repository.ProjectRepository;
 import repository.TaskRepository;
 
-import java.util.Iterator;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProjectService implements IProjectService {
@@ -25,29 +26,28 @@ public class ProjectService implements IProjectService {
         projectRepository.addProject(project);
     }
 
-    public List<Project> getAllProjectFromList() {
-        return projectRepository.getProjectList();
+    public List<Project> getProjectByUserId(Session session) {
+        final List<Project> projectList = projectRepository.getProjectList();
+        final List<Project> projectListByuserId = new ArrayList<>();
+        for (Project project: projectList)
+            if (project.getUserId().equals(session.getUserId()))
+                projectListByuserId.add(project);
+         return projectListByuserId;
     }
 
-    public void clearAllProject() {
+    public void clearAllProject(Session session) {
         projectRepository.clearProjectList();
     }
 
     public void deleteProject(String idProject) {
         if (idProject == null) return;
         final List<Project> projectList = projectRepository.getProjectList();
-
-        Iterator<Project> it = projectList.iterator();
-        while (it.hasNext()) {
-            Project project = it.next();
-            { if (project.getId().equals(idProject))
-                    it.remove();
+        for (Project project : projectList) {
+            if (project.getId().equals(idProject)) {
+                projectRepository.deleteProject(project);
+                return;
             }
         }
-
-//        for (Project project : projectList)
-//            if (project.getId().equals(idProject))
-//                projectRepository.deleteProject(project);
     }
 
     public void updateNameProject(String id, String newNameProject) {

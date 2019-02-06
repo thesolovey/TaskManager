@@ -41,6 +41,7 @@ public class ProjectCreateCommand extends AbstractCommand {
 //        project.setDateBegin(calendarBegin.getTime());
         project.setUserLogin(user.getLogin());
         project.setUserName(user.getUserName());
+        project.setUserId(user.getId());
 
         try {
             getBootstrap().getEndpointProject().createProject(session, project);

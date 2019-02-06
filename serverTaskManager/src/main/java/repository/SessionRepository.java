@@ -7,8 +7,6 @@ import java.util.List;
 
 public class SessionRepository {
 
-    private static final int VALID_PERIOD = 1800;
-
     private List<Session> sessionList = new ArrayList<>();
 
     public void addSession(final Session session) { sessionList.add(session); }

@@ -28,7 +28,7 @@ public class ProjectOpenCommand extends AbstractCommand {
             final String nameProject = ReadFromConsole.readInputFromConsole("Enter name Project do you want open: ");
             List<Project> projectList = new ArrayList<>();
             try {
-                projectList = bootstrap.getEndpointProject().findAllProject(BootstrapClient.getSessionCurrentUser());
+                projectList = bootstrap.getEndpointProject().getProjectByUserId(BootstrapClient.getSessionCurrentUser());
             } catch (AccessForbiddenException_Exception e) {
                 e.printStackTrace();
             }

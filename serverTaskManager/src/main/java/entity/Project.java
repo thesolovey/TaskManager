@@ -15,6 +15,12 @@ public class Project implements Serializable {
 
     private String userLogin;
 
+    private String userId;
+
+    public String getUserId() { return userId; }
+
+    public void setUserId(String userId) { this.userId = userId; }
+
     public String getUserLogin() { return userLogin; }
 
     public void setUserLogin(String userLogin) { this.userLogin = userLogin; }

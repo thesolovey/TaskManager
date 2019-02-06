@@ -21,6 +21,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="dateBegin" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="userId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="userLogin" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="userName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
@@ -36,6 +37,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "dateBegin",
     "id",
     "name",
+    "userId",
     "userLogin",
     "userName"
 })
@@ -45,6 +47,7 @@ public class Project {
     protected XMLGregorianCalendar dateBegin;
     protected String id;
     protected String name;
+    protected String userId;
     protected String userLogin;
     protected String userName;
 
@@ -118,6 +121,30 @@ public class Project {
      */
     public void setName(String value) {
         this.name = value;
+    }
+
+    /**
+     * Gets the value of the userId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getUserId() {
+        return userId;
+    }
+
+    /**
+     * Sets the value of the userId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setUserId(String value) {
+        this.userId = value;
     }
 
     /**

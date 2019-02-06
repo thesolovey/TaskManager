@@ -28,14 +28,15 @@ public class EndpointProject {
     }
 
     @WebMethod
-    public List<Project> findAllProject(Session session) throws AccessForbiddenException {
+    public List<Project> getProjectByUserId(Session session) throws AccessForbiddenException {
         serviceLocator.getiSessionService().validateSession(session);
-        return serviceLocator.getiProjectService().getAllProjectFromList();
+        return serviceLocator.getiProjectService().getProjectByUserId(session);
     }
 
     @WebMethod
     public boolean checkProjectListIsEmpty() { return serviceLocator.getiProjectService().checkProjectListIsEmpty(); }
 
-//    @WebMethod
-//    public void clearAllProjectList() { projectService.clearAllProject(); }
+    @WebMethod
+    public void clearAllProjectList(Session session) {
+        serviceLocator.getiProjectService().clearAllProject(session); }
 }

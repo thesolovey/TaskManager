@@ -11,7 +11,7 @@ public class TaskCreateCommand extends AbstractCommand {
     public static final String COMMAND = "task-createProject";
 
     public void execute() {
-//        final List<Project> projectList = bootstrap.getProjectService().getAllProjectFromList();
+//        final List<Project> projectList = bootstrap.getProjectService().getProjectByUserId();
 //        if (projectList == null || projectList.isEmpty()) {
 //            System.out.println("!!!  You must have any Project   !!!");
 //            System.out.println("!!! Try command 'project-createProject' !!!");

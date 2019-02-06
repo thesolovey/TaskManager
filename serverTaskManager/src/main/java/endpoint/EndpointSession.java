@@ -17,17 +17,11 @@ public class EndpointSession {
     public Session getNewSession(String userId) { return serviceLocator.getiSessionService().getNewSession(userId); }
 
     @WebMethod
-    public Session getSessionByUserId(String userId) { return serviceLocator.getiSessionService().getSessionById(userId); }
+    public void logOut(Session session) { serviceLocator.getiSessionService().logOut(session); }
 
-//    @WebMethod
-//    public void addSession(Session session) { sessionService.addSession(session); }
-//
-//    @WebMethod
-//    public void deleteSession(Session session) { sessionService.delete(session); }
+    @WebMethod
+    public Session getSessionByUserId(String userId) { return serviceLocator.getiSessionService().getSessionById(userId); }
 
     @WebMethod
     public void validateSession(Session session) throws AccessForbiddenException { serviceLocator.getiSessionService().validateSession(session); }
-
-    @WebMethod
-    public void logOut(Session session) { serviceLocator.getiSessionService().logOut(session); }
 }

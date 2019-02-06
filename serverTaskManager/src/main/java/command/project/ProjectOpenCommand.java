@@ -19,7 +19,7 @@ public class ProjectOpenCommand extends AbstractCommand {
 //            System.out.println("!!!   Try command 'project-createProject' !!!");
 //        } else {
 //            final String nameProject = ReadFromConsole.readInputFromConsole("Enter name Project do you want open: ");
-//            final List<Project> projectList = bootstrap.getProjectService().getAllProjectFromList();
+//            final List<Project> projectList = bootstrap.getProjectService().getProjectByUserId();
 //            for (Project project : projectList)
 //                if (project.getName().equals(nameProject)) {
 //

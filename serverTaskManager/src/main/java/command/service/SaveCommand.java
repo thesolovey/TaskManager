@@ -25,7 +25,7 @@ public class SaveCommand extends AbstractCommand {
 
             FileOutputStream fosProject = new FileOutputStream("project.txt");
             ObjectOutputStream oosProject = new ObjectOutputStream(fosProject);
-//            oosProject.writeObject(bootstrap.getProjectService().getAllProjectFromList());
+//            oosProject.writeObject(bootstrap.getProjectService().getProjectByUserId());
             oosProject.flush();
             oosProject.close();
 

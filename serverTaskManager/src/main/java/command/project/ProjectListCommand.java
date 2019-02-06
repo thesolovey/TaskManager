@@ -18,7 +18,7 @@ public class ProjectListCommand extends AbstractCommand {
 //            System.out.println("!!! You don't have any project now !!!");
 //            System.out.println("!!!   Try command 'project-createProject' !!!");
 //        } else {
-//        final List<Project> allProject = bootstrap.getProjectService().getAllProjectFromList();
+//        final List<Project> allProject = bootstrap.getProjectService().getProjectByUserId();
 //        final User user = bootstrap.getiUserService().getCurrentUser();
 //        for (Project project : allProject)
 //            if (project.getUserLogin().equals(user.getLogin()))

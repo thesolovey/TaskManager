@@ -5,7 +5,7 @@ import java.util.Date;
 public class Session {
     private String userId;
     private String signature;
-    private Date validPeriod = new Date();
+    private Date startValidPeriod = new Date();
 
     public String getUserId() { return userId; }
 
@@ -15,7 +15,7 @@ public class Session {
 
     public void setSignature(String signature) { this.signature = signature; }
 
-    public Date getValidPeriod() { return validPeriod; }
+    public Date getStartValidPeriod() { return startValidPeriod; }
 
-    public void setValidPeriod(Date validPeriod) { this.validPeriod = validPeriod; }
+    public void setStartValidPeriod(Date startValidPeriod) { this.startValidPeriod = startValidPeriod; }
 }
