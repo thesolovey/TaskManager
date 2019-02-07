@@ -27,9 +27,7 @@ public class ProjectListCommand extends AbstractCommand {
         List<Project> projectList = new ArrayList<>();
                     try {
                         projectList = bootstrap.getEndpointProject().getProjectByUserId(BootstrapClient.getSessionCurrentUser());
-                    } catch (AccessForbiddenException_Exception e) {
-                        e.printStackTrace();
-                    }
+                    } catch (AccessForbiddenException_Exception e) { e.printStackTrace(); }
                     for (Project project : projectList)
             System.out.println(project.getName());
                 }

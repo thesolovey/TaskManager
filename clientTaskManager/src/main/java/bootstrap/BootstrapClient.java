@@ -85,7 +85,6 @@ public class BootstrapClient {
             AbstractCommand command = commands.get(commandFromConsole);
 
             if (command == null) continue;
-//            if (command.secure() && getEndpointSession().validateSession(sessionCurrentUser)) continue;
             if (command.secure() || getSessionCurrentUser() != null)
             //           if (commands.containsKey(commandFromConsole)) {
             command.execute();

@@ -19,7 +19,7 @@ public class TaskListCommand extends AbstractCommand {
 //            System.out.println("!!! Try command 'task-createProject' !!!");
 //        }
 //
-//        final List<Task> allTask = bootstrap.getiTaskService().getAllTaskFromList();
+//        final List<Task> allTask = bootstrap.getiTaskService().getTaskByUserId();
 //        for (Task task : allTask)
 //            System.out.println(task.getName());
 

@@ -1,6 +1,7 @@
 package bootstrap;
 
 import api.*;
+import domain.DataBaseConnection;
 import endpoint.EndpointProject;
 import endpoint.EndpointSession;
 import endpoint.EndpointTask;
@@ -15,8 +16,11 @@ import service.TaskService;
 import service.UserService;
 
 import javax.xml.ws.Endpoint;
+import java.sql.Connection;
 
 public class Bootstrap implements ServiceLocator {
+
+    private Connection connection = new DataBaseConnection().getConnection();
 
     private ISessionService iSessionService;
     private IUserService iUserService;
@@ -28,10 +32,10 @@ public class Bootstrap implements ServiceLocator {
     public ITaskService getiTaskService() { return taskService; }
     public ISessionService getiSessionService() { return sessionService; }
 
-    private final UserRepository usersRepository = new UserRepository();
-    private final TaskRepository taskRepository = new TaskRepository();
-    private final ProjectRepository projectRepository = new ProjectRepository();
-    private final SessionRepository sessionRepository = new SessionRepository();
+    private final UserRepository usersRepository = new UserRepository(connection);
+    private final TaskRepository taskRepository = new TaskRepository(connection);
+    private final ProjectRepository projectRepository = new ProjectRepository(connection);
+    private final SessionRepository sessionRepository = new SessionRepository(connection);
 
     private final UserService userService = new UserService(usersRepository);
     private final ProjectService projectService = new ProjectService(projectRepository, taskRepository);

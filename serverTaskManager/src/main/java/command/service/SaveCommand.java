@@ -31,7 +31,7 @@ public class SaveCommand extends AbstractCommand {
 
             FileOutputStream fosTask = new FileOutputStream("task.txt");
             ObjectOutputStream oosTask = new ObjectOutputStream(fosTask);
-//            oosTask.writeObject(bootstrap.getiTaskService().getAllTaskFromList());
+//            oosTask.writeObject(bootstrap.getiTaskService().getTaskByUserId());
             oosTask.flush();
             oosTask.close();
         } catch (IOException e) {e.printStackTrace();}

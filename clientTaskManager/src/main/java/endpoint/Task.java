@@ -22,6 +22,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="dateEnd" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="idByProject" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="idByUser" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="nameByProject" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="userLogin" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
@@ -39,6 +40,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "dateEnd",
     "id",
     "idByProject",
+    "idByUser",
     "name",
     "nameByProject",
     "userLogin"
@@ -51,6 +53,7 @@ public class Task {
     protected XMLGregorianCalendar dateEnd;
     protected String id;
     protected String idByProject;
+    protected String idByUser;
     protected String name;
     protected String nameByProject;
     protected String userLogin;
@@ -149,6 +152,30 @@ public class Task {
      */
     public void setIdByProject(String value) {
         this.idByProject = value;
+    }
+
+    /**
+     * Gets the value of the idByUser property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getIdByUser() {
+        return idByUser;
+    }
+
+    /**
+     * Sets the value of the idByUser property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setIdByUser(String value) {
+        this.idByUser = value;
     }
 
     /**

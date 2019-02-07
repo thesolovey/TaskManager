@@ -3,9 +3,7 @@ package endpoint;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
@@ -18,7 +16,6 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="dateBegin" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="userId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
@@ -34,7 +31,6 @@ import javax.xml.datatype.XMLGregorianCalendar;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "project", propOrder = {
-    "dateBegin",
     "id",
     "name",
     "userId",
@@ -43,37 +39,11 @@ import javax.xml.datatype.XMLGregorianCalendar;
 })
 public class Project {
 
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dateBegin;
     protected String id;
     protected String name;
     protected String userId;
     protected String userLogin;
     protected String userName;
-
-    /**
-     * Gets the value of the dateBegin property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getDateBegin() {
-        return dateBegin;
-    }
-
-    /**
-     * Sets the value of the dateBegin property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setDateBegin(XMLGregorianCalendar value) {
-        this.dateBegin = value;
-    }
 
     /**
      * Gets the value of the id property.

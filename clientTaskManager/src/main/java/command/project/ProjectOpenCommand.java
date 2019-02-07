@@ -29,15 +29,12 @@ public class ProjectOpenCommand extends AbstractCommand {
             List<Project> projectList = new ArrayList<>();
             try {
                 projectList = bootstrap.getEndpointProject().getProjectByUserId(BootstrapClient.getSessionCurrentUser());
-            } catch (AccessForbiddenException_Exception e) {
-                e.printStackTrace();
-            }
+            } catch (AccessForbiddenException_Exception e) { e.printStackTrace(); }
             for (Project project : projectList)
                 if (project.getName().equals(nameProject)) {
 
                     System.out.println("Project Name: " + project.getName());
                     System.out.println("Project ID: " + project.getId());
-                    System.out.println("Project DateBegin: " + project.getDateBegin());
                     System.out.println("User: " + project.getUserName());
 
                     boolean taskListIsEmpty = bootstrap.getEndpointTask().checkTaskListIsEmpty();
@@ -45,7 +42,10 @@ public class ProjectOpenCommand extends AbstractCommand {
                         System.out.println("!!! This Project don't have any Task!!!");
                     }
 
-                    final List<Task> taskByProjectName = bootstrap.getEndpointTask().getTaskByProjectName(nameProject);
+                    List<Task> taskByProjectName = new ArrayList<>();
+                    try {
+                        taskByProjectName = bootstrap.getEndpointTask().getTaskByProjectName(BootstrapClient.getSessionCurrentUser(), nameProject);
+                    } catch (AccessForbiddenException_Exception e) { e.printStackTrace(); }
                     for (Task task : taskByProjectName)
                         System.out.println("Tasks from this Project: " + task.getName());
 

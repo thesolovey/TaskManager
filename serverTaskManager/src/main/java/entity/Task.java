@@ -5,9 +5,9 @@ import java.util.Date;
 
 public class Task implements Serializable {
 
-    private String name;
-
     private String  id;
+
+    private String name;
 
     private Date dateBegin;
 
@@ -18,6 +18,12 @@ public class Task implements Serializable {
     private String idByProject;
 
     private String userLogin;
+
+    private String idByUser;
+
+    public String getIdByUser() { return idByUser; }
+
+    public void setIdByUser(String idByUser) { this.idByUser = idByUser; }
 
     public String getUserLogin() { return userLogin; }
 

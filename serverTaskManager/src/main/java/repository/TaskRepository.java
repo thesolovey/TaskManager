@@ -2,11 +2,12 @@ package repository;
 
 import entity.Task;
 
-import java.io.Serializable;
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TaskRepository implements Serializable {
+public class TaskRepository extends AbstractRepository {
+    public TaskRepository(Connection connection) { this.connection = connection; }
 
     private final List<Task> taskList = new ArrayList<>();
 
@@ -20,5 +21,5 @@ public class TaskRepository implements Serializable {
 
     public void deleteTask(final Task task) { taskList.remove(task); }
 
-    public void addListTasks(List<Task> tasks) { taskList.addAll(tasks); }
+    public void addListTasks(final List<Task> tasks) { taskList.addAll(tasks); }
 }

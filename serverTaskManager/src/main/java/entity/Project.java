@@ -1,15 +1,12 @@
 package entity;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class Project implements Serializable {
 
     private String name;
 
     private String id;
-
-    private Date dateBegin;
 
     private String userName;
 
@@ -32,10 +29,6 @@ public class Project implements Serializable {
     public String getId() {return id;}
 
     public void setId(String id) {this.id = id;}
-
-    public Date getDateBegin() {return dateBegin;}
-
-    public void setDateBegin(Date dateBegin) {this.dateBegin = dateBegin;}
 
     public String getUserName() { return userName; }
 

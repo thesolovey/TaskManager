@@ -24,6 +24,7 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _AccessForbiddenException_QNAME = new QName("http://endpoint/", "AccessForbiddenException");
     private final static QName _CheckTaskListIsEmpty_QNAME = new QName("http://endpoint/", "checkTaskListIsEmpty");
     private final static QName _CheckTaskListIsEmptyResponse_QNAME = new QName("http://endpoint/", "checkTaskListIsEmptyResponse");
     private final static QName _CreateTask_QNAME = new QName("http://endpoint/", "createTask");
@@ -36,14 +37,22 @@ public class ObjectFactory {
     private final static QName _FindAllTaskResponse_QNAME = new QName("http://endpoint/", "findAllTaskResponse");
     private final static QName _GetTaskByProjectName_QNAME = new QName("http://endpoint/", "getTaskByProjectName");
     private final static QName _GetTaskByProjectNameResponse_QNAME = new QName("http://endpoint/", "getTaskByProjectNameResponse");
-    private final static QName _OpenTask_QNAME = new QName("http://endpoint/", "openTask");
-    private final static QName _OpenTaskResponse_QNAME = new QName("http://endpoint/", "openTaskResponse");
+    private final static QName _OpenTaskByName_QNAME = new QName("http://endpoint/", "openTaskByName");
+    private final static QName _OpenTaskByNameResponse_QNAME = new QName("http://endpoint/", "openTaskByNameResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: endpoint
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link AccessForbiddenException }
+     * 
+     */
+    public AccessForbiddenException createAccessForbiddenException() {
+        return new AccessForbiddenException();
     }
 
     /**
@@ -143,19 +152,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OpenTask }
+     * Create an instance of {@link OpenTaskByName }
      * 
      */
-    public OpenTask createOpenTask() {
-        return new OpenTask();
+    public OpenTaskByName createOpenTaskByName() {
+        return new OpenTaskByName();
     }
 
     /**
-     * Create an instance of {@link OpenTaskResponse }
+     * Create an instance of {@link OpenTaskByNameResponse }
      * 
      */
-    public OpenTaskResponse createOpenTaskResponse() {
-        return new OpenTaskResponse();
+    public OpenTaskByNameResponse createOpenTaskByNameResponse() {
+        return new OpenTaskByNameResponse();
+    }
+
+    /**
+     * Create an instance of {@link Session }
+     * 
+     */
+    public Session createSession() {
+        return new Session();
     }
 
     /**
@@ -164,6 +181,15 @@ public class ObjectFactory {
      */
     public Task createTask() {
         return new Task();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AccessForbiddenException }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://endpoint/", name = "AccessForbiddenException")
+    public JAXBElement<AccessForbiddenException> createAccessForbiddenException(AccessForbiddenException value) {
+        return new JAXBElement<AccessForbiddenException>(_AccessForbiddenException_QNAME, AccessForbiddenException.class, null, value);
     }
 
     /**
@@ -275,21 +301,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link OpenTask }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link OpenTaskByName }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://endpoint/", name = "openTask")
-    public JAXBElement<OpenTask> createOpenTask(OpenTask value) {
-        return new JAXBElement<OpenTask>(_OpenTask_QNAME, OpenTask.class, null, value);
+    @XmlElementDecl(namespace = "http://endpoint/", name = "openTaskByName")
+    public JAXBElement<OpenTaskByName> createOpenTaskByName(OpenTaskByName value) {
+        return new JAXBElement<OpenTaskByName>(_OpenTaskByName_QNAME, OpenTaskByName.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link OpenTaskResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link OpenTaskByNameResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://endpoint/", name = "openTaskResponse")
-    public JAXBElement<OpenTaskResponse> createOpenTaskResponse(OpenTaskResponse value) {
-        return new JAXBElement<OpenTaskResponse>(_OpenTaskResponse_QNAME, OpenTaskResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://endpoint/", name = "openTaskByNameResponse")
+    public JAXBElement<OpenTaskByNameResponse> createOpenTaskByNameResponse(OpenTaskByNameResponse value) {
+        return new JAXBElement<OpenTaskByNameResponse>(_OpenTaskByNameResponse_QNAME, OpenTaskByNameResponse.class, null, value);
     }
 
 }

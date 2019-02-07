@@ -79,6 +79,7 @@ endpoint\GetCurrentUser.class
 endpoint\AccessForbiddenException_Exception.class
 endpoint\LoadResponse.class
 endpoint\ValidateSessionResponse.class
+endpoint\OpenTaskByName.class
 endpoint\CheckTaskListIsEmpty.class
 endpoint\LogOutUserResponse.class
 endpoint\SessionList.class
@@ -111,3 +112,4 @@ command\service\LoadCommand.class
 endpoint\GetSessionByUserId.class
 endpoint\Session.class
 endpoint\DeleteProject.class
+endpoint\OpenTaskByNameResponse.class

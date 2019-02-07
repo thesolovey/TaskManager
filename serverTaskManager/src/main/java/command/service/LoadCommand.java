@@ -1,6 +1,6 @@
 package command.service;
 
-import Domain.Domain;
+import domain.Domain;
 import bootstrap.Bootstrap;
 import command.AbstractCommand;
 import entity.Project;

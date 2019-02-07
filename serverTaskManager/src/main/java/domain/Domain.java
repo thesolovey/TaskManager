@@ -1,4 +1,4 @@
-package Domain;
+package domain;
 
 import entity.Project;
 import entity.Session;

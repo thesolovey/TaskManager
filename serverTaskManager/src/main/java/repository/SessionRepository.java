@@ -2,12 +2,14 @@ package repository;
 
 import entity.Session;
 
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SessionRepository {
+public class SessionRepository extends AbstractRepository {
+    public SessionRepository(Connection connection) { this.connection = connection; }
 
-    private List<Session> sessionList = new ArrayList<>();
+    private final List<Session> sessionList = new ArrayList<>();
 
     public void addSession(final Session session) { sessionList.add(session); }
 

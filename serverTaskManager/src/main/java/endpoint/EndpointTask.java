@@ -4,9 +4,6 @@ import api.ServiceLocator;
 import entity.Session;
 import entity.Task;
 import exception.AccessForbiddenException;
-import repository.ProjectRepository;
-import repository.TaskRepository;
-import service.TaskService;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -19,39 +16,39 @@ public class EndpointTask  {
     public EndpointTask(ServiceLocator serviceLocator) { this.serviceLocator = serviceLocator; }
 
     @WebMethod
-    public void createTask(Session session, Task task) throws AccessForbiddenException {
+    public void createTask(final Session session, final Task task) throws AccessForbiddenException {
         serviceLocator.getiSessionService().validateSession(session);
-        taskService.addTask(task);
+        serviceLocator.getiTaskService().addTask(task);
     }
 
     @WebMethod
-    public void deleteTask(Session session, String idTask) throws AccessForbiddenException {
+    public void deleteTask(final Session session, final String idTask) throws AccessForbiddenException {
         serviceLocator.getiSessionService().validateSession(session);
-        taskService.deleteTask(idTask);
+        serviceLocator.getiTaskService().deleteTask(idTask);
     }
 
     @WebMethod
-    public List<Task> findAllTask(Session session) throws AccessForbiddenException {
+    public List<Task> findAllTask(final Session session) throws AccessForbiddenException {
         serviceLocator.getiSessionService().validateSession(session);
-        return taskService.getAllTaskFromList();
+        return serviceLocator.getiTaskService().getTaskByUserId(session);
     }
 
     @WebMethod
-    public List<Task> openTask(Session session, String name) throws AccessForbiddenException {
+    public List<Task> openTaskByName(final Session session, final String name) throws AccessForbiddenException {
         serviceLocator.getiSessionService().validateSession(session);
-        return taskService.openTaskByName(name);
+        return serviceLocator.getiTaskService().openTaskByName(name);
     }
 
     @WebMethod
-    public void deleteTaskByIdProjecr(Session session, String idProject) throws AccessForbiddenException {
+    public void deleteTaskByIdProjecr(final Session session, final String idProject) throws AccessForbiddenException {
         serviceLocator.getiSessionService().validateSession(session);
-        taskService.deleteTaskByProjectId(idProject); }
+        serviceLocator.getiTaskService().deleteTaskByProjectId(idProject); }
 
     @WebMethod
-    public boolean checkTaskListIsEmpty() { return taskService.checkTaskListIsEmpty(); }
+    public boolean checkTaskListIsEmpty() { return serviceLocator.getiTaskService().checkTaskListIsEmpty(); }
 
     @WebMethod
-    public List<Task> getTaskByProjectName(Session session, String nameProject) throws AccessForbiddenException {
+    public List<Task> getTaskByProjectName(final Session session, final String projectName) throws AccessForbiddenException {
         serviceLocator.getiSessionService().validateSession(session);
-        return taskService.getTaskByProjectName(nameProject); }
+        return serviceLocator.getiTaskService().getTaskByProjectName(projectName); }
 }

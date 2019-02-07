@@ -21,13 +21,12 @@ public class ProjectDeleteCommand extends AbstractCommand {
             System.out.println("!!!  Try command 'project-create'  !!!");
         } else {
             final String idProject = ReadFromConsole.readInputFromConsole("Input ID Project you want delete: ");
-
-            bootstrap.getEndpointTask().deleteTaskByIdProjecr(idProject);
+            try {
+                bootstrap.getEndpointTask().deleteTaskByIdProjecr(BootstrapClient.getSessionCurrentUser(), idProject);
+            } catch (AccessForbiddenException_Exception e) { e.printStackTrace(); }
             try {
                 bootstrap.getEndpointProject().deleteProject(BootstrapClient.getSessionCurrentUser(), idProject);
-            } catch (AccessForbiddenException_Exception e) {
-                e.printStackTrace();
-            }
+            } catch (AccessForbiddenException_Exception e) { e.printStackTrace(); }
         }
             System.out.println("[ОК]");
     }
