@@ -8,7 +8,6 @@ import repository.TaskRepository;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
 public class TaskService implements ITaskService {
@@ -50,11 +49,17 @@ public class TaskService implements ITaskService {
     public void deleteTaskByProjectId(String projectId) {
         if (projectId == null) return;
         final List<Task> taskList = taskRepository.getTaskList();
+        Task taskForDelete = new Task();
         if (taskList == null || taskList.isEmpty()) return;
-        Iterator<Task> it = taskList.iterator(); it.hasNext();
-        Task task = it.next();
-        if (task.getIdByProject().equals(projectId))
-            it.remove();
+        for (Task task: taskList)
+            if (task.getIdByProject().equals(projectId)) {
+                taskForDelete = task;
+                taskRepository.deleteTask(taskForDelete);
+            }
+//        Iterator<Task> it = taskList.iterator(); it.hasNext();
+//        Task task = it.next();
+//        if (task.getIdByProject().equals(projectId))
+//            it.remove();
     }
 
     public List<Task> openTaskByName(String nameTask) {
@@ -64,10 +69,6 @@ public class TaskService implements ITaskService {
             if (task.getName().equals(nameTask))
                 taskListByName.add(task);
         return taskListByName;
-    }
-
-    public void clearTaskList() {
-        taskRepository.clearTaskList();
     }
 
     public void deleteTask(String idTask) {
@@ -81,6 +82,10 @@ public class TaskService implements ITaskService {
         }
     }
 
+    public void clearTaskList() {
+        taskRepository.clearTaskList();
+    }
+
     public void updateTask(String name, String newName, Date newDateEnd) {
         if (taskRepository.getTaskList() == null) return;
         final List<Task> taskList = taskRepository.getTaskList();
@@ -89,11 +94,6 @@ public class TaskService implements ITaskService {
                 task.setName(newName);
                 task.setDateEnd(newDateEnd);
             }
-    }
-
-    public void addListTasks(List<Task> tasks) {
-        if (tasks == null) return;
-        taskRepository.addListTasks(tasks);
     }
 }
 

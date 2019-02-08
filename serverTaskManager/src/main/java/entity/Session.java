@@ -2,10 +2,11 @@ package entity;
 
 import java.util.Date;
 
+
 public class Session {
     private String userId;
     private String signature;
-    private Date startValidPeriod = new Date();
+    private Date startValidPeriod;
 
     public String getUserId() { return userId; }
 

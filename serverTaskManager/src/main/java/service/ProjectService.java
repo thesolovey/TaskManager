@@ -35,10 +35,6 @@ public class ProjectService implements IProjectService {
          return projectListByuserId;
     }
 
-    public void clearAllProject(Session session) {
-        projectRepository.clearProjectList();
-    }
-
     public void deleteProject(String idProject) {
         if (idProject == null) return;
         final List<Project> projectList = projectRepository.getProjectList();
@@ -50,16 +46,15 @@ public class ProjectService implements IProjectService {
         }
     }
 
+    public void clearAllProject(Session session) {
+        projectRepository.clearProjectList();
+    }
+
     public void updateNameProject(String id, String newNameProject) {
         if (id == null || newNameProject == null) return;
         final List<Project> projectList = projectRepository.getProjectList();
         for (Project project : projectList)
             if (project.getId().equals(id))
                 project.setName(newNameProject);
-    }
-
-    public void addListProjects(List<Project> projects) {
-        if (projects == null) return;
-        projectRepository.addListProjects(projects);
     }
 }

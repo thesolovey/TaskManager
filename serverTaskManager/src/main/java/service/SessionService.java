@@ -6,19 +6,21 @@ import entity.Session;
 import exception.AccessForbiddenException;
 import repository.SessionRepository;
 
+import java.util.Date;
 import java.util.List;
 
 public class SessionService implements ISessionService {
     private SessionRepository sessionRepository;
     public SessionService(SessionRepository sessionRepository) { this.sessionRepository = sessionRepository; }
-    private static final int SESSION_VALID_PERIOD = ApplicationConfig.sessionLifeTime;
+    private static final int SESSION_VALID_PERIOD = ApplicationConfig.SESSION_LIFE_TIME;
 
     public Session getNewSession(final String userId) { if (userId == null) { return null; }
         final Session session = new Session();
         session.setUserId(userId);
-
-        final String secretKey = ApplicationConfig.secretKey;
-        final int saltCount = ApplicationConfig.saltCount;
+        final Date dateBegin = new Date();
+        session.setStartValidPeriod(dateBegin);
+        final String secretKey = ApplicationConfig.SECRET_KEY;
+        final int saltCount = ApplicationConfig.SALT_COUNT;
 
         String signature = DigestUtils.md5Hex(session.getUserId());
         for (int i = 0; i < saltCount; i++) {
@@ -36,7 +38,6 @@ public class SessionService implements ISessionService {
         if (currentSession.getSignature() == null || currentSession.getSignature().isEmpty()) throw new AccessForbiddenException();
         if (currentSession.getUserId() == null || currentSession.getUserId().isEmpty())  throw new AccessForbiddenException();
         if (currentSession.getStartValidPeriod() == null) throw new AccessForbiddenException();
-        if (sessionList.size() == 0)  throw new AccessForbiddenException();
         Session temp = new Session();
         for (Session session: sessionList) {
             if (!session.getUserId().equals(currentSession.getUserId())) { throw new AccessForbiddenException(); }

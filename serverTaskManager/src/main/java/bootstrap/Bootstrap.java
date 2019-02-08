@@ -19,7 +19,6 @@ import javax.xml.ws.Endpoint;
 import java.sql.Connection;
 
 public class Bootstrap implements ServiceLocator {
-
     private Connection connection = new DataBaseConnection().getConnection();
 
     private ISessionService iSessionService;
@@ -43,7 +42,6 @@ public class Bootstrap implements ServiceLocator {
     private final SessionService sessionService = new SessionService(sessionRepository);
 
     private void publishEndpoint() {
-
         Endpoint.publish("http://localhost:8080/user?wsdl", new EndpointUser(this));
         Endpoint.publish("http://localhost:8080/session?wsdl", new EndpointSession(this));
         Endpoint.publish("http://localhost:8080/project?wsdl", new EndpointProject(this));
@@ -51,17 +49,9 @@ public class Bootstrap implements ServiceLocator {
     }
 
     public void start() {
-
         publishEndpoint();
         System.out.println("***SERVER RUN***");
 
-        do {
-//            String commandFromConsole = ReadFromConsole.readInputFromConsole("Input command: ");
-//            AbstractCommand command = commands.get(commandFromConsole);
-//
-//            if (command == null) continue;
-//            if (command.secure() && !this.getiUserService().isAuth()) continue;
-//                command.execute();
-        } while (true);
+        do { } while (true);
     }
  }

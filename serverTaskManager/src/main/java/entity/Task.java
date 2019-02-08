@@ -9,10 +9,6 @@ public class Task implements Serializable {
 
     private String name;
 
-    private Date dateBegin;
-
-    private Date dateEnd;
-
     private String nameByProject;
 
     private String idByProject;
@@ -20,6 +16,10 @@ public class Task implements Serializable {
     private String userLogin;
 
     private String idByUser;
+
+    private Date dateBegin;
+
+    private Date dateEnd;
 
     public String getIdByUser() { return idByUser; }
 

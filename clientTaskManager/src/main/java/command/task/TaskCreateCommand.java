@@ -8,6 +8,9 @@ import endpoint.Project;
 import endpoint.Task;
 import endpoint.User;
 
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.*;
 
 public class TaskCreateCommand extends AbstractCommand {
@@ -41,17 +44,19 @@ public class TaskCreateCommand extends AbstractCommand {
             final String idTask = UUID.randomUUID().toString();
             task.setId(idTask);
             final Date dateBegin = new Date();
-            Calendar calendarBegin = Calendar.getInstance();
-            Calendar calendarEnd = Calendar.getInstance();
-            calendarBegin.setTime(dateBegin);
+            final GregorianCalendar gc = new GregorianCalendar();
+            gc.setTime(dateBegin);
+            XMLGregorianCalendar myDate = null;
+            try {
+                myDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(gc);
+            } catch (DatatypeConfigurationException e) { e.printStackTrace(); }
+            task.setDateBegin(myDate);
 
             System.out.println("How many days to complete this Task?: ");
-            Scanner scanner = new Scanner(System.in);
-            int dateEnd = scanner.nextInt();
-            calendarEnd.add(Calendar.DATE, dateEnd);
+            final Scanner scanner = new Scanner(System.in);
+            final int dateEnd = scanner.nextInt();
+//            task.setDateEnd(myDate.get);
 
-//            task.setDateBegin(calendarBegin.getTime());
-//            task.setDateEnd(calendarEnd.getTime());
             task.setUserLogin(user.getLogin());
             task.setIdByProject(user.getUserName());
             task.setIdByUser(user.getId());

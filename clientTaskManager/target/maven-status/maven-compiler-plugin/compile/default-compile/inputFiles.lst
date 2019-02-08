@@ -84,6 +84,7 @@ C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\package-i
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\CheckTaskListIsEmpty.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\SessionListResponse.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\GetNewSessionResponse.java
+C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\OpenTaskByNameResponse.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\GetUserById.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\GetNewSession.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\command\project\ProjectListCommand.java
@@ -97,6 +98,7 @@ C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\command\task\TaskU
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\command\project\ProjectDeleteCommand.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\command\service\SaveCommand.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\DeleteTaskByIdProjecr.java
+C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\OpenTaskByName.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\AppClient.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\command\project\ProjectOpenCommand.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\DeleteTaskResponse.java

@@ -34,10 +34,5 @@ public class UserService implements IUserService {
 
     public void clearUsersList() {
         usersRepository.clearUsersList(); }
-
-    public void addListUsers(final List<User> userList) {
-        if (userList == null) return;
-        usersRepository.addListUser(userList);
-    }
 }
 

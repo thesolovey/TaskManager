@@ -37,6 +37,7 @@ public class EndpointProject {
     public boolean checkProjectListIsEmpty() { return serviceLocator.getiProjectService().checkProjectListIsEmpty(); }
 
     @WebMethod
-    public void clearAllProjectList(Session session) {
+    public void clearAllProjectList(Session session) throws AccessForbiddenException {
+        serviceLocator.getiSessionService().validateSession(session);
         serviceLocator.getiProjectService().clearAllProject(session); }
 }
