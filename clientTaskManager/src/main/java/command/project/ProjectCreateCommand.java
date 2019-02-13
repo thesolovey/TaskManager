@@ -8,8 +8,6 @@ import endpoint.Project;
 import endpoint.Session;
 import endpoint.User;
 
-import java.util.Calendar;
-import java.util.Date;
 import java.util.UUID;
 
 public class ProjectCreateCommand extends AbstractCommand {
@@ -25,30 +23,19 @@ public class ProjectCreateCommand extends AbstractCommand {
         User user = new User();
         try {
             user = getBootstrap().getEndpointUser().getUserById(BootstrapClient.getSessionCurrentUser(), session.getUserId());
-        } catch (AccessForbiddenException_Exception e) {
-            e.printStackTrace();
-        }
+        } catch (AccessForbiddenException_Exception e) { e.printStackTrace(); }
+
         final String name = ReadFromConsole.readInputFromConsole("Input name Project: ");
-        project.setName(name);
-
         final String idProject = UUID.randomUUID().toString();
+        project.setName(name);
         project.setId(idProject);
-
-        final Date dateBegin = new Date();
-        final Calendar calendarBegin = Calendar.getInstance();
-        calendarBegin.setTime(dateBegin);
-
-//        project.setDateBegin(calendarBegin.getTime());
         project.setUserLogin(user.getLogin());
         project.setUserName(user.getUserName());
         project.setUserId(user.getId());
 
         try {
             getBootstrap().getEndpointProject().createProject(session, project);
-        } catch (AccessForbiddenException_Exception e) {
-            e.printStackTrace();
-        }
-
+        } catch (AccessForbiddenException_Exception e) { e.printStackTrace(); }
         System.out.println("[OK]");
             }
 

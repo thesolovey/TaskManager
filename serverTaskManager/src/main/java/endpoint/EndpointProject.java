@@ -6,6 +6,7 @@ import entity.Session;
 import exception.AccessForbiddenException;
 
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
 import javax.jws.WebService;
 import java.util.List;
 
@@ -16,19 +17,21 @@ public class EndpointProject {
     public EndpointProject(ServiceLocator serviceLocator) { this.serviceLocator = serviceLocator; }
 
     @WebMethod
-    public void createProject (Session session,Project project) throws AccessForbiddenException {
+    public void createProject (@WebParam(name = "session") final Session session,
+                               @WebParam(name = "project") final Project project) throws AccessForbiddenException {
         serviceLocator.getiSessionService().validateSession(session);
         serviceLocator.getiProjectService().addProjectByList(project);
     }
 
     @WebMethod
-    public void deleteProject(Session session, String idProject) throws AccessForbiddenException {
+    public void deleteProject(@WebParam(name = "session") final Session session,
+                              @WebParam(name = "idProject") final String idProject) throws AccessForbiddenException {
         serviceLocator.getiSessionService().validateSession(session);
         serviceLocator.getiProjectService().deleteProject(idProject);
     }
 
     @WebMethod
-    public List<Project> getProjectByUserId(Session session) throws AccessForbiddenException {
+    public List<Project> getProjectByUserId(@WebParam(name = "session") final Session session) throws AccessForbiddenException {
         serviceLocator.getiSessionService().validateSession(session);
         return serviceLocator.getiProjectService().getProjectByUserId(session);
     }
@@ -37,7 +40,7 @@ public class EndpointProject {
     public boolean checkProjectListIsEmpty() { return serviceLocator.getiProjectService().checkProjectListIsEmpty(); }
 
     @WebMethod
-    public void clearAllProjectList(Session session) throws AccessForbiddenException {
+    public void clearAllProjectList(@WebParam(name = "session") final Session session) throws AccessForbiddenException {
         serviceLocator.getiSessionService().validateSession(session);
         serviceLocator.getiProjectService().clearAllProject(session); }
 }

@@ -10,7 +10,7 @@ import java.sql.Date;
 import static config.DateRequired.makeSqlDate;
 
 public class SessionRepository extends AbstractRepository {
-    public SessionRepository(Connection connection) { this.connection = connection; }
+//    public SessionRepository(Connection connection) { this.connection = connection; }
 
     public void addSession(final Session session) {
         final String query = "INSERT INTO session (userId, signature, startValidPeriod) VALUE (?, ?, ?)";

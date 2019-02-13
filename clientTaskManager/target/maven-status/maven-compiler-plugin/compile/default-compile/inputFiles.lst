@@ -28,7 +28,6 @@ C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\DeletePro
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\command\task\TaskClearCommand.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\EndpointDataBase.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\CreateUserResponse.java
-C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\command\user\UserAdminCreateCommand.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\SessionList.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\ValidateSessionResponse.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\GetUserListForRegistration.java
@@ -75,7 +74,6 @@ C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\GetTaskBy
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\User.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\CreateTaskResponse.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\GetListAllSession.java
-C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\command\user\UserTestCreateCommand.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\FindAllTask.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\AuthUserResponse.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\command\user\UserRegisrtationCommand.java

@@ -19,7 +19,7 @@ public class TaskCreateCommand extends AbstractCommand {
     }
 
     public static final String COMMAND = "task-create";
-
+    
     public void execute() {
         List<Project> projectList = new ArrayList<>();
         try {
@@ -78,9 +78,7 @@ public class TaskCreateCommand extends AbstractCommand {
     }
 
     @Override
-    public boolean secure() {
-        return false;
-    }
+    public boolean secure() { return false; }
 
     @Override
     public String getKeyWord() { return "task-create"; }

@@ -8,7 +8,10 @@ import command.service.HelpCommand;
 import command.service.LoadCommand;
 import command.service.SaveCommand;
 import command.task.*;
-import command.user.*;
+import command.user.UserAuthorizationCommand;
+import command.user.UserListCommand;
+import command.user.UserLogoutCommand;
+import command.user.UserRegisrtationCommand;
 import endpoint.*;
 
 import java.util.LinkedHashMap;
@@ -56,39 +59,31 @@ public class BootstrapClient {
     }
 
 //    private void getCommands() throws IllegalAccessException, InstantiationException {
-//
-//        Reflections reflections = new Reflections("serverTaskManager.command");
+//        Reflections reflections = new Reflections("clientTaskManager");
 //        final Set<Class<? extends AbstractCommand>> commandInput = reflections.getSubTypesOf(AbstractCommand.class);
-//        for (final Class<? extends AbstractCommand> commandIn : commandInput) {
-//            AbstractCommand command = commandIn.newInstance();
-//            command.setBootstrap(this);
-//            commands.put(command.getKeyWord(), command);
+//        for (final Class<? extends AbstractCommand> listCommand: commandInput) {
+//            final AbstractCommand currentCommand = listCommand.newInstance();
+//            currentCommand.setBootstrap(this);
+//            commands.put(currentCommand.getKeyWord(), currentCommand);
 //        }
 //    }
 
     public void start() {
 
-        AbstractCommand userAdminCreateCommand = new UserAdminCreateCommand(this);
-        userAdminCreateCommand.execute();
+            System.out.println("***WELLCOME TO TASK MANAGER***");
 
-        AbstractCommand userTestCreateCommand = new UserTestCreateCommand(this);
-        userTestCreateCommand.execute();
+            do {
+//             try {
+//                 getCommands();
+//             } catch (Exception e) {e.printStackTrace(); }
 
-//        try {
-//            getCommands();
-//        } catch (Exception e) {e.printStackTrace(); }
-
-        System.out.println("***WELLCOME TO TASK MANAGER***");
-
-        do {
-            String commandFromConsole = ReadFromConsole.readInputFromConsole("Input command: ");
-            AbstractCommand command = commands.get(commandFromConsole);
-
-            if (command == null) continue;
-            if (command.secure() || getSessionCurrentUser() != null)
-            //           if (commands.containsKey(commandFromConsole)) {
-            command.execute();
-            //           }
+                final String commandFromConsole = ReadFromConsole.readInputFromConsole("Input command: ");
+//          if (commands.containsKey(commandFromConsole)) {
+                final AbstractCommand command = commands.get(commandFromConsole);
+                if (command == null) continue;
+                if (command.secure() || getSessionCurrentUser() != null)
+                    command.execute();
+//                       }
         } while (true);
     }
 }

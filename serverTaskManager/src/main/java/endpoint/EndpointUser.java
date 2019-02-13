@@ -17,10 +17,10 @@ public class EndpointUser {
     public EndpointUser(ServiceLocator serviceLocator) { this.serviceLocator = serviceLocator; }
 
     @WebMethod
-    public void createUser(@WebParam final User user) { serviceLocator.getiUserService().addUserByList(user); }
+    public void createUser(@WebParam(name = "user") final User user) { serviceLocator.getiUserService().addUserByList(user); }
 
     @WebMethod
-    public List<User> getUserList(@WebParam final Session session) throws AccessForbiddenException {
+    public List<User> getUserList(@WebParam(name = "session") final Session session) throws AccessForbiddenException {
         serviceLocator.getiSessionService().validateSession(session);
         return serviceLocator.getiUserService().getUsersList();
     }
@@ -29,7 +29,8 @@ public class EndpointUser {
     public List<User> getUserListForRegistration() { return serviceLocator.getiUserService().getUsersList(); }
 
     @WebMethod
-    public User getUserById(@WebParam final Session session, @WebParam final String userId) throws AccessForbiddenException {
+    public User getUserById(@WebParam(name = "session") final Session session,
+                            @WebParam(name = "userId") final String userId) throws AccessForbiddenException {
         serviceLocator.getiSessionService().validateSession(session);
         return serviceLocator.getiUserService().getUserById(userId); }
 }

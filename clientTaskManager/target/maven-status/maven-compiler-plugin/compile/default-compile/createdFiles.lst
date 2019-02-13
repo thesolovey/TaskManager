@@ -2,7 +2,6 @@ endpoint\GetUserListForRegistration.class
 endpoint\FindAllUser.class
 command\service\HelpCommand.class
 endpoint\DeleteSession.class
-command\user\UserTestCreateCommand.class
 endpoint\GetProjectByUserIdResponse.class
 endpoint\GetUserById.class
 endpoint\GetUserList.class
@@ -40,7 +39,6 @@ endpoint\LogOutResponse.class
 command\AbstractCommand.class
 endpoint\FindAllUserResponse.class
 endpoint\EndpointUserService.class
-command\user\UserAdminCreateCommand.class
 endpoint\EndpointTask.class
 command\user\UserLogoutCommand.class
 command\service\SaveCommand.class

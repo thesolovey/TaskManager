@@ -1,13 +1,15 @@
 package repository;
 
+import domain.ConnectionMybatis;
 import entity.Project;
+import org.apache.ibatis.session.SqlSession;
 
-import java.sql.*;
-import java.util.ArrayList;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
 public class ProjectRepository extends AbstractRepository {
-    public ProjectRepository(Connection connection) { this.connection = connection; }
+//    public ProjectRepository(Connection connection) { this.connection = connection; }
 
     public void addProject(final Project project) {
         final String query = "INSERT INTO project (id, name, userName, userLogin, userId) VALUES (?, ?, ?, ?, ?)";
@@ -24,28 +26,31 @@ public class ProjectRepository extends AbstractRepository {
     }
 
     public List<Project> getProjectList() {
-        final List<Project> projectList = new ArrayList<>();
-        final String query = "SELECT * FROM project";
-        try {
-            final Statement statement = connection.createStatement();
-            final ResultSet resultSet = statement.executeQuery(query);
-            while (resultSet.next()) {
-                final String id = resultSet.getString("id");
-                final String name = resultSet.getString("name");
-                final String userName = resultSet.getString("userName");
-                final String userLogin = resultSet.getString("userLogin");
-                final String userId = resultSet.getString("userId");
+//        final List<Project> projectList = new ArrayList<>();
+//        final String query = "SELECT * FROM project";
+//        try {
+//            final Statement statement = connection.createStatement();
+//            final ResultSet resultSet = statement.executeQuery(query);
+//            while (resultSet.next()) {
+//                final String id = resultSet.getString("id");
+//                final String name = resultSet.getString("name");
+//                final String userName = resultSet.getString("userName");
+//                final String userLogin = resultSet.getString("userLogin");
+//                final String userId = resultSet.getString("userId");
+//
+//                final Project project = new Project();
+//                project.setId(id);
+//                project.setName(name);
+//                project.setUserName(userName);
+//                project.setUserLogin(userLogin);
+//                project.setUserId(userId);
+//                projectList.add(project);
+//            }
+//        } catch (SQLException e) { e.printStackTrace(); }
+//        return projectList;
 
-                final Project project = new Project();
-                project.setId(id);
-                project.setName(name);
-                project.setUserName(userName);
-                project.setUserLogin(userLogin);
-                project.setUserId(userId);
-                projectList.add(project);
-            }
-        } catch (SQLException e) { e.printStackTrace(); }
-        return projectList;
+        SqlSession session = ConnectionMybatis.getSqlSessionFactory().openSession();
+        return session.selectList("getProjectList");
     }
 
     public void deleteProject(final Project project) {

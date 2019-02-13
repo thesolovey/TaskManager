@@ -13,19 +13,19 @@ public class UserTestCreateCommand extends AbstractCommand {
 
     @Override
     public void execute() {
-        final User user = new User();
+        final User userTest = new User();
         final String login = "test";
         final String password = "test";
         final int passwordHash = password.hashCode();
         final String userName = "test";
         final String userId = UUID.randomUUID().toString();
 
-        user.setLogin(login);
-        user.setPassword(passwordHash);
-        user.setUserName(userName);
-        user.setId(userId);
+        userTest.setLogin(login);
+        userTest.setPassword(passwordHash);
+        userTest.setUserName(userName);
+        userTest.setId(userId);
 
-        bootstrap.getiUserService().addUserByList(user);
+        bootstrap.getiUserService().addUserByList(userTest);
     }
 
     @Override

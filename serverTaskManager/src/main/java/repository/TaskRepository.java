@@ -9,7 +9,7 @@ import java.util.List;
 import static config.DateRequired.makeSqlDate;
 
 public class TaskRepository extends AbstractRepository {
-    public TaskRepository(Connection connection) { this.connection = connection; }
+//    public TaskRepository(Connection connection) { this.connection = connection; }
 
     public void addTask(final Task task) {
         final String query = "INSERT INTO task (id, name, nameByProject, idByProject, userLogin, idByUser, dateBegin, dateEnd) " +

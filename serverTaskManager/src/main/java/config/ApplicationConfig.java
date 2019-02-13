@@ -25,7 +25,6 @@ public class ApplicationConfig {
             JDBC_DRIVER = prop.getProperty("JDBC_DRIVER");
             LOGIN = prop.getProperty("LOGIN");
             PASSWORD = prop.getProperty("PASSWORD");
-
         } catch (IOException e) { e.printStackTrace(); }
     }
 }

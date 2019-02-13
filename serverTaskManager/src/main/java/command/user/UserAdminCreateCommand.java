@@ -13,20 +13,19 @@ public class UserAdminCreateCommand extends AbstractCommand {
 
     @Override
     public void execute() {
-        final User newUser = new User();
+        final User userAdmin = new User();
         final String login = "admin";
         final String password = "admin";
         final int passwordHash = password.hashCode();
         final String userName = "admin";
         final String userId = UUID.randomUUID().toString();
 
-        newUser.setLogin(login);
-        newUser.setPassword(passwordHash);
-        newUser.setUserName(userName);
-        newUser.setId(userId);
+        userAdmin.setLogin(login);
+        userAdmin.setPassword(passwordHash);
+        userAdmin.setUserName(userName);
+        userAdmin.setId(userId);
 
-        bootstrap.getiUserService().addUserByList(newUser);
-
+        bootstrap.getiUserService().addUserByList(userAdmin);
     }
 
     @Override
