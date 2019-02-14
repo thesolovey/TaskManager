@@ -88,7 +88,6 @@ endpoint\ClearAllProjectListResponse.class
 endpoint\EndpointProject.class
 endpoint\DeleteTaskByIdProjecr.class
 command\user\UserListCommand.class
-command\task\TaskClearCommand.class
 endpoint\EndpointTaskService.class
 command\task\TaskCreateCommand.class
 endpoint\GetSessionById.class
@@ -101,7 +100,6 @@ endpoint\CreateProject.class
 endpoint\package-info.class
 endpoint\SetCurrentUserResponse.class
 endpoint\AuthUserResponse.class
-command\project\ProjectClearCommand.class
 endpoint\DeleteTask.class
 endpoint\GetSessionByUserIdResponse.class
 endpoint\OpenTask.class

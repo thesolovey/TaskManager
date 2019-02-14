@@ -1,31 +1,23 @@
 package repository;
 
-import domain.ConnectionMybatis;
-import entity.Project;
-import org.apache.ibatis.session.SqlSession;
+//public class ProjectRepository extends AbstractRepository {
+////    public ProjectRepository(Connection connection) { this.connection = connection; }
 
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.List;
+//    public void addProject(final Project project) {
+//        final String query = "INSERT INTO project (id, name, userName, userLogin, userId) VALUES (?, ?, ?, ?, ?)";
+//        try {
+//            final PreparedStatement statement = connection.prepareStatement(query);
+//            statement.setString(1, project.getId());
+//            statement.setString(2, project.getName());
+//            statement.setString(3, project.getUserName());
+//            statement.setString(4, project.getUserLogin());
+//            statement.setString(5, project.getUserId());
+//            statement.executeUpdate();
+//            statement.close();
+//        } catch (SQLException e) { e.printStackTrace(); }
+//    }
 
-public class ProjectRepository extends AbstractRepository {
-//    public ProjectRepository(Connection connection) { this.connection = connection; }
-
-    public void addProject(final Project project) {
-        final String query = "INSERT INTO project (id, name, userName, userLogin, userId) VALUES (?, ?, ?, ?, ?)";
-        try {
-            final PreparedStatement statement = connection.prepareStatement(query);
-            statement.setString(1, project.getId());
-            statement.setString(2, project.getName());
-            statement.setString(3, project.getUserName());
-            statement.setString(4, project.getUserLogin());
-            statement.setString(5, project.getUserId());
-            statement.executeUpdate();
-            statement.close();
-        } catch (SQLException e) { e.printStackTrace(); }
-    }
-
-    public List<Project> getProjectList() {
+//    public List<Project> getProjectList() {
 //        final List<Project> projectList = new ArrayList<>();
 //        final String query = "SELECT * FROM project";
 //        try {
@@ -49,20 +41,20 @@ public class ProjectRepository extends AbstractRepository {
 //        } catch (SQLException e) { e.printStackTrace(); }
 //        return projectList;
 
-        SqlSession session = ConnectionMybatis.getSqlSessionFactory().openSession();
-        return session.selectList("getProjectList");
-    }
+ //       SqlSession session = ConnectionMybatis.getSqlSessionFactory().openSession();
+  //      return session.selectList("getProjectList");
+ //   }
 
-    public void deleteProject(final Project project) {
-        final String query = "DELETE FROM project WHERE id = ?";
-        try {
-            final PreparedStatement statement = connection.prepareStatement(query);
-            statement.setString(1, project.getId());
-            statement.executeUpdate();
-            statement.close();
-        } catch (SQLException e) { e.printStackTrace(); }
-    }
-    public void clearProjectList() {
-//        projectList.clear();
-    }
-}
+//    public void deleteProject(final Project project) {
+//        final String query = "DELETE FROM project WHERE id = ?";
+//        try {
+//            final PreparedStatement statement = connection.prepareStatement(query);
+//            statement.setString(1, project.getId());
+//            statement.executeUpdate();
+//            statement.close();
+//        } catch (SQLException e) { e.printStackTrace(); }
+//    }
+//    public void clearProjectList() {
+////        projectList.clear();
+//    }
+//}

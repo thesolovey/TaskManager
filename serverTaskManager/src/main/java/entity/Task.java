@@ -1,24 +1,39 @@
 package entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
 
+@Entity
+@Table(name = "task")
 public class Task implements Serializable {
 
+    @Id
+    @Column(name = "id")
     private String  id;
 
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "nameByProject")
     private String nameByProject;
 
+    @Column(name = "idByProject")
     private String idByProject;
 
+    @Column(name = "userLogin")
     private String userLogin;
 
+    @Column(name = "idByUser")
     private String idByUser;
 
+    @Column(name = "dateBegin")
     private Date dateBegin;
 
+    @Column(name = "dateEnd")
     private Date dateEnd;
 
     public String getIdByUser() { return idByUser; }

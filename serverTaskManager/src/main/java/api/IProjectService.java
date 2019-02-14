@@ -10,5 +10,4 @@ public interface IProjectService {
     void deleteProject(String projectId);
     List<Project> getProjectByUserId(Session session);
     boolean checkProjectListIsEmpty();
-    void clearAllProject(Session session);
 }

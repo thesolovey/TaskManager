@@ -12,7 +12,6 @@ import java.util.List;
 
 @WebService
 public class EndpointUser {
-
     private ServiceLocator serviceLocator;
     public EndpointUser(ServiceLocator serviceLocator) { this.serviceLocator = serviceLocator; }
 

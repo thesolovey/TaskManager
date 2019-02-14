@@ -10,7 +10,6 @@ import javax.jws.WebService;
 
 @WebService
 public class EndpointSession {
-
     private ServiceLocator serviceLocator;
     public EndpointSession(ServiceLocator serviceLocator) { this.serviceLocator = serviceLocator; }
 

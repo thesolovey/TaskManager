@@ -48,37 +48,34 @@ public class BootstrapClient {
         commands.put(ProjectListCommand.COMMAND, new ProjectListCommand(this));
         commands.put(ProjectOpenCommand.COMMAND, new ProjectOpenCommand(this));
         commands.put(ProjectDeleteCommand.COMMAND, new ProjectDeleteCommand(this));
-        commands.put(ProjectClearCommand.COMMAND, new ProjectClearCommand(this));
         commands.put(ProjectUpdateCommand.COMMAND, new ProjectUpdateCommand(this));
         commands.put(TaskCreateCommand.COMMAND, new TaskCreateCommand(this));
         commands.put(TaskListCommand.COMMAND, new TaskListCommand(this));
         commands.put(TaskOpenCommand.COMMAND, new TaskOpenCommand(this));
         commands.put(TaskDeleteCommand.COMMAND, new TaskDeleteCommand(this));
-        commands.put(TaskClearCommand.COMMAND, new TaskClearCommand(this));
         commands.put(TaskUpdateCommand.COMMAND, new TaskUpdateCommand(this));
     }
 
 //    private void getCommands() throws IllegalAccessException, InstantiationException {
-//        Reflections reflections = new Reflections("clientTaskManager");
+//        Reflections reflections = new Reflections("command");
 //        final Set<Class<? extends AbstractCommand>> commandInput = reflections.getSubTypesOf(AbstractCommand.class);
 //        for (final Class<? extends AbstractCommand> listCommand: commandInput) {
-//            final AbstractCommand currentCommand = listCommand.newInstance();
+//            AbstractCommand currentCommand = listCommand.newInstance();
 //            currentCommand.setBootstrap(this);
 //            commands.put(currentCommand.getKeyWord(), currentCommand);
 //        }
 //    }
 
     public void start() {
-
             System.out.println("***WELLCOME TO TASK MANAGER***");
 
             do {
-//             try {
-//                 getCommands();
-//             } catch (Exception e) {e.printStackTrace(); }
-
                 final String commandFromConsole = ReadFromConsole.readInputFromConsole("Input command: ");
-//          if (commands.containsKey(commandFromConsole)) {
+
+//                try {
+//                 getCommands();
+//                } catch (Exception e) {e.printStackTrace(); }
+//             if (commands.containsKey(commandFromConsole)) {
                 final AbstractCommand command = commands.get(commandFromConsole);
                 if (command == null) continue;
                 if (command.secure() || getSessionCurrentUser() != null)

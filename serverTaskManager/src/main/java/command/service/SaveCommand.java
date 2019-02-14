@@ -3,10 +3,6 @@ package command.service;
 import bootstrap.Bootstrap;
 import command.AbstractCommand;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-
 public class SaveCommand extends AbstractCommand {
 
     public static final String COMMAND = "save";
@@ -16,25 +12,25 @@ public class SaveCommand extends AbstractCommand {
     @Override
     public void execute() {
         System.out.println("[SAVE]");
-        try {
-            FileOutputStream fosUser = new FileOutputStream("user.txt");
-            ObjectOutputStream oosUser = new ObjectOutputStream(fosUser);
-            oosUser.writeObject(bootstrap.getiUserService().getUsersList());
-            oosUser.flush();
-            oosUser.close();
-
-            FileOutputStream fosProject = new FileOutputStream("project.txt");
-            ObjectOutputStream oosProject = new ObjectOutputStream(fosProject);
-//            oosProject.writeObject(bootstrap.getProjectService().getProjectByUserId());
-            oosProject.flush();
-            oosProject.close();
-
-            FileOutputStream fosTask = new FileOutputStream("task.txt");
-            ObjectOutputStream oosTask = new ObjectOutputStream(fosTask);
-//            oosTask.writeObject(bootstrap.getiTaskService().getTaskByUserId());
-            oosTask.flush();
-            oosTask.close();
-        } catch (IOException e) {e.printStackTrace();}
+//        try {
+//            FileOutputStream fosUser = new FileOutputStream("user.txt");
+//            ObjectOutputStream oosUser = new ObjectOutputStream(fosUser);
+//            oosUser.writeObject(bootstrap.getiUserService().getUsersList());
+//            oosUser.flush();
+//            oosUser.close();
+//
+//            FileOutputStream fosProject = new FileOutputStream("project.txt");
+//            ObjectOutputStream oosProject = new ObjectOutputStream(fosProject);
+////            oosProject.writeObject(bootstrap.getProjectService().getProjectByUserId());
+//            oosProject.flush();
+//            oosProject.close();
+//
+//            FileOutputStream fosTask = new FileOutputStream("task.txt");
+//            ObjectOutputStream oosTask = new ObjectOutputStream(fosTask);
+////            oosTask.writeObject(bootstrap.getiTaskService().getTaskByUserId());
+//            oosTask.flush();
+//            oosTask.close();
+//        } catch (IOException e) {e.printStackTrace();}
 
         System.out.println("[OK]");
     }

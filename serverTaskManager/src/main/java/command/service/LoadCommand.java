@@ -31,19 +31,16 @@ public class LoadCommand extends AbstractCommand {
             ObjectInputStream oisUser = new ObjectInputStream(fisUser);
             userList = (List<User>) oisUser.readObject();
             domain.setUserList(userList);
-//            bootstrap.getiUserService().addListUsers(userList);
 
             FileInputStream fisProject = new FileInputStream("project.txt");
             ObjectInputStream oisProject = new ObjectInputStream(fisProject);
             projectList = (List<Project>) oisProject.readObject();
             domain.setProjectList(projectList);
-//            bootstrap.getProjectService().addListProjects(projectList);
 
             FileInputStream fisTask = new FileInputStream("task.txt");
             ObjectInputStream oisTask = new ObjectInputStream(fisTask);
             taskList = (List<Task>) oisTask.readObject();
             domain.setTaskList(taskList);
- //           bootstrap.getiTaskService().addListTasks(taskList);
 
             FileInputStream fisSession = new FileInputStream("session.txt");
             ObjectInputStream oisSession = new ObjectInputStream(fisSession);

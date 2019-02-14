@@ -1,78 +1,69 @@
 package service;
 
-import api.IProjectMapper;
+import api.IProjectHibernate;
 import api.IProjectService;
-import domain.ConnectionMybatis;
 import entity.Project;
 import entity.Session;
-import org.apache.ibatis.session.SqlSession;
 
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProjectService implements IProjectService {
-//    private final ProjectRepository projectRepository;
-//    public ProjectService(ProjectRepository projectRepository, TaskRepository taskRepository) {
-//        this.projectRepository = projectRepository;
-//    }
+import static domain.HibernateUtil.getEntityManager;
+
+public class ProjectService implements IProjectService, IProjectHibernate {
 
     public boolean checkProjectListIsEmpty() {
-        SqlSession session = ConnectionMybatis.getSqlSessionFactory().openSession();
+        final EntityManager manager = getEntityManager();
         try {
-            IProjectMapper projectMapper = session.getMapper(IProjectMapper.class);
-            final List<Project> projectList = projectMapper.getProjectList();
+            manager.getTransaction().begin();
+            TypedQuery<Project> namedQuery = manager.createNamedQuery("Project.getAll", Project.class);
+            final List<Project> projectList = namedQuery.getResultList();
             return projectList == null || projectList.isEmpty();
-        } finally {
-            session.close();
-        }
+        } finally { manager.close(); }
     }
 
-    public void addProjectByList(Project project) {
+    public void addProjectByList(final Project project) {
         if (project == null) return;
-//        projectRepository.addProject(project);
-        SqlSession session = ConnectionMybatis.getSqlSessionFactory().openSession();
+        final EntityManager manager = getEntityManager();
         try {
-            IProjectMapper projectMapper = session.getMapper(IProjectMapper.class);
-            projectMapper.addProject(project);
-            session.commit();
-        } finally {
-            session.close();
-        }
+            manager.getTransaction().begin();
+            manager.persist(project);
+            manager.getTransaction().commit();
+        } finally { manager.close(); }
     }
 
-    public List<Project> getProjectByUserId(Session session) {
-        SqlSession sqlSession = ConnectionMybatis.getSqlSessionFactory().openSession();
+    public List<Project> getProjectByUserId(final Session session) {
+        final EntityManager manager = getEntityManager();
         try {
-            IProjectMapper projectMapper = sqlSession.getMapper(IProjectMapper.class);
-            final List<Project> projectList = projectMapper.getProjectList();
+            manager.getTransaction().begin();
+            TypedQuery<Project> namedQuery = manager.createNamedQuery("Project.getAll", Project.class);
+            final List<Project> projectList = namedQuery.getResultList();
             final List<Project> projectListByuserId = new ArrayList<>();
             for (Project project : projectList)
                 if (project.getUserId().equals(session.getUserId()))
                     projectListByuserId.add(project);
             return projectListByuserId;
         } finally {
-            sqlSession.close();
+            manager.close();
         }
     }
 
-    public void deleteProject(String idProject) {
+    public void deleteProject(final String idProject) {
         if (idProject == null) return;
-        SqlSession session = ConnectionMybatis.getSqlSessionFactory().openSession();
+        final EntityManager manager = getEntityManager();
         try {
-            IProjectMapper projectMapper = session.getMapper(IProjectMapper.class);
-            final List<Project> projectList = projectMapper.getProjectList();
+            manager.getTransaction().begin();
+            TypedQuery<Project> namedProject = manager.createNamedQuery("Project.getAll", Project.class);
+            final List<Project> projectList = namedProject.getResultList();
             for (Project project : projectList) {
             if (project.getId().equals(idProject)) {
-                projectMapper.deleteProject(project);
+                manager.remove(project);
+                manager.getTransaction().commit();
                 return; }
-            } session.commit();
-        } finally {
-            session.close();
-        }
-    }
-
-    public void clearAllProject(Session session) {
-//        projectRepository.clearProjectList();
+            }
+        } finally { manager.close(); }
     }
 
     public void updateNameProject(String id, String newNameProject) {

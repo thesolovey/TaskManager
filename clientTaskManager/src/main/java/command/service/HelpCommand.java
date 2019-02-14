@@ -10,7 +10,7 @@ public class HelpCommand extends AbstractCommand {
     @Override
     public void execute() {
         System.out.println("[HELP]");
-//        Set<String> commands = bootstrap.getCommands();
+//        final Set<String> commands = bootstrap.getCommands();
 //        for (String string : commands)
 //        System.out.println(string);
         System.out.println("[OK}");
@@ -18,7 +18,7 @@ public class HelpCommand extends AbstractCommand {
 
     @Override
     public boolean secure() {
-        return false;
+        return true;
     }
 
     @Override

@@ -12,7 +12,6 @@ import java.util.List;
 
 @WebService
 public class EndpointTask  {
-
     private ServiceLocator serviceLocator;
     public EndpointTask(ServiceLocator serviceLocator) { this.serviceLocator = serviceLocator; }
 

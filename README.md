@@ -9,7 +9,11 @@ Application `TaskManager`
 ****
 `Descriptions`
 * Project management application.
+      The application allows you to create projects, tasks and manage them.
 
+* default Users:
+      login: admin, password: admin
+      login: test, password: test
 
 ****
 `Project build`

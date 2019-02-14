@@ -1,20 +1,20 @@
 package service;
-import api.ISessionMapper;
+import api.ISessionHibernate;
 import api.ISessionService;
 import config.ApplicationConfig;
-import domain.ConnectionMybatis;
 import entity.Session;
 import exception.AccessForbiddenException;
 import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.ibatis.session.SqlSession;
 import org.jetbrains.annotations.Nullable;
 
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import java.util.Date;
 import java.util.List;
 
-public class SessionService implements ISessionService {
-//    private SessionRepository sessionRepository;
-//    public SessionService(SessionRepository sessionRepository) { this.sessionRepository = sessionRepository; }
+import static domain.HibernateUtil.getEntityManager;
+
+public class SessionService implements ISessionService, ISessionHibernate {
     private static final int SESSION_VALID_PERIOD = ApplicationConfig.SESSION_LIFE_TIME;
 
     @Nullable
@@ -32,14 +32,14 @@ public class SessionService implements ISessionService {
             signature = DigestUtils.md5Hex(signature + secretKey);
         }
         session.setSignature(signature);
-        SqlSession sqlSession = ConnectionMybatis.getSqlSessionFactory().openSession();
+        final EntityManager manager = getEntityManager();;
         try {
-            ISessionMapper sessionMapper = sqlSession.getMapper(ISessionMapper.class);
-            sessionMapper.addSession(session);
-            sqlSession.commit();
+            manager.getTransaction().begin();
+            manager.persist(session);
+            manager.getTransaction().commit();
             return session;
         } finally {
-            sqlSession.close();
+            manager.close();
         }
     }
 
@@ -50,10 +50,11 @@ public class SessionService implements ISessionService {
         if (currentSession.getStartValidPeriod() == null) throw new AccessForbiddenException();
 
         Session temp = new Session();
-        SqlSession sqlSession = ConnectionMybatis.getSqlSessionFactory().openSession();
+        final EntityManager manager = getEntityManager();
         try {
-            ISessionMapper sessionMapper = sqlSession.getMapper(ISessionMapper.class);
-            final List<Session> sessionList = sessionMapper.getSessionList();
+            manager.getTransaction().begin();
+            TypedQuery<Session> namedQuery = manager.createNamedQuery("Session.getAll", Session.class);
+            final List<Session> sessionList = namedQuery.getResultList();
             for (Session session: sessionList) {
             if (!session.getUserId().equals(currentSession.getUserId())) { throw new AccessForbiddenException(); }
             if (session.getUserId().equals(currentSession.getUserId())) {temp = session;}
@@ -64,44 +65,46 @@ public class SessionService implements ISessionService {
         if (!checkSignature) throw new  AccessForbiddenException();
 
         if (System.currentTimeMillis() - currentSession.getStartValidPeriod().getTime() > SESSION_VALID_PERIOD) {
-            sessionMapper.delete(currentSession);
-            sqlSession.commit();}
+            manager.remove(currentSession);
+            manager.getTransaction().commit();}
     } finally {
-            sqlSession.close();
+            manager.close();
         }
     }
 
     public void logOut(final Session currentSession) {
         if (currentSession == null) return;
-        SqlSession sqlSession = ConnectionMybatis.getSqlSessionFactory().openSession();
+        final EntityManager manager = getEntityManager();
         try {
-            ISessionMapper sessionMapper = sqlSession.getMapper(ISessionMapper.class);
-            final List<Session> sessionList = sessionMapper.getSessionList();
+            manager.getTransaction().begin();
+            TypedQuery<Session> namedQuery = manager.createNamedQuery("Session.getAll", Session.class);
+            final List<Session> sessionList = namedQuery.getResultList();
             for (Session session : sessionList) {
                 if (session.getUserId().equals(currentSession.getUserId())) {
-                    sessionMapper.delete(session);
-                    sqlSession.commit();
+                    manager.remove(session);
+                    manager.getTransaction().commit();
                     return;
                 }
             }
         } finally {
-            sqlSession.close();
+            manager.close();
         }
     }
 
     public Session getSessionById(final String userId) {
         if (userId == null || userId.isEmpty()) { return null; }
         Session sessionByUserId = null;
-        SqlSession sqlSession = ConnectionMybatis.getSqlSessionFactory().openSession();
+        final EntityManager manager = getEntityManager();
         try {
-            ISessionMapper sessionMapper = sqlSession.getMapper(ISessionMapper.class);
-            final List<Session> sessionList = sessionMapper.getSessionList();
+            manager.getTransaction().begin();
+            TypedQuery<Session> namedQuery = manager.createNamedQuery("Session.getAll", Session.class);
+            final List<Session> sessionList = namedQuery.getResultList();
             for (Session session: sessionList) {
                 if (session.getUserId().equals(userId))
                     sessionByUserId = session;
             }
         } finally {
-            sqlSession.close();
+            manager.close();
         } return sessionByUserId;
     }
 }

@@ -12,7 +12,6 @@ import java.util.List;
 
 @WebService
 public class EndpointProject {
-
     private ServiceLocator serviceLocator;
     public EndpointProject(ServiceLocator serviceLocator) { this.serviceLocator = serviceLocator; }
 
@@ -38,9 +37,4 @@ public class EndpointProject {
 
     @WebMethod
     public boolean checkProjectListIsEmpty() { return serviceLocator.getiProjectService().checkProjectListIsEmpty(); }
-
-    @WebMethod
-    public void clearAllProjectList(@WebParam(name = "session") final Session session) throws AccessForbiddenException {
-        serviceLocator.getiSessionService().validateSession(session);
-        serviceLocator.getiProjectService().clearAllProject(session); }
 }

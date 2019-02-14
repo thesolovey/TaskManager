@@ -1,69 +1,67 @@
 package service;
 
-import api.ITaskMapper;
+import api.ITaskHibernate;
 import api.ITaskService;
-import domain.ConnectionMybatis;
 import entity.Session;
 import entity.Task;
-import org.apache.ibatis.session.SqlSession;
 
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-public class TaskService implements ITaskService {
-//    private final TaskRepository taskRepository;
-//    private final ProjectRepository projectRepository;
-//
-//    public TaskService(TaskRepository taskRepository, ProjectRepository projectRepository) { this.taskRepository = taskRepository;
-//        this.projectRepository = projectRepository;
-//    }
+import static domain.HibernateUtil.getEntityManager;
+
+public class TaskService implements ITaskService, ITaskHibernate {
 
     public boolean checkTaskListIsEmpty() {
-        SqlSession sqlSession = ConnectionMybatis.getSqlSessionFactory().openSession();
+        final EntityManager manager = getEntityManager();
         try {
-            ITaskMapper taskMapper = sqlSession.getMapper(ITaskMapper.class);
-            final List<Task> taskList = taskMapper.getTaskList();
+            manager.getTransaction().begin();
+            TypedQuery<Task> namedQuery = manager.createNamedQuery("Task.getAll", Task.class);
+            final List<Task> taskList = namedQuery.getResultList();
             return taskList == null || taskList.isEmpty();
         } finally {
-            sqlSession.close();
+            manager.close();
         }
     }
 
-    public void addTask(Task task) {
+    public void addTask(final Task task) {
         if (task == null) return;
-        SqlSession sqlSession = ConnectionMybatis.getSqlSessionFactory().openSession();
+        final EntityManager manager = getEntityManager();
         try {
-            ITaskMapper taskMapper = sqlSession.getMapper(ITaskMapper.class);
-            taskMapper.addTask(task);
-            sqlSession.commit();
+            manager.getTransaction().begin();
+            manager.persist(task);
+            manager.getTransaction().commit();
         } finally {
-            sqlSession.close();
+            manager.close();
         }
     }
 
-    public List<Task> getTaskByUserId(Session session) {
+    public List<Task> getTaskByUserId(final Session session) {
         if (session == null) return null;
-        SqlSession sqlSession = ConnectionMybatis.getSqlSessionFactory().openSession();
+        final EntityManager manager = getEntityManager();
         try {
-            ITaskMapper taskMapper = sqlSession.getMapper(ITaskMapper.class);
-            final List<Task> taskList = taskMapper.getTaskList();
+            manager.getTransaction().begin();
+            TypedQuery<Task> namedQuery = manager.createNamedQuery("Task.getAll", Task.class);
+            final List<Task> taskList = namedQuery.getResultList();
             final List<Task> taskListByUserId = new ArrayList<>();
             for (Task task : taskList)
                 if (task.getIdByUser().equals(session.getUserId()))
                     taskListByUserId.add(task);
             return taskListByUserId;
         } finally {
-            sqlSession.close();
+            manager.close();
         }
     }
 
-    public List<Task> getTaskByProjectName(String projectName) {
+    public List<Task> getTaskByProjectName(final String projectName) {
         if (projectName == null) return null;
-        SqlSession sqlSession = ConnectionMybatis.getSqlSessionFactory().openSession();
+        final EntityManager manager = getEntityManager();
         try {
-            ITaskMapper taskMapper = sqlSession.getMapper(ITaskMapper.class);
-            final List<Task> taskList = taskMapper.getTaskList();
+            manager.getTransaction().begin();
+            TypedQuery<Task> namedQuery = manager.createNamedQuery("Task.getAll", Task.class);
+            final List<Task> taskList = namedQuery.getResultList();
             final List<Task> taskByProjectName = new ArrayList<>();
             for (Task task : taskList) {
                 if (task.getNameByProject().equals(projectName))
@@ -71,72 +69,66 @@ public class TaskService implements ITaskService {
             }
             return taskByProjectName;
         } finally {
-            sqlSession.close();
+            manager.close();
         }
     }
 
-    public void deleteTaskByProjectId(String projectId) {
+    public void deleteTaskByProjectId(final String projectId) {
         if (projectId == null) return;
-        SqlSession sqlSession = ConnectionMybatis.getSqlSessionFactory().openSession();
+        final EntityManager manager = getEntityManager();
         try {
-            ITaskMapper taskMapper = sqlSession.getMapper(ITaskMapper.class);
-            final List<Task> taskList = taskMapper.getTaskList();
+            manager.getTransaction().begin();
+            TypedQuery<Task> namedQuery = manager.createNamedQuery("Task.getAll", Task.class);
+            final List<Task> taskList = namedQuery.getResultList();
             Task taskForDelete = new Task();
             if (taskList == null || taskList.isEmpty()) return;
             for (Task task : taskList)
                 if (task.getIdByProject().equals(projectId)) {
                     taskForDelete = task;
-                    taskMapper.deleteTask(taskForDelete);
-                    sqlSession.commit();
+                    manager.remove(taskForDelete);
+                    manager.getTransaction().commit();
                 }
-//        Iterator<Task> it = taskList.iterator(); it.hasNext();
-//        Task task = it.next();
-//        if (task.getIdByProject().equals(projectId))
-//            it.remove();
         } finally {
-            sqlSession.close();
+            manager.close();
         }
     }
 
-    public List<Task> openTaskByName(String nameTask) {
+    public List<Task> openTaskByName(final String nameTask) {
         if (nameTask == null) return null;
-        SqlSession sqlSession = ConnectionMybatis.getSqlSessionFactory().openSession();
+        final EntityManager manager = getEntityManager();
         try {
-            ITaskMapper taskMapper = sqlSession.getMapper(ITaskMapper.class);
-            final List<Task> taskList = taskMapper.getTaskList();
+            TypedQuery<Task> namedQuery = manager.createNamedQuery("Task.getAll", Task.class);
+            final List<Task> taskList = namedQuery.getResultList();
             final List<Task> taskListByName = new ArrayList<>();
             for (Task task : taskList)
                 if (task.getName().equals(nameTask))
                     taskListByName.add(task);
             return taskListByName;
         } finally {
-            sqlSession.close();
+            manager.close();
         }
     }
 
-    public void deleteTask(String idTask) {
+    public void deleteTask(final String idTask) {
         if (idTask == null) return;
-        SqlSession sqlSession = ConnectionMybatis.getSqlSessionFactory().openSession();
+        final EntityManager manager = getEntityManager();
         try {
-            ITaskMapper taskMapper = sqlSession.getMapper(ITaskMapper.class);
-            final List<Task> taskList = taskMapper.getTaskList();
+            manager.getTransaction().begin();
+            TypedQuery<Task> namedQuery = manager.createNamedQuery("Task.getAll", Task.class);
+            final List<Task> taskList = namedQuery.getResultList();
             for (Task task : taskList) {
                 if (task.getId().equals(idTask)) {
-                    taskMapper.deleteTask(task);
-                    sqlSession.commit();
+                    manager.remove(task);
+                    manager.getTransaction().commit();
                     return;
                 }
             }
         } finally {
-            sqlSession.close();
+            manager.close();
         }
     }
 
-    public void clearTaskList() {
-//        taskRepository.clearTaskList();
-    }
-
-    public void updateTask(String name, String newName, Date newDateEnd) {
+//    public void updateTask(String name, String newName, Date newDateEnd) {
 //        if (taskRepository.getTaskList() == null) return;
 //        final List<Task> taskList = taskRepository.getTaskList();
 //        for (Task task : taskList)
@@ -144,6 +136,6 @@ public class TaskService implements ITaskService {
 //                task.setName(newName);
 //                task.setDateEnd(newDateEnd);
 //            }
-    }
+//    }
 }
 

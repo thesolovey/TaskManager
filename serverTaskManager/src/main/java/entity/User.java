@@ -1,15 +1,25 @@
 package entity;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
+@Entity
+@Table(name = "user")
 public class User implements Serializable {
+    @Column(name = "login")
     private String login;
 
+    @Column(name = "password")
     private int password;
 
+    @Column(name = "userName")
     private String userName;
 
+    @Id
+    @Column(name = "id")
     private String id;
+
+    public User() { }
 
     public String getLogin() { return login; }
 
