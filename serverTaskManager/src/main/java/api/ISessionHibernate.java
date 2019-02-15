@@ -3,10 +3,10 @@ package api;
 import entity.Session;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public interface ISessionHibernate {
-    Session getNewSession(String userId) throws SQLException;
-//    void validateSession(Session session) throws SQLException, AccessForbiddenException;
-    void logOut(Session session) throws SQLException;
-    Session getSessionById(String userId) throws SQLException;
+    void addSession(Session session) throws SQLException;
+    void delete(Session session) throws SQLException;
+    List<Session> getSessionList() throws SQLException;
 }

@@ -1,53 +1,35 @@
 package repository;
-
+import api.ISessionHibernate;
 import entity.Session;
-
-import java.sql.*;
-import java.util.ArrayList;
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import java.util.List;
+import static domain.HibernateUtil.getEntityManager;
 
-public class SessionRepository extends AbstractRepository {
-//    public SessionRepository(Connection connection) { this.connection = connection; }
+public class SessionRepository implements ISessionHibernate {
 
+    @Override
     public void addSession(final Session session) {
-//        final String query = "INSERT INTO session (userId, signature, startValidPeriod) VALUE (?, ?, ?)";
-//        try {
-//            final PreparedStatement statement = connection.prepareStatement(query);
-//            statement.setString(1, session.getUserId());
-//            statement.setString(2, session.getSignature());
-//            statement.setDate(3, makeSqlDate(session.getStartValidPeriod()));
-//            statement.executeUpdate();
-//            statement.close();
-//        } catch (SQLException e) { e.printStackTrace(); }
+        final EntityManager manager = getEntityManager();
+        manager.getTransaction().begin();
+        manager.persist(session);
+        manager.getTransaction().commit();
+        manager.close();
     }
 
+    @Override
     public void delete(final Session session) {
-        final String query = "DELETE FROM session WHERE userId = ?";
-        try {
-            final PreparedStatement statement = connection.prepareStatement(query);
-            statement.setString(1, session.getUserId());
-            statement.executeUpdate();
-            statement.close();
-        } catch (SQLException e) { e.printStackTrace(); }
-
+        final EntityManager manager = getEntityManager();
+        manager.getTransaction().begin();
+        manager.remove(session);
+        manager.getTransaction().commit();
+        manager.close();
     }
 
-    public List<Session> getSessionList () {
-        final List<Session> sessionList = new ArrayList<>();
-        final String query = "SELECT * FROM session";
-        try {
-            final Statement statement = connection.createStatement();
-            final ResultSet resultSet = statement.executeQuery(query);
-            while (resultSet.next()) {
-                final String userId = resultSet.getString("userId");
-                final String signature = resultSet.getString("signature");
-                final Date startValidPeriod = resultSet.getDate("startValidPeriod");
-                final Session session = new Session();
-                session.setUserId(userId);
-                session.setSignature(signature);
-                session.setStartValidPeriod(startValidPeriod);
-                sessionList.add(session);
-            }
-        } catch (SQLException e) { e.printStackTrace(); }
-        return sessionList; }
+    @Override
+    public List<Session> getSessionList() {
+        final EntityManager manager = getEntityManager();
+        TypedQuery<Session> query = manager.createNamedQuery("Session.getAll", Session.class);
+        return query.getResultList();
+    }
 }

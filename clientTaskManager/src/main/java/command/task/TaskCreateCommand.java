@@ -55,9 +55,9 @@ public class TaskCreateCommand extends AbstractCommand {
             System.out.println("How many days to complete this Task?: ");
             final Scanner scanner = new Scanner(System.in);
             final int dateEnd = scanner.nextInt();
-            long countDay = dateEnd * 86400000;
-            long finalDate = dateBegin.getTime() + countDay;
-            Date endDate = new Date(finalDate);
+            final long countDay = dateEnd * 86400000;
+            final long finalDate = dateBegin.getTime() + countDay;
+            final Date endDate = new Date(finalDate);
             final GregorianCalendar gcEnd = new GregorianCalendar();
             gcEnd.setTime(endDate);
             XMLGregorianCalendar myDateEnd = null;

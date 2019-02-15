@@ -1,58 +1,40 @@
 package service;
 
-import api.IUserHibernate;
 import api.IUserService;
 import entity.User;
+import repository.UserRepository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
 import java.util.List;
 
-import static domain.HibernateUtil.getEntityManager;
-
-public class UserService implements IUserService, IUserHibernate {
+public class UserService implements IUserService {
+    private UserRepository userRepository;
+    public UserService(UserRepository usersRepository) { this.userRepository = usersRepository; }
 
     public Boolean checkUserListIsEmpty() {
-        final EntityManager manager = getEntityManager();
-        try {
-            TypedQuery<User> namedQuery = manager.createNamedQuery("User.getAll", User.class);
-            final List<User> userList = namedQuery.getResultList();
-            return userList == null || userList.isEmpty();
-        } finally { manager.close(); }
+        final List<User> userList = userRepository.getUsersList();
+        return userList == null || userList.isEmpty();
     }
 
     @Override
     public void addUserByList(final User user) {
         if (user == null) return;
-        final EntityManager manager = getEntityManager();
-        manager.getTransaction().begin();
-        manager.persist(user);
-        manager.getTransaction().commit();
-        manager.close();
-    }
-
-    public List<User> getUsersList() {
-        final EntityManager manager = getEntityManager();
-        try {
-            TypedQuery<User> namedQuery = manager.createNamedQuery("User.getAll", User.class);
-            return namedQuery.getResultList();
-        } finally { manager.close(); }
+        userRepository.addUserByList(user);
     }
 
     @Override
-    public void delete(User user) { }
+    public List<User> getUsersList() {
+        return userRepository.getUsersList();
+    }
 
+    @Override
     public User getUserById (final String userId) {
-        final EntityManager manager = getEntityManager();
-        try {
+        if (userId == null) return null;
             User userById = new User();
-            TypedQuery<User> namedQuery = manager.createNamedQuery("User.getAll", User.class);
-            final List<User> usersList = namedQuery.getResultList();
+            final List<User> usersList = userRepository.getUsersList();
             for (User users : usersList)
                 if (users.getId().equals(userId))
                     userById = users;
             return userById;
-        } finally { manager.close(); }
     }
 }
 

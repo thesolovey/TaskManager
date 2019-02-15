@@ -1,23 +1,23 @@
 package service;
-import api.ISessionHibernate;
 import api.ISessionService;
 import config.ApplicationConfig;
 import entity.Session;
 import exception.AccessForbiddenException;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.jetbrains.annotations.Nullable;
+import repository.SessionRepository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
 import java.util.Date;
 import java.util.List;
 
-import static domain.HibernateUtil.getEntityManager;
+public class SessionService implements ISessionService {
+    private SessionRepository sessionRepository;
+    public SessionService(SessionRepository sessionRepository) {this.sessionRepository = sessionRepository;}
 
-public class SessionService implements ISessionService, ISessionHibernate {
     private static final int SESSION_VALID_PERIOD = ApplicationConfig.SESSION_LIFE_TIME;
 
     @Nullable
+    @Override
     public Session getNewSession(final String userId) {
         if (userId == null) { return null; }
         final Session session = new Session();
@@ -32,17 +32,11 @@ public class SessionService implements ISessionService, ISessionHibernate {
             signature = DigestUtils.md5Hex(signature + secretKey);
         }
         session.setSignature(signature);
-        final EntityManager manager = getEntityManager();;
-        try {
-            manager.getTransaction().begin();
-            manager.persist(session);
-            manager.getTransaction().commit();
-            return session;
-        } finally {
-            manager.close();
-        }
+        sessionRepository.addSession(session);
+        return session;
     }
 
+    @Override
     public void validateSession(final Session currentSession) throws AccessForbiddenException {
         if (currentSession == null)  throw new AccessForbiddenException();
         if (currentSession.getSignature() == null || currentSession.getSignature().isEmpty()) throw new AccessForbiddenException();
@@ -50,12 +44,8 @@ public class SessionService implements ISessionService, ISessionHibernate {
         if (currentSession.getStartValidPeriod() == null) throw new AccessForbiddenException();
 
         Session temp = new Session();
-        final EntityManager manager = getEntityManager();
-        try {
-            manager.getTransaction().begin();
-            TypedQuery<Session> namedQuery = manager.createNamedQuery("Session.getAll", Session.class);
-            final List<Session> sessionList = namedQuery.getResultList();
-            for (Session session: sessionList) {
+        final List<Session> sessionList = sessionRepository.getSessionList();
+        for (Session session: sessionList) {
             if (!session.getUserId().equals(currentSession.getUserId())) { throw new AccessForbiddenException(); }
             if (session.getUserId().equals(currentSession.getUserId())) {temp = session;}
         }
@@ -65,46 +55,29 @@ public class SessionService implements ISessionService, ISessionHibernate {
         if (!checkSignature) throw new  AccessForbiddenException();
 
         if (System.currentTimeMillis() - currentSession.getStartValidPeriod().getTime() > SESSION_VALID_PERIOD) {
-            manager.remove(currentSession); }
-    } finally {
-            manager.getTransaction().commit();
-            manager.close();
-        }
+            sessionRepository.delete(currentSession); }
     }
 
+    @Override
     public void logOut(final Session currentSession) {
         if (currentSession == null) return;
-        final EntityManager manager = getEntityManager();
-        try {
-            manager.getTransaction().begin();
-            TypedQuery<Session> namedQuery = manager.createNamedQuery("Session.getAll", Session.class);
-            final List<Session> sessionList = namedQuery.getResultList();
+        final List<Session> sessionList = sessionRepository.getSessionList();
             for (Session session : sessionList) {
                 if (session.getUserId().equals(currentSession.getUserId())) {
-                    manager.remove(session);
-                    manager.getTransaction().commit();
+                    sessionRepository.delete(session);
                     return;
                 }
             }
-        } finally {
-            manager.close();
-        }
     }
 
+    @Override
     public Session getSessionById(final String userId) {
-        if (userId == null || userId.isEmpty()) { return null; }
+        if (userId == null) { return null; }
         Session sessionByUserId = null;
-        final EntityManager manager = getEntityManager();
-        try {
-            manager.getTransaction().begin();
-            TypedQuery<Session> namedQuery = manager.createNamedQuery("Session.getAll", Session.class);
-            final List<Session> sessionList = namedQuery.getResultList();
+        final List<Session> sessionList = sessionRepository.getSessionList();
             for (Session session: sessionList) {
                 if (session.getUserId().equals(userId))
                     sessionByUserId = session;
-            }
-        } finally {
-            manager.close();
-        } return sessionByUserId;
+            } return sessionByUserId;
     }
 }

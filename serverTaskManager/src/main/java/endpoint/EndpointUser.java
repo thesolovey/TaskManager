@@ -16,7 +16,9 @@ public class EndpointUser {
     public EndpointUser(ServiceLocator serviceLocator) { this.serviceLocator = serviceLocator; }
 
     @WebMethod
-    public void createUser(@WebParam(name = "user") final User user) { serviceLocator.getiUserService().addUserByList(user); }
+    public void createUser(@WebParam(name = "user") final User user) {
+//        UserDTO userDTO = new UserDTO(user.getId(), user.getLogin(), user.getPassword(), user.getUserName());
+        serviceLocator.getiUserService().addUserByList(user); }
 
     @WebMethod
     public List<User> getUserList(@WebParam(name = "session") final Session session) throws AccessForbiddenException {

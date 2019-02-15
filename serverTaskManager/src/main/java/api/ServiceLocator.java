@@ -6,5 +6,4 @@ public interface ServiceLocator {
     ITaskService getiTaskService();
     ISessionService getiSessionService();
     IUserService getiUserService();
-
 }

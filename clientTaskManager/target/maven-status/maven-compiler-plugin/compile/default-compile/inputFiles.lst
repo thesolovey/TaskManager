@@ -25,7 +25,6 @@ C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\GetProjec
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\ValidateSession.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\CreateProject.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\DeleteProjectResponse.java
-C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\command\task\TaskClearCommand.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\EndpointDataBase.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\CreateUserResponse.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\SessionList.java
@@ -90,7 +89,6 @@ C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\AddSessio
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\AccessForbiddenException_Exception.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\command\service\ExitCommand.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\ObjectFactory.java
-C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\command\project\ProjectClearCommand.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\CheckProjectListIsEmpty.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\command\task\TaskUpdateCommand.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\command\project\ProjectDeleteCommand.java

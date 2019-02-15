@@ -8,6 +8,10 @@ import endpoint.EndpointProject;
 import endpoint.EndpointSession;
 import endpoint.EndpointTask;
 import endpoint.EndpointUser;
+import repository.ProjectRepository;
+import repository.SessionRepository;
+import repository.TaskRepository;
+import repository.UserRepository;
 import service.ProjectService;
 import service.SessionService;
 import service.TaskService;
@@ -27,10 +31,15 @@ public class Bootstrap implements ServiceLocator {
     public ITaskService getiTaskService() { return taskService; }
     public ISessionService getiSessionService() { return sessionService; }
 
-    private final UserService userService = new UserService();
-    private final ProjectService projectService = new ProjectService();
-    private final TaskService taskService = new TaskService();
-    private final SessionService sessionService = new SessionService();
+    private final UserRepository usersRepository = new UserRepository();
+    private final TaskRepository taskRepository = new TaskRepository();
+    private final ProjectRepository projectRepository = new ProjectRepository();
+    private final SessionRepository sessionRepository = new SessionRepository();
+
+    private final UserService userService = new UserService(usersRepository);
+    private final ProjectService projectService = new ProjectService(projectRepository, taskRepository);
+    private final TaskService taskService = new TaskService(taskRepository);
+    private final SessionService sessionService = new SessionService(sessionRepository);
 
     private void publishEndpoint() {
         Endpoint.publish("http://localhost:8080/user?wsdl", new EndpointUser(this));
