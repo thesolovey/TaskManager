@@ -17,7 +17,6 @@ public class TaskService implements ITaskService, ITaskHibernate {
     public boolean checkTaskListIsEmpty() {
         final EntityManager manager = getEntityManager();
         try {
-            manager.getTransaction().begin();
             TypedQuery<Task> namedQuery = manager.createNamedQuery("Task.getAll", Task.class);
             final List<Task> taskList = namedQuery.getResultList();
             return taskList == null || taskList.isEmpty();
@@ -42,7 +41,6 @@ public class TaskService implements ITaskService, ITaskHibernate {
         if (session == null) return null;
         final EntityManager manager = getEntityManager();
         try {
-            manager.getTransaction().begin();
             TypedQuery<Task> namedQuery = manager.createNamedQuery("Task.getAll", Task.class);
             final List<Task> taskList = namedQuery.getResultList();
             final List<Task> taskListByUserId = new ArrayList<>();
@@ -59,7 +57,6 @@ public class TaskService implements ITaskService, ITaskHibernate {
         if (projectName == null) return null;
         final EntityManager manager = getEntityManager();
         try {
-            manager.getTransaction().begin();
             TypedQuery<Task> namedQuery = manager.createNamedQuery("Task.getAll", Task.class);
             final List<Task> taskList = namedQuery.getResultList();
             final List<Task> taskByProjectName = new ArrayList<>();
@@ -86,9 +83,9 @@ public class TaskService implements ITaskService, ITaskHibernate {
                 if (task.getIdByProject().equals(projectId)) {
                     taskForDelete = task;
                     manager.remove(taskForDelete);
-                    manager.getTransaction().commit();
                 }
         } finally {
+            manager.getTransaction().commit();
             manager.close();
         }
     }

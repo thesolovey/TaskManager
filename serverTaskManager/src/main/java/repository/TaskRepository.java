@@ -6,27 +6,25 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static config.DateRequired.makeSqlDate;
-
 public class TaskRepository extends AbstractRepository {
 //    public TaskRepository(Connection connection) { this.connection = connection; }
 
     public void addTask(final Task task) {
-        final String query = "INSERT INTO task (id, name, nameByProject, idByProject, userLogin, idByUser, dateBegin, dateEnd) " +
-                "VALUE (?, ?, ?, ?, ?, ?, ?, ?)";
-        try {
-            final PreparedStatement statement = connection.prepareStatement(query);
-            statement.setString(1, task.getId());
-            statement.setString(2, task.getName());
-            statement.setString(3, task.getNameByProject());
-            statement.setString(4, task.getIdByProject());
-            statement.setString(5, task.getUserLogin());
-            statement.setString(6, task.getIdByUser());
-            statement.setDate(7, makeSqlDate(task.getDateBegin()));
-            statement.setDate(8, makeSqlDate(task.getDateEnd()));
-            statement.executeUpdate();
-            statement.close();
-        } catch (SQLException e) { e.printStackTrace(); }
+//        final String query = "INSERT INTO task (id, name, nameByProject, idByProject, userLogin, idByUser, dateBegin, dateEnd) " +
+//                "VALUE (?, ?, ?, ?, ?, ?, ?, ?)";
+//        try {
+//            final PreparedStatement statement = connection.prepareStatement(query);
+//            statement.setString(1, task.getId());
+//            statement.setString(2, task.getName());
+//            statement.setString(3, task.getNameByProject());
+//            statement.setString(4, task.getIdByProject());
+//            statement.setString(5, task.getUserLogin());
+//            statement.setString(6, task.getIdByUser());
+//            statement.setDate(7, makeSqlDate(task.getDateBegin()));
+//            statement.setDate(8, makeSqlDate(task.getDateEnd()));
+//            statement.executeUpdate();
+//            statement.close();
+//        } catch (SQLException e) { e.printStackTrace(); }
     }
 
     public List<Task> getTaskList() {

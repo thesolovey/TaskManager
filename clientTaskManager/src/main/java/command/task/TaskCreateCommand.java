@@ -19,7 +19,7 @@ public class TaskCreateCommand extends AbstractCommand {
     }
 
     public static final String COMMAND = "task-create";
-    
+
     public void execute() {
         List<Project> projectList = new ArrayList<>();
         try {
@@ -55,7 +55,16 @@ public class TaskCreateCommand extends AbstractCommand {
             System.out.println("How many days to complete this Task?: ");
             final Scanner scanner = new Scanner(System.in);
             final int dateEnd = scanner.nextInt();
-//            task.setDateEnd(myDate.get);
+            long countDay = dateEnd * 86400000;
+            long finalDate = dateBegin.getTime() + countDay;
+            Date endDate = new Date(finalDate);
+            final GregorianCalendar gcEnd = new GregorianCalendar();
+            gcEnd.setTime(endDate);
+            XMLGregorianCalendar myDateEnd = null;
+            try {
+                myDateEnd = DatatypeFactory.newInstance().newXMLGregorianCalendar(gcEnd);
+            } catch (DatatypeConfigurationException e) { e.printStackTrace(); }
+            task.setDateEnd(myDateEnd);
 
             task.setUserLogin(user.getLogin());
             task.setIdByProject(user.getUserName());

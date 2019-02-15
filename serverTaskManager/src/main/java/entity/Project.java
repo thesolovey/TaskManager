@@ -5,6 +5,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "project")
+@NamedQuery(name = "Project.getAll", query = "SELECT c from Project c")
 public class Project implements Serializable {
 
     @Column(name = "name")

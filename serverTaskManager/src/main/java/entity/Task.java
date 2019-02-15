@@ -1,14 +1,12 @@
 package entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "task")
+@NamedQuery(name = "Task.getAll", query = "SELECT c from Task c")
 public class Task implements Serializable {
 
     @Id

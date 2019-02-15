@@ -65,9 +65,9 @@ public class SessionService implements ISessionService, ISessionHibernate {
         if (!checkSignature) throw new  AccessForbiddenException();
 
         if (System.currentTimeMillis() - currentSession.getStartValidPeriod().getTime() > SESSION_VALID_PERIOD) {
-            manager.remove(currentSession);
-            manager.getTransaction().commit();}
+            manager.remove(currentSession); }
     } finally {
+            manager.getTransaction().commit();
             manager.close();
         }
     }

@@ -5,23 +5,20 @@ import entity.Session;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.sql.Date;
-
-import static config.DateRequired.makeSqlDate;
 
 public class SessionRepository extends AbstractRepository {
 //    public SessionRepository(Connection connection) { this.connection = connection; }
 
     public void addSession(final Session session) {
-        final String query = "INSERT INTO session (userId, signature, startValidPeriod) VALUE (?, ?, ?)";
-        try {
-            final PreparedStatement statement = connection.prepareStatement(query);
-            statement.setString(1, session.getUserId());
-            statement.setString(2, session.getSignature());
-            statement.setDate(3, makeSqlDate(session.getStartValidPeriod()));
-            statement.executeUpdate();
-            statement.close();
-        } catch (SQLException e) { e.printStackTrace(); }
+//        final String query = "INSERT INTO session (userId, signature, startValidPeriod) VALUE (?, ?, ?)";
+//        try {
+//            final PreparedStatement statement = connection.prepareStatement(query);
+//            statement.setString(1, session.getUserId());
+//            statement.setString(2, session.getSignature());
+//            statement.setDate(3, makeSqlDate(session.getStartValidPeriod()));
+//            statement.executeUpdate();
+//            statement.close();
+//        } catch (SQLException e) { e.printStackTrace(); }
     }
 
     public void delete(final Session session) {

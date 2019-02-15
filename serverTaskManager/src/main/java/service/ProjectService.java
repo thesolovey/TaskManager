@@ -17,7 +17,6 @@ public class ProjectService implements IProjectService, IProjectHibernate {
     public boolean checkProjectListIsEmpty() {
         final EntityManager manager = getEntityManager();
         try {
-            manager.getTransaction().begin();
             TypedQuery<Project> namedQuery = manager.createNamedQuery("Project.getAll", Project.class);
             final List<Project> projectList = namedQuery.getResultList();
             return projectList == null || projectList.isEmpty();
@@ -37,7 +36,6 @@ public class ProjectService implements IProjectService, IProjectHibernate {
     public List<Project> getProjectByUserId(final Session session) {
         final EntityManager manager = getEntityManager();
         try {
-            manager.getTransaction().begin();
             TypedQuery<Project> namedQuery = manager.createNamedQuery("Project.getAll", Project.class);
             final List<Project> projectList = namedQuery.getResultList();
             final List<Project> projectListByuserId = new ArrayList<>();
@@ -66,11 +64,11 @@ public class ProjectService implements IProjectService, IProjectHibernate {
         } finally { manager.close(); }
     }
 
-    public void updateNameProject(String id, String newNameProject) {
+//    public void updateNameProject(String id, String newNameProject) {
 //        if (id == null || newNameProject == null) return;
 //        final List<Project> projectList = projectRepository.getProjectList();
 //        for (Project project : projectList)
 //            if (project.getId().equals(id))
 //                project.setName(newNameProject);
-    }
+//    }
 }

@@ -6,7 +6,6 @@ import entity.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-import java.sql.SQLException;
 import java.util.List;
 
 import static domain.HibernateUtil.getEntityManager;
@@ -16,7 +15,6 @@ public class UserService implements IUserService, IUserHibernate {
     public Boolean checkUserListIsEmpty() {
         final EntityManager manager = getEntityManager();
         try {
-            manager.getTransaction().begin();
             TypedQuery<User> namedQuery = manager.createNamedQuery("User.getAll", User.class);
             final List<User> userList = namedQuery.getResultList();
             return userList == null || userList.isEmpty();
@@ -36,20 +34,18 @@ public class UserService implements IUserService, IUserHibernate {
     public List<User> getUsersList() {
         final EntityManager manager = getEntityManager();
         try {
-            manager.getTransaction().begin();
             TypedQuery<User> namedQuery = manager.createNamedQuery("User.getAll", User.class);
             return namedQuery.getResultList();
         } finally { manager.close(); }
     }
 
     @Override
-    public void delete(User user) throws SQLException { }
+    public void delete(User user) { }
 
     public User getUserById (final String userId) {
         final EntityManager manager = getEntityManager();
         try {
             User userById = new User();
-            manager.getTransaction().begin();
             TypedQuery<User> namedQuery = manager.createNamedQuery("User.getAll", User.class);
             final List<User> usersList = namedQuery.getResultList();
             for (User users : usersList)
