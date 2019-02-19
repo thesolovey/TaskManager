@@ -184,6 +184,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Project }
+     * 
+     */
+    public Project createProject() {
+        return new Project();
+    }
+
+    /**
+     * Create an instance of {@link TaskDTO }
+     * 
+     */
+    public TaskDTO createTaskDTO() {
+        return new TaskDTO();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link AccessForbiddenException }{@code >}}
      * 
      */

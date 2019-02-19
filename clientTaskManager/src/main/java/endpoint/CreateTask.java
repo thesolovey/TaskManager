@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="session" type="{http://endpoint/}session" minOccurs="0"/&gt;
- *         &lt;element name="task" type="{http://endpoint/}task" minOccurs="0"/&gt;
+ *         &lt;element name="task" type="{http://endpoint/}taskDTO" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlType;
 public class CreateTask {
 
     protected Session session;
-    protected Task task;
+    protected TaskDTO task;
 
     /**
      * Gets the value of the session property.
@@ -65,10 +65,10 @@ public class CreateTask {
      * 
      * @return
      *     possible object is
-     *     {@link Task }
+     *     {@link TaskDTO }
      *     
      */
-    public Task getTask() {
+    public TaskDTO getTask() {
         return task;
     }
 
@@ -77,10 +77,10 @@ public class CreateTask {
      * 
      * @param value
      *     allowed object is
-     *     {@link Task }
+     *     {@link TaskDTO }
      *     
      */
-    public void setTask(Task value) {
+    public void setTask(TaskDTO value) {
         this.task = value;
     }
 

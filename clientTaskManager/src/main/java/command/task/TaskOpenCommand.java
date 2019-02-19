@@ -30,7 +30,7 @@ public class TaskOpenCommand extends AbstractCommand {
                 taskListByName = bootstrap.getEndpointTask().openTaskByName(BootstrapClient.getSessionCurrentUser(), nameTask);
             } catch (AccessForbiddenException_Exception e) { e.printStackTrace(); }
             for (Task task : taskListByName) {
-                System.out.println("Name Project for this Task: " + task.getNameByProject());
+                System.out.println("Name Project for this Task: " + task.getProject().getName());
                 System.out.println("Name Task: " + task.getName());
                 System.out.println("Task ID: " + task.getId());
                 System.out.println("Task Date Begin: " + task.getDateBegin());

@@ -3,10 +3,7 @@ package command.task;
 import bootstrap.BootstrapClient;
 import command.AbstractCommand;
 import command.ReadFromConsole;
-import endpoint.AccessForbiddenException_Exception;
-import endpoint.Project;
-import endpoint.Task;
-import endpoint.User;
+import endpoint.*;
 
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
@@ -32,7 +29,7 @@ public class TaskCreateCommand extends AbstractCommand {
             System.out.println("!!! Try command 'project-create' !!!");
         } else {
             System.out.println("[TASK CREATE]");
-            final Task task = new Task();
+            final TaskDTO task = new TaskDTO();
             final String name = ReadFromConsole.readInputFromConsole("Input name Task: ");
             User user = new User();
             try {

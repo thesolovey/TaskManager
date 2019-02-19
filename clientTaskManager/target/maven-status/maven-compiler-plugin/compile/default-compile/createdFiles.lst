@@ -67,6 +67,7 @@ endpoint\SessionListResponse.class
 command\service\ExitCommand.class
 endpoint\EndpointUser.class
 endpoint\CreateTask.class
+endpoint\TaskDTO.class
 endpoint\SetCurrentUser.class
 command\task\TaskUpdateCommand.class
 endpoint\User.class

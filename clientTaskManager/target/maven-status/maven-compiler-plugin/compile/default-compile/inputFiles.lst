@@ -17,6 +17,7 @@ C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\DeleteTas
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\command\user\UserAuthorizationCommand.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\GetUserList.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\SetCurrentUserResponse.java
+C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\TaskDTO.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\CreateProjectResponse.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\endpoint\LogOutResponse.java
 C:\Users\soloviev\TaskManager\clientTaskManager\src\main\java\command\task\TaskCreateCommand.java

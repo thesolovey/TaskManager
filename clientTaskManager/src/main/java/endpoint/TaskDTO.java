@@ -9,21 +9,22 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Java class for task complex type.
+ * <p>Java class for taskDTO complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="task"&gt;
+ * &lt;complexType name="taskDTO"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="dateBegin" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
  *         &lt;element name="dateEnd" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="idByProject" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="idByUser" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="project" type="{http://endpoint/}project" minOccurs="0"/&gt;
+ *         &lt;element name="nameByProject" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="userLogin" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -34,25 +35,27 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "task", propOrder = {
+@XmlType(name = "taskDTO", propOrder = {
     "dateBegin",
     "dateEnd",
     "id",
+    "idByProject",
     "idByUser",
     "name",
-    "project",
+    "nameByProject",
     "userLogin"
 })
-public class Task {
+public class TaskDTO {
 
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar dateBegin;
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar dateEnd;
     protected String id;
+    protected String idByProject;
     protected String idByUser;
     protected String name;
-    protected Project project;
+    protected String nameByProject;
     protected String userLogin;
 
     /**
@@ -128,6 +131,30 @@ public class Task {
     }
 
     /**
+     * Gets the value of the idByProject property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getIdByProject() {
+        return idByProject;
+    }
+
+    /**
+     * Sets the value of the idByProject property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setIdByProject(String value) {
+        this.idByProject = value;
+    }
+
+    /**
      * Gets the value of the idByUser property.
      * 
      * @return
@@ -176,27 +203,27 @@ public class Task {
     }
 
     /**
-     * Gets the value of the project property.
+     * Gets the value of the nameByProject property.
      * 
      * @return
      *     possible object is
-     *     {@link Project }
+     *     {@link String }
      *     
      */
-    public Project getProject() {
-        return project;
+    public String getNameByProject() {
+        return nameByProject;
     }
 
     /**
-     * Sets the value of the project property.
+     * Sets the value of the nameByProject property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Project }
+     *     {@link String }
      *     
      */
-    public void setProject(Project value) {
-        this.project = value;
+    public void setNameByProject(String value) {
+        this.nameByProject = value;
     }
 
     /**

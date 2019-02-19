@@ -40,12 +40,21 @@ public class ProjectService implements IProjectService {
     public void deleteProject(final String idProject) {
         if (idProject == null) return;
         final List<Project> projectList = projectRepository.getProjectList();
-        for (Project project : projectList) {
+        for (Project project: projectList) {
             if (project.getId().equals(idProject)) {
                 projectRepository.deleteProject(project);
                 return;
             }
         }
+    }
+    public Project getProjectById(final String idProject) {
+        if (idProject == null) return null;
+        Project projectById = null;
+        final List<Project> projectList = projectRepository.getProjectList();
+        for (Project project: projectList)
+            if (project.getId().equals(idProject))
+                projectById = project;
+                return projectById;
     }
 
 //    public void updateNameProject(String id, String newNameProject) {

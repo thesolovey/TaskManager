@@ -7,6 +7,7 @@ import java.util.Date;
 @Table(name = "session")
 @NamedQuery(name = "Session.getAll", query = "SELECT c FROM Session c")
 public class Session {
+
     @Id
     @Column(name = "userId")
     private String userId;

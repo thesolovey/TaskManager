@@ -18,9 +18,10 @@ public class TaskRepository implements ITaskHibernate {
     }
 
     @Override
-    public void deleteTask(final Task task) {
+    public void deleteTask(Task task) {
         final EntityManager manager = getEntityManager();
        manager.getTransaction().begin();
+       task = manager.merge(task);
        manager.remove(task);
        manager.getTransaction().commit();
        manager.close();

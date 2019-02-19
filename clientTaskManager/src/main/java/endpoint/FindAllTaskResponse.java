@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="return" type="{http://endpoint/}task" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="return" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlType;
 public class FindAllTaskResponse {
 
     @XmlElement(name = "return")
-    protected List<Task> _return;
+    protected List<String> _return;
 
     /**
      * Gets the value of the return property.
@@ -55,13 +55,13 @@ public class FindAllTaskResponse {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Task }
+     * {@link String }
      * 
      * 
      */
-    public List<Task> getReturn() {
+    public List<String> getReturn() {
         if (_return == null) {
-            _return = new ArrayList<Task>();
+            _return = new ArrayList<String>();
         }
         return this._return;
     }

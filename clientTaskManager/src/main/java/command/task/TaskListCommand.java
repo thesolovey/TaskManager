@@ -3,7 +3,6 @@ package command.task;
 import bootstrap.BootstrapClient;
 import command.AbstractCommand;
 import endpoint.AccessForbiddenException_Exception;
-import endpoint.Task;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,12 +23,12 @@ public class TaskListCommand extends AbstractCommand {
             System.out.println("!!! Try command 'task-create' !!!");
         }
 
-        List<Task> allTask = new ArrayList<>();
+        List<String> allTask = new ArrayList<>();
         try {
             allTask = bootstrap.getEndpointTask().findAllTask(BootstrapClient.getSessionCurrentUser());
         } catch (AccessForbiddenException_Exception e) { e.printStackTrace(); }
-        for (Task task : allTask)
-            System.out.println(task.getName());
+        for (String task : allTask)
+            System.out.println(task);
 
         System.out.println("[OK]");
     }

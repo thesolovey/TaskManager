@@ -7,6 +7,7 @@ import java.io.Serializable;
 @Table(name = "user")
 @NamedQuery(name = "User.getAll", query = "SELECT c from User c")
 public class User implements Serializable {
+
     @Column(name = "login")
     private String login;
 

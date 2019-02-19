@@ -38,7 +38,7 @@ public class Bootstrap implements ServiceLocator {
 
     private final UserService userService = new UserService(usersRepository);
     private final ProjectService projectService = new ProjectService(projectRepository, taskRepository);
-    private final TaskService taskService = new TaskService(taskRepository);
+    private final TaskService taskService = new TaskService(taskRepository, projectRepository);
     private final SessionService sessionService = new SessionService(sessionRepository);
 
     private void publishEndpoint() {

@@ -1,8 +1,11 @@
 package service;
 
 import api.ITaskService;
+import dto.TaskDTO;
+import entity.Project;
 import entity.Session;
 import entity.Task;
+import repository.ProjectRepository;
 import repository.TaskRepository;
 
 import java.util.ArrayList;
@@ -10,8 +13,10 @@ import java.util.List;
 
 public class TaskService implements ITaskService {
     private final TaskRepository taskRepository;
-    public TaskService(TaskRepository taskRepository) { this.taskRepository = taskRepository;
-    }
+    private final ProjectRepository projectRepository;
+
+    public TaskService(TaskRepository taskRepository, ProjectRepository projectRepository) {
+        this.taskRepository = taskRepository; this.projectRepository = projectRepository; }
 
     @Override
     public boolean checkTaskListIsEmpty() {
@@ -20,46 +25,54 @@ public class TaskService implements ITaskService {
     }
 
     @Override
-    public void addTask(final Task task) {
-        if (task == null) return;
+    public void addTask(final TaskDTO taskDTO, final Project project) {
+        if (taskDTO == null) return;
+        final Task task = new Task();
+        task.setId(taskDTO.getId());
+        task.setName(taskDTO.getName());
+        task.setProject(project);
+        task.setUserLogin(taskDTO.getUserLogin());
+        task.setIdByUser(taskDTO.getIdByUser());
+        task.setDateBegin(taskDTO.getDateBegin());
+        task.setDateEnd(taskDTO.getDateEnd());
         taskRepository.addTask(task);
     }
 
     @Override
-    public List<Task> getTaskByUserId(final Session session) {
+    public List<String> getTaskByUserId(final Session session) {
         if (session == null) return null;
         final List<Task> taskList = taskRepository.getTaskList();
-        final List<Task> taskListByUserId = new ArrayList<>();
+        final List<String> taskListByUserId = new ArrayList<>();
         for (Task task : taskList) {
             if (task.getIdByUser().equals(session.getUserId()))
-                taskListByUserId.add(task);
+                taskListByUserId.add(task.getName());
         }
-            return taskListByUserId;
+        return taskListByUserId;
     }
 
     @Override
-    public List<Task> getTaskByProjectName(final String projectName) {
+    public List<String> getTaskByProjectName(final String projectName) {
         if (projectName == null) return null;
         final List<Task> taskList = taskRepository.getTaskList();
-        final List<Task> taskByProjectName = new ArrayList<>();
+        final List<String> taskByProjectName = new ArrayList<>();
         for (Task task : taskList) {
-            if (task.getNameByProject().equals(projectName))
-                taskByProjectName.add(task);
-            }
-            return taskByProjectName;
+            if (task.getProject().getName().equals(projectName))
+                taskByProjectName.add(task.getName());
+        }
+        return taskByProjectName;
     }
 
     @Override
     public void deleteTaskByProjectId(final String projectId) {
         if (projectId == null) return;
-            final List<Task> taskList = taskRepository.getTaskList();
-            Task taskForDelete = new Task();
-            if (taskList == null || taskList.isEmpty()) return;
-            for (Task task : taskList)
-                if (task.getIdByProject().equals(projectId)) {
-                    taskForDelete = task;
-                    taskRepository.deleteTask(taskForDelete);
-                }
+        final List<Task> taskList = taskRepository.getTaskList();
+        Task taskForDelete = new Task();
+        if (taskList == null || taskList.isEmpty()) return;
+        for (Task task : taskList)
+            if (task.getProject().getId().equals(projectId)) {
+                taskForDelete = task;
+                taskRepository.deleteTask(taskForDelete);
+            }
     }
 
     @Override
@@ -70,7 +83,7 @@ public class TaskService implements ITaskService {
         for (Task task : taskList)
             if (task.getName().equals(nameTask))
                 taskListByName.add(task);
-            return taskListByName;
+        return taskListByName;
     }
 
     @Override
@@ -81,10 +94,10 @@ public class TaskService implements ITaskService {
             if (task.getId().equals(idTask)) {
                 taskRepository.deleteTask(task);
                 return;
-                }
             }
         }
-
+    }
+}
 //    public void updateTask(String name, String newName, Date newDateEnd) {
 //        if (taskRepository.getTaskList() == null) return;
 //        final List<Task> taskList = taskRepository.getTaskList();
@@ -94,5 +107,4 @@ public class TaskService implements ITaskService {
 //                task.setDateEnd(newDateEnd);
 //            }
 //    }
-}
 

@@ -1,16 +1,18 @@
 package api;
 
+import dto.TaskDTO;
+import entity.Project;
 import entity.Session;
 import entity.Task;
 
 import java.util.List;
 
 public interface ITaskService {
-    void addTask(Task task);
+    void addTask(TaskDTO task, Project project);
     void deleteTask(String taskId);
-    List<Task> getTaskByUserId(Session session);
+    List<String> getTaskByUserId(Session session);
     List<Task> openTaskByName(String name);
-    List<Task> getTaskByProjectName(String projectName);
+    List<String> getTaskByProjectName(String projectName);
     void deleteTaskByProjectId(String projectId);
     boolean checkTaskListIsEmpty();
 }

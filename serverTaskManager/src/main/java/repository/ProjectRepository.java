@@ -18,9 +18,10 @@ public class ProjectRepository implements IProjectHibernate {
     }
 
     @Override
-    public void deleteProject(final Project project) {
+    public void deleteProject(Project project) {
         final EntityManager manager = getEntityManager();
         manager.getTransaction().begin();
+        project = manager.merge(project);
         manager.remove(project);
         manager.getTransaction().commit();
         manager.close();

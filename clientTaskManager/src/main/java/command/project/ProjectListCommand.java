@@ -23,13 +23,12 @@ public class ProjectListCommand extends AbstractCommand {
             System.out.println("!!! You don't have any project now !!!");
             System.out.println("!!!   Try command 'project-create' !!!");
         } else {
-
-        List<Project> projectList = new ArrayList<>();
+                    List<Project> projectList = new ArrayList<>();
                     try {
                         projectList = bootstrap.getEndpointProject().getProjectByUserId(BootstrapClient.getSessionCurrentUser());
                     } catch (AccessForbiddenException_Exception e) { e.printStackTrace(); }
                     for (Project project : projectList)
-            System.out.println(project.getName());
+                        System.out.println(project.getName());
                 }
                 System.out.println("[OK]");
     }

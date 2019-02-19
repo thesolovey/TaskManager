@@ -16,12 +16,6 @@ public class Task implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "nameByProject")
-    private String nameByProject;
-
-    @Column(name = "idByProject")
-    private String idByProject;
-
     @Column(name = "userLogin")
     private String userLogin;
 
@@ -33,6 +27,13 @@ public class Task implements Serializable {
 
     @Column(name = "dateEnd")
     private Date dateEnd;
+
+    @ManyToOne
+    private Project project;
+
+    public Project getProject() { return project; }
+
+    public void setProject(Project project) { this.project = project; }
 
     public String getIdByUser() { return idByUser; }
 
@@ -57,12 +58,4 @@ public class Task implements Serializable {
     public Date getDateEnd() {return dateEnd;}
 
     public void setDateEnd(Date dateEnd) {this.dateEnd = dateEnd;}
-
-    public String getNameByProject() { return nameByProject; }
-
-    public void setNameByProject(String nameByProject) { this.nameByProject = nameByProject; }
-
-    public String getIdByProject() { return idByProject; }
-
-    public void setIdByProject(String idByProject) { this.idByProject = idByProject; }
 }

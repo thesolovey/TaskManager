@@ -5,7 +5,6 @@ import command.AbstractCommand;
 import command.ReadFromConsole;
 import endpoint.AccessForbiddenException_Exception;
 import endpoint.Project;
-import endpoint.Task;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,12 +41,12 @@ public class ProjectOpenCommand extends AbstractCommand {
                         System.out.println("!!! This Project don't have any Task!!!");
                     }
 
-                    List<Task> taskByProjectName = new ArrayList<>();
+                    List<String> taskByProjectName = new ArrayList<>();
                     try {
                         taskByProjectName = bootstrap.getEndpointTask().getTaskByProjectName(BootstrapClient.getSessionCurrentUser(), nameProject);
                     } catch (AccessForbiddenException_Exception e) { e.printStackTrace(); }
-                    for (Task task : taskByProjectName)
-                        System.out.println("Tasks from this Project: " + task.getName());
+                    for (String task : taskByProjectName)
+                        System.out.println("Tasks from this Project: " + task);
 
                     System.out.println("[OK]");
             }

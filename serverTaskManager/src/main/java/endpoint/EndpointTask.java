@@ -1,6 +1,8 @@
 package endpoint;
 
 import api.ServiceLocator;
+import dto.TaskDTO;
+import entity.Project;
 import entity.Session;
 import entity.Task;
 import exception.AccessForbiddenException;
@@ -17,9 +19,10 @@ public class EndpointTask  {
 
     @WebMethod
     public void createTask(@WebParam(name = "session") final Session session,
-                           @WebParam(name = "task") final Task task) throws AccessForbiddenException {
+                           @WebParam(name = "task") final TaskDTO task) throws AccessForbiddenException {
+        final Project project = serviceLocator.getiProjectService().getProjectById(task.getIdByProject());
         serviceLocator.getiSessionService().validateSession(session);
-        serviceLocator.getiTaskService().addTask(task);
+        serviceLocator.getiTaskService().addTask(task, project);
     }
 
     @WebMethod
@@ -30,7 +33,7 @@ public class EndpointTask  {
     }
 
     @WebMethod
-    public List<Task> findAllTask(@WebParam(name = "session") final Session session) throws AccessForbiddenException {
+    public List<String> findAllTask(@WebParam(name = "session") final Session session) throws AccessForbiddenException {
         serviceLocator.getiSessionService().validateSession(session);
         return serviceLocator.getiTaskService().getTaskByUserId(session);
     }
@@ -52,7 +55,7 @@ public class EndpointTask  {
     public boolean checkTaskListIsEmpty() { return serviceLocator.getiTaskService().checkTaskListIsEmpty(); }
 
     @WebMethod
-    public List<Task> getTaskByProjectName(@WebParam(name = "session") final Session session,
+    public List<String> getTaskByProjectName(@WebParam(name = "session") final Session session,
                                            @WebParam(name = "projectName") final String projectName) throws AccessForbiddenException {
         serviceLocator.getiSessionService().validateSession(session);
         return serviceLocator.getiTaskService().getTaskByProjectName(projectName); }
