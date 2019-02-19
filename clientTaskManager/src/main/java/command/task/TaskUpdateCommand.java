@@ -5,8 +5,7 @@ import command.AbstractCommand;
 
 public class TaskUpdateCommand extends AbstractCommand {
     public TaskUpdateCommand(BootstrapClient bootstrap) { super(bootstrap); }
-
-    public static final String COMMAND = "task-update";
+    public TaskUpdateCommand() { }
 
     public void execute() {
         System.out.println("[TASK UPDATE]");

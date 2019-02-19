@@ -9,6 +9,8 @@ public abstract class AbstractCommand implements ICommand, Serializable {
 
     protected BootstrapClient bootstrap;
 
+    public AbstractCommand() { }
+
     public BootstrapClient getBootstrap() { return bootstrap; }
 
     public void setBootstrap(BootstrapClient bootstrap) { this.bootstrap = bootstrap; }

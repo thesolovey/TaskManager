@@ -5,8 +5,7 @@ import command.AbstractCommand;
 
 public class ExitCommand extends AbstractCommand {
     public ExitCommand(BootstrapClient bootstrap) { super(bootstrap); }
-
-    public static final String COMMAND = "exit";
+    public ExitCommand() { }
 
     @Override
     public void execute() {

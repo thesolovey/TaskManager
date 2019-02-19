@@ -13,8 +13,7 @@ public class TaskOpenCommand extends AbstractCommand {
     public TaskOpenCommand(BootstrapClient bootstrap) {
         super(bootstrap);
     }
-
-    public static final String COMMAND = "task-open";
+    public TaskOpenCommand() { }
 
     public void execute() {
         System.out.println("[TASK OPEN]");

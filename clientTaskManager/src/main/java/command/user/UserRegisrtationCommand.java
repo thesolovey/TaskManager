@@ -11,7 +11,7 @@ public class UserRegisrtationCommand extends AbstractCommand {
     public UserRegisrtationCommand(BootstrapClient bootstrap) {
         super(bootstrap);
     }
-    public final static String COMMAND = "user-reg";
+    public UserRegisrtationCommand() { }
 
     @Override
     public void execute() {

@@ -9,12 +9,10 @@ import endpoint.User;
 import java.util.List;
 
 public class UserAuthorizationCommand extends AbstractCommand {
-
     public UserAuthorizationCommand(BootstrapClient bootstrap) {
         super(bootstrap);
     }
-
-    public final static String COMMAND = "user-login";
+    public UserAuthorizationCommand() { }
 
     @Override
     public void execute() {

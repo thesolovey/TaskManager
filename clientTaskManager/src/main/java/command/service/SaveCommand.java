@@ -5,9 +5,8 @@ import command.AbstractCommand;
 
 
 public class SaveCommand extends AbstractCommand {
-
     public SaveCommand(BootstrapClient bootstrap) { super(bootstrap); }
-    public static final String COMMAND = "save";
+    public SaveCommand() { }
 
     @Override
     public void execute() {

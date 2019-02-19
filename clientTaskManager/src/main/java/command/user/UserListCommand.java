@@ -12,8 +12,7 @@ public class UserListCommand extends AbstractCommand {
     public UserListCommand(BootstrapClient bootstrap) {
         super(bootstrap);
     }
-
-    public static final String COMMAND = "user-list";
+    public UserListCommand() { }
 
     @Override
     public void execute() {

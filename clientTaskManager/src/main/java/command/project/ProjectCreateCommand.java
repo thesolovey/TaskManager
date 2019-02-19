@@ -14,7 +14,7 @@ public class ProjectCreateCommand extends AbstractCommand {
     public ProjectCreateCommand(BootstrapClient bootstrap) {
         super(bootstrap);
     }
-    public static final String COMMAND = "project-create";
+    public ProjectCreateCommand() { }
 
     public void execute() {
         System.out.println("[PROJECT CREATE]");

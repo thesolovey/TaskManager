@@ -3,16 +3,18 @@ package command.service;
 import bootstrap.BootstrapClient;
 import command.AbstractCommand;
 
+import java.util.Set;
+
 public class HelpCommand extends AbstractCommand {
     public HelpCommand(BootstrapClient bootstrap) { super(bootstrap); }
-    public final static String COMMAND = "help";
+    public HelpCommand() { }
 
     @Override
     public void execute() {
         System.out.println("[HELP]");
-//        final Set<String> commands = bootstrap.getCommands();
-//        for (String string : commands)
-//        System.out.println(string);
+        Set<String> commands = bootstrap.getCommand();
+        for (String string : commands)
+        System.out.println(string);
         System.out.println("[OK}");
     }
 

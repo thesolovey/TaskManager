@@ -11,8 +11,7 @@ public class TaskListCommand extends AbstractCommand {
     public TaskListCommand(BootstrapClient bootstrap) {
         super(bootstrap);
     }
-
-    public static final String COMMAND = "task-list";
+    public TaskListCommand() { }
 
     public void execute() {
         System.out.println("[TASK LIST]");

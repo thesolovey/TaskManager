@@ -7,8 +7,7 @@ public class ProjectUpdateCommand extends AbstractCommand {
     public ProjectUpdateCommand(BootstrapClient bootstrap) {
         super(bootstrap);
     }
-
-    public static final String COMMAND = "project-update";
+    public ProjectUpdateCommand() { }
 
     public void execute() {
         System.out.println("[PROJECT UPDATE]");

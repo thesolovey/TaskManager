@@ -9,8 +9,7 @@ public class ProjectDeleteCommand extends AbstractCommand {
     public ProjectDeleteCommand(BootstrapClient bootstrap) {
         super(bootstrap);
     }
-
-    public static final String COMMAND = "project-delete";
+    public ProjectDeleteCommand() { }
 
     public void execute() {
         System.out.println("[PROJECT DELETE]");

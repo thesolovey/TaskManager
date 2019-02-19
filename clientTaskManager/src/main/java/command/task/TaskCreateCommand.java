@@ -14,8 +14,7 @@ public class TaskCreateCommand extends AbstractCommand {
     public TaskCreateCommand(BootstrapClient bootstrap) {
         super(bootstrap);
     }
-
-    public static final String COMMAND = "task-create";
+    public TaskCreateCommand() { }
 
     public void execute() {
         List<Project> projectList = new ArrayList<>();

@@ -9,8 +9,7 @@ public class TaskDeleteCommand extends AbstractCommand {
     public TaskDeleteCommand(BootstrapClient bootstrap) {
         super(bootstrap);
     }
-
-    public static final String COMMAND = "task-delete";
+    public TaskDeleteCommand() { }
 
     public void execute() {
         System.out.println("[TASK DELETE]");

@@ -5,8 +5,7 @@ import command.AbstractCommand;
 
 public class UserLogoutCommand extends AbstractCommand {
     public UserLogoutCommand(BootstrapClient bootstrap) { super(bootstrap); }
-
-    public static final String COMMAND = "user-logout";
+    public UserLogoutCommand() { }
 
     @Override
     public void execute() {

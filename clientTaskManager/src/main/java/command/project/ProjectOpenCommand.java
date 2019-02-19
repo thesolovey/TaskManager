@@ -13,8 +13,7 @@ public class ProjectOpenCommand extends AbstractCommand {
     public ProjectOpenCommand(BootstrapClient bootstrap) {
         super(bootstrap);
     }
-
-    public static final String COMMAND = "project-open";
+    public ProjectOpenCommand() { }
 
     public void execute() {
         System.out.println("[PROJECT OPEN]");

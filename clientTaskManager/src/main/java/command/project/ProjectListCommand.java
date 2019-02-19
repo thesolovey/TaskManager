@@ -12,8 +12,7 @@ public class ProjectListCommand extends AbstractCommand {
     public ProjectListCommand(BootstrapClient bootstrap) {
         super(bootstrap);
     }
-
-    public static final String COMMAND = "project-list";
+    public ProjectListCommand() { }
 
     public void execute() {
         System.out.println("[PROJECT LIST]");

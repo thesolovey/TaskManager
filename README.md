@@ -1,3 +1,4 @@
+****
 Application `TaskManager`
 ****
 
@@ -12,8 +13,8 @@ Application `TaskManager`
       The application allows you to create projects, tasks and manage them.
 
 * default Users:
-      login: admin, password: admin
-      login: test, password: test
+      `login: admin, password: admin`
+      `login: test, password: test`
 
 ****
 `Project build`
@@ -21,4 +22,5 @@ Application `TaskManager`
 * mvn clean install
 
 ****
-######author: Dmitriy Solovev, sdima9999@gmail.com
+`author: Dmitriy Solovev, sdima9999@gmail.com`
+****

@@ -5,7 +5,7 @@ import command.AbstractCommand;
 
 public class LoadCommand extends AbstractCommand {
     public LoadCommand(BootstrapClient bootstrap) { super(bootstrap); }
-    public static final String COMMAND = "load";
+    public LoadCommand() { }
 
     @Override
     public void execute() {
