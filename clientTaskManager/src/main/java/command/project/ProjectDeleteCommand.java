@@ -13,16 +13,12 @@ public class ProjectDeleteCommand extends AbstractCommand {
 
     public void execute() {
         System.out.println("[PROJECT DELETE]");
-
         boolean projectListIsEmpty = bootstrap.getEndpointProject().checkProjectListIsEmpty();
         if (projectListIsEmpty) {
             System.out.println("!!! You don't have any project now !!!");
             System.out.println("!!!  Try command 'project-create'  !!!");
         } else {
             final String idProject = ReadFromConsole.readInputFromConsole("Input ID Project you want delete: ");
-            try {
-                bootstrap.getEndpointTask().deleteTaskByIdProjecr(BootstrapClient.getSessionCurrentUser(), idProject);
-            } catch (AccessForbiddenException_Exception e) { e.printStackTrace(); }
             try {
                 bootstrap.getEndpointProject().deleteProject(BootstrapClient.getSessionCurrentUser(), idProject);
             } catch (AccessForbiddenException_Exception e) { e.printStackTrace(); }

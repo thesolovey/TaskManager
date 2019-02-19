@@ -29,7 +29,10 @@ public class Task implements Serializable {
     private Date dateEnd;
 
     @ManyToOne
+    @JoinColumn(name = "project_id")
     private Project project;
+
+    public Task() {}
 
     public Project getProject() { return project; }
 

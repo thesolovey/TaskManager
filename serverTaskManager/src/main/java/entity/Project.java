@@ -2,6 +2,8 @@ package entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "project")
@@ -23,6 +25,11 @@ public class Project implements Serializable {
 
     @Column(name = "userId")
     private String userId;
+
+    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    private Set<Task> taskList = new HashSet<Task>();
+
+    public Project() {}
 
     public String getUserId() { return userId; }
 
