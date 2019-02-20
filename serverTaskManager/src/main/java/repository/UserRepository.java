@@ -7,23 +7,19 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-import static domain.HibernateUtil.getEntityManager;
-
 public class UserRepository implements IUserHibernate {
+    private EntityManager manager;
+    public EntityManager getManager() { return manager; }
+    public void setManager(EntityManager manager) { this.manager = manager; }
 
     @Override
     public void addUserByList(final User user) {
-        final EntityManager manager = getEntityManager();
-        manager.getTransaction().begin();
-        manager.persist(user);
-        manager.getTransaction().commit();
-        manager.close();
+        getManager().persist(user);
     }
 
     @Override
     public List<User> getUsersList() {
-        final EntityManager manager = getEntityManager();
-        TypedQuery<User> query = manager.createNamedQuery("User.getAll", User.class);
+        TypedQuery<User> query = getManager().createNamedQuery("User.getAll", User.class);
         return query.getResultList();
     }
 }

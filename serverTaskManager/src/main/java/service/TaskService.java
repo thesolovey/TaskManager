@@ -8,8 +8,11 @@ import entity.Task;
 import repository.ProjectRepository;
 import repository.TaskRepository;
 
+import javax.persistence.EntityManager;
 import java.util.ArrayList;
 import java.util.List;
+
+import static domain.HibernateUtil.getEntityManager;
 
 public class TaskService implements ITaskService {
     private final TaskRepository taskRepository;
@@ -20,6 +23,8 @@ public class TaskService implements ITaskService {
 
     @Override
     public boolean checkTaskListIsEmpty() {
+        final EntityManager manager = getEntityManager();
+        taskRepository.setManager(manager);
         final List<Task> taskList = taskRepository.getTaskList();
         return taskList == null || taskList.isEmpty();
     }
@@ -35,12 +40,20 @@ public class TaskService implements ITaskService {
         task.setIdByUser(taskDTO.getIdByUser());
         task.setDateBegin(taskDTO.getDateBegin());
         task.setDateEnd(taskDTO.getDateEnd());
+        final EntityManager manager = getEntityManager();
+        manager.getTransaction().begin();
+        taskRepository.setManager(manager);
         taskRepository.addTask(task);
+        manager.getTransaction().commit();
+        manager.close();
+        taskRepository.setManager(manager);
     }
 
     @Override
     public List<String> getTaskByUserId(final Session session) {
         if (session == null) return null;
+        final EntityManager manager = getEntityManager();
+        taskRepository.setManager(manager);
         final List<Task> taskList = taskRepository.getTaskList();
         final List<String> taskListByUserId = new ArrayList<>();
         for (Task task : taskList) {
@@ -53,6 +66,8 @@ public class TaskService implements ITaskService {
     @Override
     public List<String> getTaskByProjectName(final String projectName) {
         if (projectName == null) return null;
+        final EntityManager manager = getEntityManager();
+        taskRepository.setManager(manager);
         final List<Task> taskList = taskRepository.getTaskList();
         final List<String> taskByProjectName = new ArrayList<>();
         for (Task task : taskList) {
@@ -65,19 +80,28 @@ public class TaskService implements ITaskService {
     @Override
     public void deleteTaskByProjectId(final String projectId) {
         if (projectId == null) return;
+        final EntityManager manager = getEntityManager();
+        taskRepository.setManager(manager);
         final List<Task> taskList = taskRepository.getTaskList();
         Task taskForDelete = new Task();
         if (taskList == null || taskList.isEmpty()) return;
         for (Task task : taskList)
             if (task.getProject().getId().equals(projectId)) {
                 taskForDelete = task;
+                manager.getTransaction().begin();
+                taskRepository.setManager(manager);
                 taskRepository.deleteTask(taskForDelete);
+                manager.getTransaction().commit();
+                manager.close();
+                taskRepository.setManager(manager);
             }
     }
 
     @Override
     public List<Task> openTaskByName(final String nameTask) {
         if (nameTask == null) return null;
+        final EntityManager manager = getEntityManager();
+        taskRepository.setManager(manager);
         final List<Task> taskList = taskRepository.getTaskList();
         final List<Task> taskListByName = new ArrayList<>();
         for (Task task : taskList)
@@ -89,10 +113,17 @@ public class TaskService implements ITaskService {
     @Override
     public void deleteTask(final String idTask) {
         if (idTask == null) return;
+        final EntityManager manager = getEntityManager();
+        taskRepository.setManager(manager);
         final List<Task> taskList = taskRepository.getTaskList();
         for (Task task : taskList) {
             if (task.getId().equals(idTask)) {
+                manager.getTransaction().begin();
+                taskRepository.setManager(manager);
                 taskRepository.deleteTask(task);
+                manager.getTransaction().commit();
+                manager.close();
+                taskRepository.setManager(manager);
                 return;
             }
         }

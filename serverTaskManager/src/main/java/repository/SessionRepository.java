@@ -1,35 +1,30 @@
 package repository;
 import api.ISessionHibernate;
 import entity.Session;
+
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.util.List;
-import static domain.HibernateUtil.getEntityManager;
 
 public class SessionRepository implements ISessionHibernate {
+    private EntityManager manager;
+    public EntityManager getManager() { return manager; }
+    public void setManager(EntityManager manager) { this.manager = manager; }
 
     @Override
     public void addSession(final Session session) {
-        final EntityManager manager = getEntityManager();
-        manager.getTransaction().begin();
-        manager.persist(session);
-        manager.getTransaction().commit();
-        manager.close();
+        getManager().persist(session);
     }
 
     @Override
-    public void delete(final Session session) {
-        final EntityManager manager = getEntityManager();
-        manager.getTransaction().begin();
-        manager.remove(session);
-        manager.getTransaction().commit();
-        manager.close();
+    public void delete(Session session) {
+        session = getManager().merge(session);
+        getManager().remove(session);
     }
 
     @Override
     public List<Session> getSessionList() {
-        final EntityManager manager = getEntityManager();
-        TypedQuery<Session> query = manager.createNamedQuery("Session.getAll", Session.class);
+        TypedQuery<Session> query = getManager().createNamedQuery("Session.getAll", Session.class);
         return query.getResultList();
     }
 }
