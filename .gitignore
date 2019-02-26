@@ -1,7 +1,7 @@
 .idea
 .gitignore
 .TaskManager.iml
-.target
+target/
 .idea
 *.iml
 *.iws

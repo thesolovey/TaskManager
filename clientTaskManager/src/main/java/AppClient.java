@@ -1,4 +1,4 @@
-import bootstrap.BootstrapClient;
+import com.gmail.sdima.bootstrap.BootstrapClient;
 
 public class AppClient {
     public static void main(String[] args) {
