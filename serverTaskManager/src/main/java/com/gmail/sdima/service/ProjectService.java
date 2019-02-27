@@ -81,12 +81,4 @@ public class ProjectService implements IProjectService {
                 projectById = project;
                 return projectById;
     }
-
-//    public void updateNameProject(String id, String newNameProject) {
-//        if (id == null || newNameProject == null) return;
-//        final List<Project> projectList = projectRepository.getProjectList();
-//        for (Project project : projectList)
-//            if (project.getId().equals(id))
-//                project.setName(newNameProject);
-//    }
 }

@@ -1,33 +1,34 @@
 package com.gmail.sdima.repository;
 import com.gmail.sdima.api.ISessionHibernate;
 import com.gmail.sdima.entity.Session;
+import org.apache.deltaspike.jpa.api.transaction.Transactional;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
 @ApplicationScoped
+@Transactional
 public class SessionRepository implements ISessionHibernate {
 
-    private EntityManager manager;
-    public EntityManager getManager() { return manager; }
-    public void setManager(EntityManager manager) { this.manager = manager; }
+    @Inject private EntityManager manager;
 
     @Override
     public void addSession(final Session session) {
-        getManager().persist(session);
+        manager.persist(session);
     }
 
     @Override
     public void delete(Session session) {
-        session = getManager().merge(session);
-        getManager().remove(session);
+        session = manager.merge(session);
+        manager.remove(session);
     }
 
     @Override
     public List<Session> getSessionList() {
-        TypedQuery<Session> query = getManager().createNamedQuery("Session.getAll", Session.class);
+        TypedQuery<Session> query = manager.createNamedQuery("Session.getAll", Session.class);
         return query.getResultList();
     }
 }

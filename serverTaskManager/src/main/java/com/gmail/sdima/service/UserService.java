@@ -17,8 +17,6 @@ public class UserService implements IUserService {
     @Inject private UserRepository userRepository;
 
     public Boolean checkUserListIsEmpty() {
-        final EntityManager manager = getEntityManager();
-        userRepository.setManager(manager);
         final List<User> userList = userRepository.getUsersList();
         return userList == null || userList.isEmpty();
     }
@@ -26,19 +24,11 @@ public class UserService implements IUserService {
     @Override
     public void addUserByList(final User user) {
         if (user == null) return;
-        final EntityManager manager = getEntityManager();
-        manager.getTransaction().begin();
-        userRepository.setManager(manager);
         userRepository.addUserByList(user);
-        manager.getTransaction().commit();
-        manager.close();
-        userRepository.setManager(manager);
     }
 
     @Override
     public List<User> getUsersList() {
-        final EntityManager manager = getEntityManager();
-        userRepository.setManager(manager);
         return userRepository.getUsersList();
     }
 
@@ -47,7 +37,6 @@ public class UserService implements IUserService {
         if (userId == null) return null;
             User userById = new User();
             final EntityManager manager = getEntityManager();
-            userRepository.setManager(manager);
             final List<User> usersList = userRepository.getUsersList();
             for (User users : usersList)
                 if (users.getId().equals(userId))
