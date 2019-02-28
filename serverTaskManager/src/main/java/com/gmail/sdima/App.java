@@ -1,15 +1,15 @@
 package com.gmail.sdima;
 
 import com.gmail.sdima.bootstrap.Bootstrap;
-
-import javax.enterprise.inject.se.SeContainerInitializer;
-import javax.enterprise.inject.spi.CDI;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class App {
     public static void main(String[] args) {
-        
-        SeContainerInitializer.newInstance().addPackages(App.class).initialize();
-        final Bootstrap bootstrap = CDI.current().select(Bootstrap.class).get();
+
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        context.scan("com.gmail.sdima");
+        context.refresh();
+        Bootstrap bootstrap = context.getBean(Bootstrap.class);
         bootstrap.start();
     }
 }

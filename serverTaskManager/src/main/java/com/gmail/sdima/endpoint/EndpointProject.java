@@ -5,18 +5,20 @@ import com.gmail.sdima.entity.Session;
 import com.gmail.sdima.exception.AccessForbiddenException;
 import com.gmail.sdima.service.ProjectService;
 import com.gmail.sdima.service.SessionService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import javax.inject.Inject;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 import java.util.List;
 
 @WebService
+@Component
 public class EndpointProject {
 
-    @Inject private ProjectService projectService;
-    @Inject private SessionService sessionService;
+    @Autowired private ProjectService projectService;
+    @Autowired private SessionService sessionService;
 
     @WebMethod
     public void createProject (@WebParam(name = "session") final Session session,

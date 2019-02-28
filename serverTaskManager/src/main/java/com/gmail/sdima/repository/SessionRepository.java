@@ -1,26 +1,27 @@
 package com.gmail.sdima.repository;
-import com.gmail.sdima.api.ISessionHibernate;
+import com.gmail.sdima.api.ISessionRepository;
 import com.gmail.sdima.entity.Session;
-import org.apache.deltaspike.jpa.api.transaction.Transactional;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-@ApplicationScoped
-@Transactional
-public class SessionRepository implements ISessionHibernate {
+@Repository
+public class SessionRepository implements ISessionRepository {
 
-    @Inject private EntityManager manager;
+    @PersistenceContext private EntityManager manager;
 
     @Override
+    @Transactional
     public void addSession(final Session session) {
         manager.persist(session);
     }
 
     @Override
+    @Transactional
     public void delete(Session session) {
         session = manager.merge(session);
         manager.remove(session);

@@ -1,33 +1,35 @@
 package com.gmail.sdima.repository;
-import com.gmail.sdima.api.IProjectHibernate;
+import com.gmail.sdima.api.IProjectRepository;
 import com.gmail.sdima.entity.Project;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-@ApplicationScoped
-public class ProjectRepository implements IProjectHibernate {
+@Repository
+public class ProjectRepository implements IProjectRepository {
 
-    private EntityManager manager;
-    public EntityManager getManager() { return manager; }
-    public void setManager(EntityManager manager) { this.manager = manager; }
+    @PersistenceContext private EntityManager manager;
 
     @Override
+    @Transactional
     public void addProject(final Project project) {
-        getManager().persist(project);
+        manager.persist(project);
     }
 
     @Override
+    @Transactional
     public void deleteProject(Project project) {
-        project = getManager().merge(project);
-        getManager().remove(project);
+        project = manager.merge(project);
+        manager.remove(project);
     }
 
     @Override
     public List<Project> getProjectList() {
-        TypedQuery<Project> query = getManager().createNamedQuery("Project.getAll", Project.class);
+        TypedQuery<Project> query = manager.createNamedQuery("Project.getAll", Project.class);
         return query.getResultList();
     }
 }

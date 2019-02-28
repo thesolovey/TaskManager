@@ -1,21 +1,21 @@
 package com.gmail.sdima.service;
 
+import com.gmail.sdima.api.ITaskRepository;
 import com.gmail.sdima.api.ITaskService;
 import com.gmail.sdima.dto.TaskDTO;
 import com.gmail.sdima.entity.Project;
 import com.gmail.sdima.entity.Session;
 import com.gmail.sdima.entity.Task;
-import com.gmail.sdima.repository.TaskRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 
-@ApplicationScoped
+@Service
 public class TaskService implements ITaskService {
 
-    @Inject private TaskRepository taskRepository;
+    @Autowired private ITaskRepository taskRepository;
 
     @Override
     public boolean checkTaskListIsEmpty() {

@@ -8,19 +8,21 @@ import com.gmail.sdima.exception.AccessForbiddenException;
 import com.gmail.sdima.service.ProjectService;
 import com.gmail.sdima.service.SessionService;
 import com.gmail.sdima.service.TaskService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import javax.inject.Inject;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 import java.util.List;
 
 @WebService
+@Component
 public class EndpointTask  {
 
-    @Inject private TaskService taskService;
-    @Inject private ProjectService projectService;
-    @Inject private SessionService sessionService;
+    @Autowired private TaskService taskService;
+    @Autowired private ProjectService projectService;
+    @Autowired private SessionService sessionService;
 
     @WebMethod
     public void createTask(@WebParam(name = "session") final Session session,

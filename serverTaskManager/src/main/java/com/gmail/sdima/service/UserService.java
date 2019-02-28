@@ -1,22 +1,20 @@
 package com.gmail.sdima.service;
 
+import com.gmail.sdima.api.IUserRepository;
 import com.gmail.sdima.api.IUserService;
 import com.gmail.sdima.entity.User;
-import com.gmail.sdima.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
+import java.sql.SQLException;
 import java.util.List;
 
-import static com.gmail.sdima.domain.HibernateUtil.getEntityManager;
-
-@ApplicationScoped
+@Service
 public class UserService implements IUserService {
 
-    @Inject private UserRepository userRepository;
+    @Autowired private IUserRepository userRepository;
 
-    public Boolean checkUserListIsEmpty() {
+    public Boolean checkUserListIsEmpty() throws SQLException {
         final List<User> userList = userRepository.getUsersList();
         return userList == null || userList.isEmpty();
     }
@@ -36,7 +34,7 @@ public class UserService implements IUserService {
     public User getUserById (final String userId) {
         if (userId == null) return null;
             User userById = new User();
-            final EntityManager manager = getEntityManager();
+//            final EntityManager manager = getEntityManager();
             final List<User> usersList = userRepository.getUsersList();
             for (User users : usersList)
                 if (users.getId().equals(userId))

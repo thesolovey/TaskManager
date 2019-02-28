@@ -1,21 +1,21 @@
 package com.gmail.sdima.service;
+import com.gmail.sdima.api.ISessionRepository;
 import com.gmail.sdima.api.ISessionService;
 import com.gmail.sdima.config.ApplicationConfig;
 import com.gmail.sdima.entity.Session;
 import com.gmail.sdima.exception.AccessForbiddenException;
-import com.gmail.sdima.repository.SessionRepository;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.jetbrains.annotations.Nullable;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 import java.util.Date;
 import java.util.List;
 
-@ApplicationScoped
+@Service
 public class SessionService implements ISessionService {
 
-    @Inject private SessionRepository sessionRepository;
+    @Autowired private ISessionRepository sessionRepository;
 
     private static final int SESSION_VALID_PERIOD = ApplicationConfig.SESSION_LIFE_TIME;
 

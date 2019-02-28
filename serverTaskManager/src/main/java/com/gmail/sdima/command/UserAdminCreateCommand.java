@@ -2,15 +2,15 @@ package com.gmail.sdima.command;
 
 import com.gmail.sdima.entity.User;
 import com.gmail.sdima.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 import java.util.UUID;
 
-@ApplicationScoped
+@Component
 public class UserAdminCreateCommand {
 
-    @Inject private UserService userService;
+    @Autowired private UserService userService;
 
     public void execute() {
         final User userAdmin = new User();
