@@ -4,17 +4,19 @@ import com.gmail.sdima.command.AbstractCommand;
 import com.gmail.sdima.command.ReadFromConsole;
 import com.gmail.sdima.endpoint.*;
 import org.reflections.Reflections;
+import org.springframework.stereotype.Component;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
+@Component
 public class BootstrapClient {
 
-    private final EndpointUser endpointUser = new EndpointUserService().getEndpointUserPort();
-    private final EndpointProject endpointProject = new EndpointProjectService().getEndpointProjectPort();
-    private final EndpointTask endpointTask = new EndpointTaskService().getEndpointTaskPort();
-    private final EndpointSession endpointSession = new EndpointSessionService().getEndpointSessionPort();
+    private EndpointUser endpointUser = new EndpointUserService().getEndpointUserPort();
+    private EndpointProject endpointProject = new EndpointProjectService().getEndpointProjectPort();
+    private EndpointTask endpointTask = new EndpointTaskService().getEndpointTaskPort();
+    private EndpointSession endpointSession = new EndpointSessionService().getEndpointSessionPort();
 
     public EndpointUser getEndpointUser() { return endpointUser; }
     public EndpointProject getEndpointProject() {return endpointProject; }

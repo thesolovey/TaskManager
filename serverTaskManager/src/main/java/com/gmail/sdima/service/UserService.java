@@ -34,7 +34,6 @@ public class UserService implements IUserService {
     public User getUserById (final String userId) {
         if (userId == null) return null;
             User userById = new User();
-//            final EntityManager manager = getEntityManager();
             final List<User> usersList = userRepository.getUsersList();
             for (User users : usersList)
                 if (users.getId().equals(userId))

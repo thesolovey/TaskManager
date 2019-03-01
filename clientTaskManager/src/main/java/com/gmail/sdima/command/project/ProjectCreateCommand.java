@@ -11,10 +11,10 @@ import com.gmail.sdima.endpoint.User;
 import java.util.UUID;
 
 public class ProjectCreateCommand extends AbstractCommand {
-    public ProjectCreateCommand(BootstrapClient bootstrap) {
-        super(bootstrap);
-    }
-    public ProjectCreateCommand() { }
+//    public ProjectCreateCommand(BootstrapClient bootstrap) {
+//        super(bootstrap);
+//    }
+//    public ProjectCreateCommand() { }
 
     public void execute() {
         System.out.println("[PROJECT CREATE]");

@@ -2,11 +2,10 @@ package com.gmail.sdima.command.service;
 
 import com.gmail.sdima.bootstrap.Bootstrap;
 import com.gmail.sdima.command.AbstractCommand;
-import com.gmail.sdima.domain.Domain;
 
 public class LoadCommand extends AbstractCommand {
     public LoadCommand(Bootstrap bootstrap) { super(bootstrap); }
-    private Domain domain = new Domain();
+//    private Domain domain = new Domain();
 
     public static final String COMMAND = "load";
 
