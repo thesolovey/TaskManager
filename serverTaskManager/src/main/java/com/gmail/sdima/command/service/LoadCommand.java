@@ -1,17 +1,14 @@
 package com.gmail.sdima.command.service;
 
-import com.gmail.sdima.bootstrap.Bootstrap;
-import com.gmail.sdima.command.AbstractCommand;
-
-public class LoadCommand extends AbstractCommand {
-    public LoadCommand(Bootstrap bootstrap) { super(bootstrap); }
-//    private Domain domain = new Domain();
-
-    public static final String COMMAND = "load";
-
-    @Override
-    public void execute() {
-        System.out.println("[LOAD]");
+//public class LoadCommand extends AbstractCommand {
+//    public LoadCommand(Bootstrap bootstrap) { super(bootstrap); }
+////    private Domain domain = new Domain();
+//
+//    public static final String COMMAND = "load";
+//
+//    @Override
+//    public void execute() {
+//        System.out.println("[LOAD]");
 //        try {
 //            List<Session> sessionList = null;
 //            List<User> userList = null;
@@ -38,6 +35,6 @@ public class LoadCommand extends AbstractCommand {
 //            com.gmail.sdima.domain.setSessionList(sessionList);
 //
 //        } catch (IOException | ClassNotFoundException e) {e.printStackTrace();}
-        System.out.println("[OK]");
-    }
-}
+//        System.out.println("[OK]");
+//    }
+//}

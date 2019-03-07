@@ -89,7 +89,7 @@ public class TaskService implements ITaskService {
     public void deleteTask(final String idTask) {
         if (idTask == null) return;
         final List<Task> taskList = taskRepository.getTaskList();
-        for (Task task : taskList) {
+        for (Task task: taskList) {
             if (task.getId().equals(idTask)) {
                 taskRepository.deleteTask(task);
                 return;

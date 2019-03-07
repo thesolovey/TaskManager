@@ -13,18 +13,18 @@ public class UserAdminCreateCommand {
     @Autowired private UserService userService;
 
     public void execute() {
-        final User userAdmin = new User();
+        final User admin = new User();
         final String login = "admin";
         final String password = "admin";
         final int passwordHash = password.hashCode();
         final String userName = "admin";
         final String userId = UUID.randomUUID().toString();
 
-        userAdmin.setLogin(login);
-        userAdmin.setPassword(passwordHash);
-        userAdmin.setUserName(userName);
-        userAdmin.setId(userId);
+        admin.setLogin(login);
+        admin.setPassword(passwordHash);
+        admin.setUserName(userName);
+        admin.setId(userId);
 
-        userService.addUserByList(userAdmin);
+        userService.addUserByList(admin);
     }
 }
