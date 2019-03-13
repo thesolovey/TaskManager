@@ -17,7 +17,7 @@
             <a href="authorization" class="w3-bar-item w3-button">Sign in</a>
 
             <a href="projectList" class="w3-bar-item w3-button">Project List</a>
-            <a href="taskList" class="w3-bar-item w3-button">task List</a>
+            <a href="taskList" class="w3-bar-item w3-button">Task List</a>
 
           </div>
 

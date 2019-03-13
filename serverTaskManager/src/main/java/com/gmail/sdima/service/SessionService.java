@@ -5,7 +5,6 @@ import com.gmail.sdima.config.ApplicationConfig;
 import com.gmail.sdima.entity.Session;
 import com.gmail.sdima.exception.AccessForbiddenException;
 import org.apache.commons.codec.digest.DigestUtils;
-import org.jetbrains.annotations.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +18,6 @@ public class SessionService implements ISessionService {
 
     private static final int SESSION_VALID_PERIOD = ApplicationConfig.SESSION_LIFE_TIME;
 
-    @Nullable
     @Override
     public Session getNewSession(final String userId) {
         if (userId == null) { return null; }

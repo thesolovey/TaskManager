@@ -12,7 +12,7 @@ public class User implements Serializable {
     private String login;
 
     @Column(name = "password")
-    private int password;
+    private String password;
 
     @Column(name = "userName")
     private String userName;
@@ -27,9 +27,9 @@ public class User implements Serializable {
 
     public void setLogin(String login) { this.login = login; }
 
-    public int getPassword() { return password; }
+    public String getPassword() { return password; }
 
-    public void setPassword(int password) { this.password = password; }
+    public void setPassword(String password) { this.password = password; }
 
     public String getUserName() { return userName; }
 

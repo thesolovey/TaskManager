@@ -14,8 +14,10 @@ public class UserService implements IUserService {
 
     @Autowired private IUserRepository userRepository;
 
-    public Boolean checkUserListIsEmpty() throws SQLException {
+    public boolean checkUserListIsEmpty() throws SQLException {
         final List<User> userList = userRepository.getUsersList();
+        for (User user: userList)
+            if(user.getUserName().equals("admin") && user.getUserName().equals("test")) { return true; }
         return userList == null || userList.isEmpty();
     }
 
@@ -39,6 +41,16 @@ public class UserService implements IUserService {
                 if (users.getId().equals(userId))
                     userById = users;
             return userById;
+    }
+
+    public User getUserByName (final String userName) {
+        if (userName == null) return null;
+        User userByName = new User();
+        final List<User> userList = userRepository.getUsersList();
+        for (User user: userList)
+            if (user.getUserName().equals(userName))
+                userByName = user;
+            return userByName;
     }
 }
 
