@@ -7,8 +7,8 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 
 @EnableWebSecurity
 @ComponentScan("com.gmail.sdima")
@@ -19,10 +19,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-    @Autowired private UserDetailsService userDetailsService;
+    @Autowired private UserDetailsServiceImpl userDetailsService;
 
     @Override
-    public void configure(AuthenticationManagerBuilder auth) throws Exception {
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
                 .userDetailsService(userDetailsService)
                 .passwordEncoder(passwordEncoder());
@@ -32,18 +32,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http
-                .authorizeRequests().antMatchers("/").permitAll()
+                .authorizeRequests()
+                .antMatchers( "/registration", "/", "/login**").permitAll()
+                .anyRequest().authenticated()
                 .and()
-                .authorizeRequests().antMatchers("/authorization").permitAll()
+                .formLogin().loginPage("/login").usernameParameter("username").passwordParameter("password")
+                .loginProcessingUrl("/loginAction")
+                .successForwardUrl("/userMainPage")
+                .permitAll()
                 .and()
-                .authorizeRequests().antMatchers("/registration").permitAll()
-                .and()
-                .formLogin().loginPage("/authorization").loginProcessingUrl("/authorizationAction").permitAll()
-                .and()
-                .logout().logoutSuccessUrl("/").permitAll()
+                .logout().logoutSuccessUrl("/login").permitAll()
                 .and()
                 .csrf().disable();
-
-
     }
 }

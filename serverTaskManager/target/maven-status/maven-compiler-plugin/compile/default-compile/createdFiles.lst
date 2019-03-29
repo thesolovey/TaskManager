@@ -11,6 +11,7 @@ com\gmail\sdima\repository\SessionRepository.class
 com\gmail\sdima\config\DataConfig.class
 com\gmail\sdima\api\ISessionRepository.class
 com\gmail\sdima\config\ApplicationConfig.class
+com\gmail\sdima\entity\UserRole.class
 com\gmail\sdima\command\UserAdminCreateCommand.class
 com\gmail\sdima\entity\Task.class
 com\gmail\sdima\repository\ProjectRepository.class

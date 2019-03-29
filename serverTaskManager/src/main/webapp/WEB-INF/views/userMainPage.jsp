@@ -67,5 +67,11 @@
             <button class="w3-btn w3-round-large" onclick="location.href='/'"><i class="fa fa-home"></i> Back to Main-Menu</button>
         </div>
 
+        <div class="w3-container w3-light-grey w3-opacity w3-left-align w3-padding">
+        <form action="/logout" method="post">
+        	<input value="Logout" type="submit">
+        </form>
+        </div>
+
     </body>
 </html>

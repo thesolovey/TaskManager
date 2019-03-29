@@ -21,6 +21,9 @@ public class User implements Serializable {
     @Column(name = "id")
     private String id;
 
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+//    private Set<UserRole> authorities = new HashSet<>();
+
     public User() { }
 
     public String getLogin() { return login; }

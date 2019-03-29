@@ -35,22 +35,22 @@ public class UserService implements IUserService {
     @Override
     public User getUserById (final String userId) {
         if (userId == null) return null;
-            User userById = new User();
-            final List<User> usersList = userRepository.getUsersList();
-            for (User users : usersList)
-                if (users.getId().equals(userId))
-                    userById = users;
+        User userById = new User();
+        final List<User> usersList = userRepository.getUsersList();
+        for (User users : usersList)
+            if (users.getId().equals(userId))
+                userById = users;
             return userById;
     }
 
-    public User getUserByName (final String userName) {
-        if (userName == null) return null;
-        User userByName = new User();
+    public User getUserByLogin (final String login) {
+        if (login == null) return null;
+        User userByLogin = new User();
         final List<User> userList = userRepository.getUsersList();
         for (User user: userList)
-            if (user.getUserName().equals(userName))
-                userByName = user;
-            return userByName;
+            if (user.getLogin().equals(login))
+                userByLogin = user;
+            return userByLogin;
     }
 }
 

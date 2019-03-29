@@ -16,6 +16,7 @@ C:\Users\soloviev\TaskManager\serverTaskManager\src\main\java\com\gmail\sdima\co
 C:\Users\soloviev\TaskManager\serverTaskManager\src\main\java\com\gmail\sdima\entity\User.java
 C:\Users\soloviev\TaskManager\serverTaskManager\src\main\java\com\gmail\sdima\command\ReadFromConsole.java
 C:\Users\soloviev\TaskManager\serverTaskManager\src\main\java\com\gmail\sdima\repository\TaskRepository.java
+C:\Users\soloviev\TaskManager\serverTaskManager\src\main\java\com\gmail\sdima\entity\UserRole.java
 C:\Users\soloviev\TaskManager\serverTaskManager\src\main\java\com\gmail\sdima\bootstrap\Bootstrap.java
 C:\Users\soloviev\TaskManager\serverTaskManager\src\main\java\com\gmail\sdima\repository\SessionRepository.java
 C:\Users\soloviev\TaskManager\serverTaskManager\src\main\java\com\gmail\sdima\service\UserService.java
